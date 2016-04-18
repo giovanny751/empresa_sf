@@ -151,6 +151,18 @@
                 </li>
             </ul>
         </li>
+        <li class="has-sub">
+            <a href="javascript:" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">
+                Cotización <span class="holder" style="border-color: rgba(0, 0, 0, 0.35);"></span></a>
+            <ul>
+                <li>
+                    <a href="<?php echo base_url('index.php/Cotizacion'); ?>">Nuevo</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url('index.php/Cotizacion/consultaCotizacion'); ?>">Consultar</a>
+                </li>
+            </ul>
+        </li>
         <li><a href="<?php echo base_url('index.php/login/logout'); ?>" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">CERRAR SESION</a></li>
     </ul>
 </div>

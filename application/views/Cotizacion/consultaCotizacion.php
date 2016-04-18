@@ -9,7 +9,7 @@
         <form class='form-horizontal' id='frmCotizacion' method="post">
             <div class='col-md-6'>
                 <div class='form-group'>
-                    <label div class='col-md-6'><span style='color: red'>*&nbsp;&nbsp;</span>Cliente</label>
+                    <label div class='col-md-6'>Cliente</label>
                     <div class='col-md-6'>
                         <select name='cliente' id='cliente' class='form-control obligatorio'>  
                             <option value=''>::Seleccionar</option>
@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <div class='form-group'>
-                    <label div class='col-md-6'><span style='color: red'>*&nbsp;&nbsp;</span>Forma de pago</label>
+                    <label div class='col-md-6'>Forma de pago</label>
                     <div class='col-md-6'>
                         <select name='formaPago' id='formaPago' class='form-control obligatorio'>  
                             <option value=''>::Seleccionar</option>
@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class='form-group'>
-                    <label div class='col-md-6'><span style='color: red'>*&nbsp;&nbsp;</span>Tiempo de entrega</label>
+                    <label div class='col-md-6'>Tiempo de entrega</label>
                     <div class='col-md-6'>
                         <select name='tiempoEntrega' id='tiempoEntrega' class='form-control obligatorio'>  
                             <option value=''>::Seleccionar</option>
@@ -46,7 +46,7 @@
 
             <div class='col-md-6'>
                 <div class='form-group'>
-                    <label div class='col-md-6'><span style='color: red'>*&nbsp;&nbsp;</span>Garantía</label>
+                    <label div class='col-md-6'>Garantía</label>
                     <div class='col-md-6'>
                         <select name='garantia' id='garantia' class='form-control obligatorio'>  
                             <option value=''>::Seleccionar</option>
@@ -57,7 +57,7 @@
                     </div>
                 </div>
                 <div class='form-group'>
-                    <label div class='col-md-6'><span style='color: red'>*&nbsp;&nbsp;</span>Validez de la oferta</label>
+                    <label div class='col-md-6'>Validez de la oferta</label>
                     <div class='col-md-6'>
                         <select name='validezOferta' id='validezOferta' class='form-control obligatorio'>  
                             <option value=''>::Seleccionar</option>
@@ -78,11 +78,13 @@
             <div class='table-responsive'>
                 <table class='table table-hover table-bordered' id='tablaPrincipal'>
                     <thead>
+                    <th>Codigo</th>
                     <th>Cliente</th>
                     <th>Garantía</th>
                     <th>Forma de pago</th>
                     <th>Validez de la oferta</th>
                     <th>Tiempo de entrega</th>
+                    <th>Estado</th>
                     <th>Seleccionar</th>
                     </thead>
                     <tbody id='bodyBusqueda'>
@@ -103,11 +105,13 @@
                     body = '';
                     $.each(msg,function(key,val){
                         body += "<tr>";
+                        body += "<td>"+val.cotEnc_id+"</td>";
                         body += "<td>"+val.cliente+"</td>";
                         body += "<td>"+val.garantia+"</td>";
                         body += "<td>"+val.formaPago+"</td>";
                         body += "<td>"+val.validezOferta+"</td>";
                         body += "<td>"+val.tiempoEntrega+"</td>";
+                        body += "<td>"+val.estado+"</td>";
                         body += "<td style='text-align:center'><button type='button' name='consultaCotizacion' encCot_id='"+val.cotEnc_id+"' class='btn btn-info consultarEncabezado'>Consultar</button></td>";
                         body += "</tr>";
                     });

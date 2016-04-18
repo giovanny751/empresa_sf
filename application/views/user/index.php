@@ -94,6 +94,13 @@
             <div class="col-md-3">
                 <?php echo lista("emp_id", "emp_id", "form-control obligatorio", "empresa", "id", "nombre", (isset($datos[0]->emp_id) ? $datos[0]->emp_id : ''), array("ACTIVO" => "S"), /* readOnly? */ false); ?>                        <br>
             </div>
+            <div class="col-md-3">
+                <label for="emp_id">
+                    *                             Permiso                        </label>
+            </div>
+            <div class="col-md-3">
+                <?php echo lista("permisos", "permisos", "form-control obligatorio", "permiso", "id", "nombre", (isset($datos[0]->permisos) ? $datos[0]->permisos : ''), array("ACTIVO" => "S"), /* readOnly? */ false); ?>                        <br>
+            </div>
 
         </div>
         <?php if (isset($post['campo'])) { ?>

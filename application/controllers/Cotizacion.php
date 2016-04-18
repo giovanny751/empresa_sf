@@ -30,6 +30,7 @@ class Cotizacion extends My_Controller {
         $this->data['tiempoEntrega'] = $this->Cotizacion_model->TiemoEntrega();
         $this->data['Garantia'] = $this->Cotizacion_model->garantia();
         $this->data['validezOferta'] = $this->Cotizacion_model->ValidezOferta();
+        $this->data['estados'] = $this->Cotizacion_model->estados();
         $this->layout->view("Cotizacion/cotizacion",$this->data);
     }
     function consultaProductos(){

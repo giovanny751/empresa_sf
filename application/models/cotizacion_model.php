@@ -56,11 +56,13 @@ class Cotizacion_model extends CI_Model {
         $this->db->select("forma_pago.nombre as formaPago");
         $this->db->select("validez_oferta.nombre as validezOferta");
         $this->db->select("tiempo_entrega.nombre as tiempoEntrega");
+        $this->db->select("estados.nombre estado");
         $this->db->join("clientes","clientes.id = encabezado_cotizacion.id_cliente");
         $this->db->join("forma_pago","forma_pago.id = encabezado_cotizacion.id_formaPago");
         $this->db->join("garantia","garantia.id = encabezado_cotizacion.id_garantia");
         $this->db->join("tiempo_entrega","tiempo_entrega.id = encabezado_cotizacion.id_tiempoEntrega");
         $this->db->join("validez_oferta","validez_oferta.id = encabezado_cotizacion.id_validezOferta");
+        $this->db->join("estados","encabezado_cotizacion.est_id=estados.id");
         $data = $this->db->get("encabezado_cotizacion");
         return $data->result();
     }
@@ -68,6 +70,19 @@ class Cotizacion_model extends CI_Model {
     function consultaEncabezado($encCot_id){
         $this->db->where("encCot_id",$encCot_id);
         $data = $this->db->get("encabezado_cotizacion");
+        return $data->result();
+    }
+    function estados(){
+        if($this->session->userdata('permisos')==1){// cotizador
+            $d=array(1,2);
+            $this->db->where_in('id',$d);
+        }
+        if($this->session->userdata('permisos')==2){// aprobador
+            $d=array(3,4);
+            $this->db->where_in('id',$d);
+        }
+        $data = $this->db->get("estados");
+//        echo $this->db->last_query();
         return $data->result();
     }
     function consultaProductosCotizacion($encCot_id){
