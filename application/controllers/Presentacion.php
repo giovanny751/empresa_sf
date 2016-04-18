@@ -22,6 +22,7 @@ class Presentacion extends My_Controller {
     }
 
     function principal() {
+        $datos=$this->session->userdata('usu_id'); 
         $this->layout->view('presentacion/principal', $this->data);
     }
 

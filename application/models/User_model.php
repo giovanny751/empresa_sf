@@ -19,18 +19,20 @@ class User_model extends CI_Model {
     }
 
     public function get_user($username, $pass) {
+        $this->db->select('user.*,empresa.nombre empresa', false);
         $this->db->where('usu_usuario', $username);
         $this->db->where('usu_contrasena', sha1($pass));
-        $this->db->where('activo', 'S');
+        $this->db->join('empresa', 'empresa.id=user.emp_id', 'left');
+        $this->db->where('user.activo', 'S');
         $query = $this->db->get('user');
         echo $this->db->last_query();
         return $query->result_array();
     }
 
     public function validacionusuario($iduser) {
-        $this->db->select('user.*,empresa.nombre empresa',false);
+        $this->db->select('user.*,empresa.nombre empresa', false);
         $this->db->where('usu_id', $iduser);
-        $this->db->join('empresa', 'empresa.id=user.emp_id');
+        $this->db->join('empresa', 'empresa.id=user.emp_id', 'left');
         $query = $this->db->get('user');
         return $query->result();
     }
@@ -92,8 +94,6 @@ class User_model extends CI_Model {
         $this->db->update('user', $data);
     }
 
-    
-
     function consultageneral() {
 
         $this->db->select("user.usu_id as id,user.*,ingreso.Ing_fechaIngreso as ingreso");
@@ -154,7 +154,5 @@ class User_model extends CI_Model {
         $data = $this->db->get('user');
         return $data->result();
     }
-
-   
 
 }
