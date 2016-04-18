@@ -39,7 +39,6 @@ class Login extends My_Controller {
 //        echo $this->input->post('username')."***".$this->input->post('password');die;
 
         $user = $this->user_model->get_user($this->input->post('username'), $this->input->post('password'));  
-        print_r($user);
         if (!empty($user) > 0) {
             $this->data['username'] = $user[0]["usu_email"];
             $this->data['password'] = $user[0]["usu_contrasena"];
@@ -48,11 +47,8 @@ class Login extends My_Controller {
                     'usu_id' => $user[0]['usu_id'],
                     'ing_fechaIngreso' => date('Y-m-d H:i:s')
                 );
-                if (!empty($user[0]['rol_id'])) {
                     redirect('index.php/presentacion/principal', 'location');
-                } else {
-                    redirect('index.php/presentacion/rol', 'location');
-                }
+                
             
         } else {
             $this->session->set_flashdata(array('message' => 'Su n&uacute;mero de documento no se encuentra registrado en el sistema.', 'message_type' => 'warning'));

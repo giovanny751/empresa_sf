@@ -21,14 +21,16 @@ class User_model extends CI_Model {
     public function get_user($username, $pass) {
         $this->db->where('usu_usuario', $username);
         $this->db->where('usu_contrasena', sha1($pass));
-        $this->db->where('est_id', 1);
+        $this->db->where('activo', 'S');
         $query = $this->db->get('user');
         echo $this->db->last_query();
         return $query->result_array();
     }
 
     public function validacionusuario($iduser) {
+        $this->db->select('user.*,empresa.nombre empresa',false);
         $this->db->where('usu_id', $iduser);
+        $this->db->join('empresa', 'empresa.id=user.emp_id');
         $query = $this->db->get('user');
         return $query->result();
     }
@@ -90,22 +92,7 @@ class User_model extends CI_Model {
         $this->db->update('user', $data);
     }
 
-    function filteruser($apellido = null, $cedula = null, $estado = null, $nombre = null) {
-        if (!empty($apellido))
-            $this->db->where('usu_apellido', $apellido);
-        if (!empty($cedula))
-            $this->db->where('usu_cedula', $cedula);
-        if (!empty($estado))
-            $this->db->where('user.est_id', $estado);
-        if (!empty($nombre))
-            $this->db->where('usu_nombre', $nombre);
-        $this->db->join("ingreso", "ingreso.usu_id = user.usu_id", "LEFT");
-        $this->db->order_by('ingreso.ing_fechaIngreso', 'DESC');
-        $this->db->group_by('user.usu_id ');
-        $user = $this->db->get('user');
-//                echo "<br><p><br>".$this->db->last_query();
-        return $user->result();
-    }
+    
 
     function consultageneral() {
 
@@ -168,16 +155,6 @@ class User_model extends CI_Model {
         return $data->result();
     }
 
-    function eliminar_usuarios($post) {
-        $this->db->set('est_id', '2');
-        $this->db->set('activo', 'N');
-        $this->db->set('rol_id', '0');
-        $this->db->where('usu_id', $post['usu_id']);
-        $this->db->update('user');
-
-
-        $this->db->where('usu_id', $post['usu_id']);
-        $this->db->delete('user');
-    }
+   
 
 }

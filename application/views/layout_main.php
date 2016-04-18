@@ -39,11 +39,36 @@
 
 
 <header>
-    <span class="tituloH">SF</span>
+    <span class="tituloH"><?php echo $this->session->userdata('empresa'); ?></span>
 </header>
 <div id="cssmenu">
-    aka va el menu quemado
-</div> 
+    <ul id="principalMenu">
+        <li class="active has-sub">
+            <a href="javascript:" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">
+                Empresa <span class="holder" style="border-color: rgba(0, 0, 0, 0.35);"></span></a>
+            <ul>
+                <li>
+                    <a href="<?php echo base_url('index.php/Empresa'); ?>">Nuevo</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url('index.php/Empresa'); ?>">Consultar</a>
+                </li>
+            </ul>
+        </li>
+        <li class="has-sub">
+            <a href="javascript:" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">
+                Usuario <span class="holder" style="border-color: rgba(0, 0, 0, 0.35);"></span></a>
+            <ul>
+                <li>
+                    <a href="<?php echo base_url('index.php/user'); ?>">Nuevo</a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url('index.php/user'); ?>">Consultar</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
 <div class="contenidoLayout">
     <div class="container">
         <div class="row contenido " >

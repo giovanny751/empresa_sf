@@ -1,79 +1,78 @@
 <div class="widgetTitle" >
     <h5>
-        <i class="glyphicon glyphicon-ok"></i> Clientes    </h5>
+        <i class="glyphicon glyphicon-ok"></i> Usuarios    </h5>
 </div>
 <div class='well'>
-    <form action="<?php echo base_url('index.php/') . '/Clientes/consult_clientes'; ?>" method="post" >
+    <form action="<?php echo base_url('index.php/') . '/User/consult_user'; ?>" method="post" >
         <div class="row">
-
+            
             <div class="col-md-3">
-                <label for="nit">
-                    NIT                        </label>
+                <label for="usu_cedula">
+                    Cedula                        </label>
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['nit']) ? $post['nit'] : '' ) ?>" class="form-control obligatorio  " id="nit" name="nit">
+                <input type="text" value="<?php echo (isset($post['usu_cedula']) ? $post['usu_cedula'] : '' ) ?>" class="form-control obligatorio  number" id="usu_cedula" name="usu_cedula">
                 <br>
             </div>
 
             <div class="col-md-3">
-                <label for="cliente">
-                    Cliente                        </label>
+                <label for="usu_nombre">
+                    Nombre                        </label>
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['cliente']) ? $post['cliente'] : '' ) ?>" class="form-control obligatorio  number" id="cliente" name="cliente">
+                <input type="text" value="<?php echo (isset($post['usu_nombre']) ? $post['usu_nombre'] : '' ) ?>" class="form-control obligatorio  " id="usu_nombre" name="usu_nombre">
                 <br>
             </div>
 
             <div class="col-md-3">
-                <label for="contacto">
-                    Contacto                        </label>
+                <label for="usu_apellido">
+                    Apellido                        </label>
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['contacto']) ? $post['contacto'] : '' ) ?>" class="form-control obligatorio  " id="contacto" name="contacto">
+                <input type="text" value="<?php echo (isset($post['usu_apellido']) ? $post['usu_apellido'] : '' ) ?>" class="form-control obligatorio  " id="usu_apellido" name="usu_apellido">
                 <br>
             </div>
 
             <div class="col-md-3">
-                <label for="cargo">
-                    Cargo                        </label>
+                <label for="usu_usuario">
+                    Usuario                        </label>
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['cargo']) ? $post['cargo'] : '' ) ?>" class="form-control obligatorio  " id="cargo" name="cargo">
+                <input type="text" value="<?php echo (isset($post['usu_usuario']) ? $post['usu_usuario'] : '' ) ?>" class="form-control obligatorio  " id="usu_usuario" name="usu_usuario">
                 <br>
             </div>
 
             <div class="col-md-3">
-                <label for="ciudad">
-                    Ciudad                        </label>
+                <label for="usu_contrasena">
+                    Contrasena                        </label>
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['ciudad']) ? $post['ciudad'] : '' ) ?>" class="form-control obligatorio  " id="ciudad" name="ciudad">
+                <input type="text" value="<?php echo (isset($post['usu_contrasena']) ? $post['usu_contrasena'] : '' ) ?>" class="form-control obligatorio  " id="usu_contrasena" name="usu_contrasena">
                 <br>
             </div>
 
             <div class="col-md-3">
-                <label for="email">
+                <label for="usu_email">
                     E-mail                        </label>
             </div>
             <div class="col-md-3">
 
-                <input type="email" value="<?php echo (isset($post['email']) ? $post['email'] : '' ) ?>" class="form-control obligatorio  " id="email" name="email">
+                <input type="email" value="<?php echo (isset($post['usu_email']) ? $post['usu_email'] : '' ) ?>" class="form-control obligatorio  " id="usu_email" name="usu_email">
                 <br>
             </div>
 
             <div class="col-md-3">
-                <label for="telefono_cli">
-                    Telefono cliente                        </label>
+                <label for="emp_id">
+                    Empresa                        </label>
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['telefono_cli']) ? $post['telefono_cli'] : '' ) ?>" class="form-control obligatorio  number" id="telefono_cli" name="telefono_cli">
-                <br>
+                <?php echo lista("emp_id", "emp_id", "form-control obligatorio", "empresa", "id", "nombre", (isset($datos[0]->emp_id) ? $datos[0]->emp_id : ''), array("ACTIVO" => "S"), /* readOnly? */ false); ?>                    <br>
             </div>
 
         </div>
@@ -84,14 +83,13 @@
         <div class="col-md-12">
             <table class="table table-bordered">
                 <thead>
-                <th>id</th>
-                <th>NIT</th>
-                <th>Cliente</th>
-                <th>Contacto</th>
-                <th>Cargo</th>
-                <th>Ciudad</th>
+                <th></th>
+                <th>Cedula</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Usuario</th>
                 <th>E-mail</th>
-                <th>Telefono cliente</th>
+                <th>Empresa</th>
                 <th>Acción</th>
                 </thead>
                 <tbody>
@@ -123,15 +121,15 @@
 </div>
 <div class="row">
     <div class="col-md-12" style="float:right">
-        <a href="<?php echo base_url() . "/index.php/Clientes/index" ?>" class="btn btn-dcs" >Nuevo</a>
+        <a href="<?php echo base_url() . "/index.php/User/index" ?>" class="btn btn-dcs" >Nuevo</a>
     </div>
 </div>
 <?php if (isset($campo)) { ?>
-    <form action="<?php echo base_url('index.php/') . "/Clientes/edit_clientes"; ?>" method="post" id="editar">
+    <form action="<?php echo base_url('index.php/') . "/User/edit_user"; ?>" method="post" id="editar">
         <input type="hidden" name="<?php echo $campo ?>" id="<?php echo $campo ?>2">
         <input type="hidden" name="campo" value="<?php echo $campo ?>">
     </form>
-    <form action="<?php echo base_url('index.php/') . "/Clientes/delete_clientes"; ?>" method="post" id="delete">
+    <form action="<?php echo base_url('index.php/') . "/User/delete_user"; ?>" method="post" id="delete">
         <input type="hidden" name="<?php echo $campo ?>" id="<?php echo $campo ?>3">
         <input type="hidden" name="campo" value="<?php echo $campo ?>">
     </form>
