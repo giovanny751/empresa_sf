@@ -36,61 +36,22 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/dt/dt-1.10.9/datatables.min.css"/>
  
 <script type="text/javascript" src="https://cdn.datatables.net/r/dt/dt-1.10.9/datatables.min.js"></script>
-<?php
-function modulos($datosmodulos, $idusuario, $dato = null) {
 
-    $ci = &get_instance();
-    $ci->load->model("ingreso_model");
-    $user = null;
-    $menu = $ci->ingreso_model->menu($datosmodulos, $idusuario, 2);
-    $i = array();
-    foreach ($menu as $modulo)
-        $i[$modulo['menu_id']][$modulo['menu_nombrepadre']][$modulo['menu_idpadre']] [] = array($modulo['menu_idhijo'], $modulo['menu_controlador'], $modulo['menu_accion']);
-    echo ($datosmodulos == 'prueba')?"<ul id='principalMenu'>":"<ul>";
-    foreach ($i as $padre => $nombrepapa)
-        foreach ($nombrepapa as $nombrepapa => $menuidpadre)
-            foreach ($menuidpadre as $modulos => $menu)
-                foreach ($menu as $submenus):
-                    if ($submenus[1] == "" && $submenus[2] == "") {
-                        echo "<li class='active has-sub'><a href='javascript:'>" . strtoupper($nombrepapa) . "</a>";
-                    } else {
-                        echo "<li><a href='" . base_url("index.php/" . $submenus[1] . "/" . $submenus[2]) . "'>" . strtoupper($nombrepapa) . "</a>";
-                    }
-                    if (!empty($submenus[0]))
-                        modulos($submenus[0], $idusuario);
-                    echo "</li>";
-                endforeach;
-    if($datosmodulos == 'prueba'){
-            echo "<li class='has-sub'>";
-                echo "<a href='#'>OPCIONES</a>";
-                echo "<ul>";
-            echo "<li><a href='". base_url('index.php/presentacion/recordarcontrasena') ."' >Cambiar Contraseña</a></li>";
-                    echo "<li><a href='". base_url('index.php/presentacion/rol')."'>Cambiar de Rol</a></li>";
-                echo "</ul>";
-            echo "</li>";
-            echo "<li><a href='". base_url('index.php/login/logout')."'>CERRAR SESION</a></li>";
-    }
-    echo "</ul>";
-}
-
-?>
 
 <header>
-    <span class="tituloH">HOME CARE</span>
+    <span class="tituloH">SF</span>
     <span class="cuadroH1"></span>
     <span class="cuadroH2"></span>
     <span class="cuadroH3"></span>
 </header>
 <div id="cssmenu">
-        <?php echo modulos('prueba', $id, null); ?>
-   
+        aka va el menu quemado
 </div> 
     <div class="contenidoLayout">
 <div class="container">
-        <div class="row contenido" >
+        <div class="row contenido marco" >
             <?php echo $content_for_layout ?>
             <p><br></p>
-            <img src="<?php echo base_url('img/LogosBarra.PNG') ?>" width="320px">
         </div>
     </div>
 </div>
@@ -104,6 +65,14 @@ function modulos($datosmodulos, $idusuario, $dato = null) {
     </div>  
 </footer>
 <style>
+    .marco {
+                background-color: white !important;
+                border: 2px solid #337ab7 !important;
+                color: gray;
+                border-radius: 15px;
+                margin: 15px;
+                padding: 25px;
+            }
     .obligado{
         background-color: rgb(250, 255, 189);
     }

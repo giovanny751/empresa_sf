@@ -44,14 +44,6 @@ class MY_Controller extends CI_Controller {
         $ci = & get_instance();
         $controller = $ci->router->fetch_class();
         $method = $ci->router->fetch_method();
-        if (isset($usu_id['usu_id'])) {
-            $consulta = $this->Ingreso_model->consultapermisosmenu($usu_id['usu_id'], $controller, $method);
-            if (!empty($consulta)) {
-                return true;
-            } else {
-                return false;
-            }
-        }
     }
 
 }
