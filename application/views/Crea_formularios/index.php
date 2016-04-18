@@ -8,8 +8,8 @@
             <select id="tabla" class="form-control" name="tabla">
                 <option value="">::Seleccionar::</option>
                 <?php foreach ($tablas as $key =>$value) { ?>
-                    <option value="<?php echo $value->Tables_in_symNygsoft ?>">
-                        <?php echo $value->Tables_in_symNygsoft ?>
+                    <option value="<?php echo $value->Tables_in_empresa_sf ?>">
+                        <?php echo $value->Tables_in_empresa_sf ?>
                     </option>
                 <?php } ?>
             </select>
