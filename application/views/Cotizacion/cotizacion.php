@@ -14,7 +14,7 @@
                         <select name='cliente' id='cliente' class='form-control obligatorio'>  
                             <option value=''>::Seleccionar</option>
                             <?php foreach ($cliente as $c): ?>
-                                <option <?php echo ((isset($consultaEncabezado->id_cliente)?$consultaEncabezado->id_cliente:'') == $c->id ) ? "selected" : ""; ?> value='<?php echo $c->id ?>'><?php echo $c->cliente ?></option>
+                                <option <?php echo ((isset($consultaEncabezado->id_cliente) ? $consultaEncabezado->id_cliente : '') == $c->id ) ? "selected" : ""; ?> value='<?php echo $c->id ?>'><?php echo $c->cliente ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
@@ -25,7 +25,7 @@
                         <select name='formaPago' id='formaPago' class='form-control obligatorio'>  
                             <option value=''>::Seleccionar</option>
                             <?php foreach ($formaPago as $f): ?>
-                                <option <?php echo ((isset($consultaEncabezado->id_formaPago)?$consultaEncabezado->id_formaPago:'') == $f->id ) ? "selected" : ""; ?> value='<?php echo $f->id ?>'><?php echo $f->nombre ?></option>
+                                <option <?php echo ((isset($consultaEncabezado->id_formaPago) ? $consultaEncabezado->id_formaPago : '') == $f->id ) ? "selected" : ""; ?> value='<?php echo $f->id ?>'><?php echo $f->nombre ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
@@ -36,18 +36,20 @@
                         <select name='tiempoEntrega' id='tiempoEntrega' class='form-control obligatorio'>  
                             <option value=''>::Seleccionar</option>
                             <?php foreach ($tiempoEntrega as $t): ?>
-                                <option <?php echo ((isset($consultaEncabezado->id_tiempoEntrega)?$consultaEncabezado->id_tiempoEntrega:'') == $t->id ) ? "selected" : ""; ?> value='<?php echo $t->id ?>'><?php echo $t->nombre ?></option>
+                                <option <?php echo ((isset($consultaEncabezado->id_tiempoEntrega) ? $consultaEncabezado->id_tiempoEntrega : '') == $t->id ) ? "selected" : ""; ?> value='<?php echo $t->id ?>'><?php echo $t->nombre ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
                 </div>
+            </div>
+            <div class='col-md-6'>
                 <div class='form-group'>
                     <label div class='col-md-6'><span style='color: red'>*&nbsp;&nbsp;</span>Garantía</label>
                     <div class='col-md-6'>
                         <select name='garantia' id='garantia' class='form-control obligatorio'>  
                             <option value=''>::Seleccionar</option>
                             <?php foreach ($Garantia as $g): ?>
-                                <option <?php echo ((isset($consultaEncabezado->id_garantia)?$consultaEncabezado->id_garantia:'') == $g->id) ? "selected" : ""; ?> value='<?php echo $g->id ?>'><?php echo $g->nombre ?></option>
+                                <option <?php echo ((isset($consultaEncabezado->id_garantia) ? $consultaEncabezado->id_garantia : '') == $g->id) ? "selected" : ""; ?> value='<?php echo $g->id ?>'><?php echo $g->nombre ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
@@ -58,7 +60,7 @@
                         <select name='validezOferta' id='validezOferta' class='form-control obligatorio'>  
                             <option value=''>::Seleccionar</option>
                             <?php foreach ($validezOferta as $v): ?>
-                                <option <?php echo ((isset($consultaEncabezado->id_validezOferta)?$consultaEncabezado->id_validezOferta:'') == $v->id ) ? "selected" : ""; ?> value='<?php echo $v->id ?>'><?php echo $v->nombre ?></option>
+                                <option <?php echo ((isset($consultaEncabezado->id_validezOferta) ? $consultaEncabezado->id_validezOferta : '') == $v->id ) ? "selected" : ""; ?> value='<?php echo $v->id ?>'><?php echo $v->nombre ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
@@ -69,7 +71,7 @@
                         <select name='est_id' id='est_id' class='form-control obligatorio'>  
                             <option value=''>::Seleccionar</option>
                             <?php foreach ($estados as $v): ?>
-                            <option <?php echo ((isset($consultaEncabezado->est_id)?$consultaEncabezado->est_id:'') == $v->id ) ? "selected" : ""; ?> value='<?php echo $v->id ?>'><?php echo $v->nombre ?></option>
+                                <option <?php echo ((isset($consultaEncabezado->est_id) ? $consultaEncabezado->est_id : '') == $v->id ) ? "selected" : ""; ?> value='<?php echo $v->id ?>'><?php echo $v->nombre ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
@@ -103,7 +105,7 @@
                                         <td><input type='text' style='text-align:center' value='<?php echo $c->proCot_cantidad ?>' name='cantidadProductos[]' class='cantidadProductos'></td>
                                         <td><button type='button' class='btn btn-danger eliminar'>Eliminar</button></td>
                                     </tr>
-    <?php endforeach; ?>
+                                <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
@@ -205,25 +207,25 @@
         }
         ;
     });
-    
+
     $('#guardarFormulario').hide();
-    
-<?php if ($this->session->userdata('permisos') == 1 && $consultaEncabezado->est_id==4) { ?>
+
+<?php if ($this->session->userdata('permisos') == 1 && $consultaEncabezado->est_id == 4) { ?>
         $('#guardarFormulario').show();
 <?php } ?>
-<?php if ($this->session->userdata('permisos') == 1 && $consultaEncabezado->est_id==1) { ?>
+<?php if ($this->session->userdata('permisos') == 1 && $consultaEncabezado->est_id == 1) { ?>
         $('#guardarFormulario').show();
 <?php } ?>
-<?php if ($this->session->userdata('permisos') == 2 && $consultaEncabezado->est_id=2) { ?>
+<?php if ($this->session->userdata('permisos') == 2 && $consultaEncabezado->est_id = 2) { ?>
         $('#guardarFormulario').show();
 <?php } ?>
-    
-    
-    
+
+
+
 <?php if (!isset($consultaEncabezado->est_id)) { ?>
         $('#guardarFormulario').show();
 <?php } ?>
-    
-    
-    
+
+
+
 </script>

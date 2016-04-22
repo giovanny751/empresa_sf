@@ -15,6 +15,9 @@ class Cotizacion extends My_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model('Crea_formularios_model');
+        $this->load->helper('security');
+        $this->load->helper('miscellaneous');
+        validate_login($this->session->userdata('usu_id'));
     }
     function index(){
         
