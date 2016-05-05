@@ -84,7 +84,10 @@
                     <th>Forma de pago</th>
                     <th>Validez de la oferta</th>
                     <th>Tiempo de entrega</th>
+                    <th>Cantidad Productos</th>
+                    <th>Valor Cotización</th>
                     <th>Estado</th>
+                    <th>Imprimir</th>
                     <th>Seleccionar</th>
                     </thead>
                     <tbody id='bodyBusqueda'>
@@ -100,34 +103,53 @@
         $.post(
                 "<?php echo base_url("index.php/cotizacion/filtroBusqueda") ?>",
                 $('#frmCotizacion').serialize()
-                ).done(function(msg){
-                    $('#bodyBusqueda *').remove();
-                    body = '';
-                    $.each(msg,function(key,val){
-                        body += "<tr>";
-                        body += "<td>"+val.cotEnc_id+"</td>";
-                        body += "<td>"+val.cliente+"</td>";
-                        body += "<td>"+val.garantia+"</td>";
-                        body += "<td>"+val.formaPago+"</td>";
-                        body += "<td>"+val.validezOferta+"</td>";
-                        body += "<td>"+val.tiempoEntrega+"</td>";
-                        body += "<td>"+val.estado+"</td>";
-                        body += "<td style='text-align:center'><button type='button' name='consultaCotizacion' encCot_id='"+val.cotEnc_id+"' class='btn btn-info consultarEncabezado'>Consultar</button></td>";
-                        body += "</tr>";
-                    });
-                    $('#bodyBusqueda').append(body);
-                }).fail(function(){
-                    
-                });
+                ).done(function (msg) {
+            $('#bodyBusqueda *').remove();
+            body = '';
+            $.each(msg, function (key, val) {
+                body += "<tr>";
+                body += "<td>" + val.cotEnc_id + "</td>";
+                body += "<td>" + val.cliente + "</td>";
+                body += "<td>" + val.garantia + "</td>";
+                body += "<td>" + val.formaPago + "</td>";
+                body += "<td>" + val.validezOferta + "</td>";
+                body += "<td>" + val.tiempoEntrega + "</td>";
+                body += "<td>" + val.cantidad + "</td>";
+                body += "<td>" + CurrencyFormatted(val.valor_cotizacion) + "</td>";
+                body += "<td>" + val.estado + "</td>";
+                body += "<td>"+ (val.id_estado==3?"<a href='<?php echo base_url('index.php/Cotizacion/pdf') ?>/" + val.cotEnc_id + "' target='_black'>PDF</a>":'')+ "</td>";
+                body += "<td style='text-align:center'><button type='button' name='consultaCotizacion' encCot_id='" + val.cotEnc_id + "' class='btn btn-info consultarEncabezado'>Consultar</button></td>";
+                body += "</tr>";
+            });
+            $('#bodyBusqueda').append(body);
+        }).fail(function () {
+
+        });
     });
-    
-    $('body').delegate('.consultarEncabezado',"click",function(){
+
+    $('body').delegate('.consultarEncabezado', "click", function () {
         var form = "<form method='post' id='frmConsulta' action='<?php echo base_url("index.php/cotizacion/index") ?>'>";
-            form += "<input type='hidden' value='"+$(this).attr("encCot_id")+"' name='encCot_id'>";
-            form += "</form>";
-            
-            $('body').append(form);
-            $('#frmConsulta').submit();
+        form += "<input type='hidden' value='" + $(this).attr("encCot_id") + "' name='encCot_id'>";
+        form += "</form>";
+
+        $('body').append(form);
+        $('#frmConsulta').submit();
     })
-    
+
+    function CurrencyFormatted(num) {
+        num = num.toString().replace(/\$|\,/g, '');
+        if (isNaN(num))
+            num = "0";
+        sign = (num == (num = Math.abs(num)));
+        num = Math.floor(num * 100 + 0.50000000001);
+        cents = num % 100;
+        num = Math.floor(num / 100).toString();
+        if (cents < 10)
+            cents = "0" + cents;
+        for (var i = 0; i < Math.floor((num.length - (1 + i)) / 3); i++)
+            num = num.substring(0, num.length - (4 * i + 3)) + ',' +
+                    num.substring(num.length - (4 * i + 3));
+        return (((sign) ? '' : '-') + num);
+    }
+
 </script>    

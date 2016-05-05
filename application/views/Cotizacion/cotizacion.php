@@ -91,23 +91,37 @@
                         <thead>
                         <th>Referencia</th>
                         <th>Nombre</th>
+						<th>Valor Unitario</th>
                         <th>Cantidad</th>
+						<th>Valor Total</th>
                         <th>Eliminar</th>
                         </thead>
                         <tbody>
                             <?php
+							$resultado=0;
                             if (isset($consultaProductos))
                                 foreach ($consultaProductos as $c):
                                     ?>
                                     <tr>
                                         <td><?php echo $c->referencia ?></td>
                                         <td><input type='hidden' value='<?php echo $c->id_producto ?>' name='IdProducto[]'><?php echo $c->Nombre ?></td>
+                                        <td><input type='hidden' value='<?php echo $c->proCot_costo ?>' name='costoPro[]'><?php echo $c->proCot_costo ?></td>
                                         <td><input type='text' style='text-align:center' value='<?php echo $c->proCot_cantidad ?>' name='cantidadProductos[]' class='cantidadProductos'></td>
+										<td><span class='valor_total'><?php echo number_format($c->proCot_costo*$c->proCot_cantidad) ?></span></td>
                                         <td><button type='button' class='btn btn-danger eliminar'>Eliminar</button></td>
                                     </tr>
-                                <?php endforeach; ?>
+                                <?php 
+								$resultado+=$c->proCot_costo*$c->proCot_cantidad;
+								endforeach; ?>
                         </tbody>
                     </table>
+					<hr>
+					<table class='table table-hover table-bordered'>
+					<thead>
+                        <th>Total</th>
+                        <th><span class='valor_toal_factura'><?php echo number_format($resultado) ?></span></th>
+                        </thead>
+					</table>
                 </div>
             </div>
             <div class='col-md-12'>
@@ -140,6 +154,7 @@
                         <thead>
                         <th>Referencia</th>
                         <th>Nombre</th>
+                        <th>Costo</th>
                         <th>Cantidad</th>
                         </thead>
                         <tbody id='bodyProducto'>
@@ -162,6 +177,7 @@
                 cuerpo += "<tr>";
                 cuerpo += "<td class='columnaReferencia'><input class='idProducto' type='hidden' name='idProducto' value='" + val.id + "' class='idProducto' >" + val.referencia + "</td>";
                 cuerpo += "<td class='nombreProducto'>" + val.Nombre + "</td>";
+                cuerpo += "<td class='costo_prod'>" + val.costo_cop + "</td>";
                 cuerpo += "<td class='cantidadProducto'><input type='text' name='cantidad' class='form-control cantidad' style='text-align:center'></td>";
                 cuerpo += "</tr>";
             })
@@ -179,19 +195,23 @@
                 table += "<tr>"
                 table += "<td>" + $(this).parent('td').siblings('.columnaReferencia').text() + "</td>"
                 table += "<td><input type='hidden' value='" + $(this).parent('td').parent('tr').find('.idProducto').val() + "' name='IdProducto[]'>" + $(this).parent('td').siblings('.nombreProducto').text() + "</td>"
+                table += "<td><input type='hidden' value='" + $(this).parent('td').siblings('.costo_prod').text() + "' name='costoPro[]'>" + $(this).parent('td').siblings('.costo_prod').text() + "</td>"
                 table += "<td><input type='text' style='text-align:center' value='" + $(this).parent('td').parent('tr').find('.cantidad').val() + "' name='cantidadProductos[]' class='cantidadProductos'></td>"
+				table += "<td><span class='valor_total'>"+(CurrencyFormatted(parseInt($(this).parent('td').siblings('.costo_prod').text())*parseInt($(this).parent('td').parent('tr').find('.cantidad').val())))+"</span></td>"
                 table += "<td><button type='button' class='btn btn-danger eliminar'>Eliminar</button></td>"
                 table += "</tr>"
             }
         });
         $('#tablaPrincipal').append(table);
         $('#myModal').modal('hide');
+		sumar_todo()
     });
 
     $('body').delegate('.eliminar', "click", function () {
         if (confirm("Esta seguro de eliminar el registro")) {
             $(this).parents('tr').remove();
         }
+		sumar_todo()
     });
 
     $('body').delegate("#guardarFormulario", "click", function () {
@@ -200,16 +220,62 @@
                     "<?php echo base_url("index.php/cotizacion/guardarCotizacion") ?>",
                     $('#frmCotizacion').serialize()
                     ).done(function (msg) {
-
+						 $('#guardarFormulario').hide();
+						 alert('Datos Guardados Con Exto')
+						location.reload();
             }).fail(function () {
 
             });
         }
         ;
     });
+	
+	$('body').delegate('.cantidadProductos','change',function(){
+		var unidades=$(this).val();
+		var costo=$(this).parent().parent('tr').find('input[name="costoPro[]"]').val();
+		console.log(costo)
+		var resultado=parseInt(unidades)*parseInt(costo);
+		$(this).parent().parent('tr').find('.valor_total').html(CurrencyFormatted(resultado));
+		
+		sumar_todo()
+	})
 
-    $('#guardarFormulario').hide();
+   
 
+	function sumar_todo(){
+		var valor=0;
+		$('.cantidadProductos').each(function(){
+			var dato=$(this).parent().parent('tr').find('.valor_total').html();
+			 dato=dato.replace(',','');
+			 dato=dato.replace(',','');
+			 dato=dato.replace(',','');
+			 dato=dato.replace(',','');
+			valor=parseInt(dato)+parseInt(valor);
+		})
+		
+		$('.valor_toal_factura').html(CurrencyFormatted(valor));
+	}
+	
+	function CurrencyFormatted(num) {
+                            num = num.toString().replace(/\$|\,/g, '');
+                            if (isNaN(num))
+                                num = "0";
+                            sign = (num == (num = Math.abs(num)));
+                            num = Math.floor(num * 100 + 0.50000000001);
+                            cents = num % 100;
+                            num = Math.floor(num / 100).toString();
+                            if (cents < 10)
+                                cents = "0" + cents;
+                            for (var i = 0; i < Math.floor((num.length - (1 + i)) / 3); i++)
+                                num = num.substring(0, num.length - (4 * i + 3)) + ',' +
+                                        num.substring(num.length - (4 * i + 3));
+                            return (((sign) ? '' : '-') + num);
+                        }
+	
+	
+	
+	 $('#guardarFormulario').hide();
+<?php if (isset($consultaEncabezado->est_id)) { ?>
 <?php if ($this->session->userdata('permisos') == 1 && $consultaEncabezado->est_id == 4) { ?>
         $('#guardarFormulario').show();
 <?php } ?>
@@ -218,6 +284,7 @@
 <?php } ?>
 <?php if ($this->session->userdata('permisos') == 2 && $consultaEncabezado->est_id = 2) { ?>
         $('#guardarFormulario').show();
+<?php } ?>
 <?php } ?>
 
 

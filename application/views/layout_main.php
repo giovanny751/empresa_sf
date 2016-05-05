@@ -42,129 +42,148 @@
     <span class="tituloH"><?php echo $this->session->userdata('empresa'); ?></span>
 </header>
 <div id="cssmenu">
-    <ul id="principalMenu">
-        <li class="active has-sub">
-            <a href="javascript:" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">
-                Empresa <span class="holder" style="border-color: rgba(0, 0, 0, 0.35);"></span></a>
-            <ul>
-                <li>
-                    <a href="<?php echo base_url('index.php/Empresa'); ?>">Nuevo</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url('index.php/Empresa/consult_empresa'); ?>">Consultar</a>
-                </li>
-            </ul>
-        </li>
-        <li class="has-sub">
-            <a href="javascript:" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">
-                Usuario <span class="holder" style="border-color: rgba(0, 0, 0, 0.35);"></span></a>
-            <ul>
-                <li>
-                    <a href="<?php echo base_url('index.php/user'); ?>">Nuevo</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url('index.php/user/consult_user'); ?>">Consultar</a>
-                </li>
-            </ul>
-        </li>
-        <li class="has-sub">
-            <a href="javascript:" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">
-                Clientes <span class="holder" style="border-color: rgba(0, 0, 0, 0.35);"></span></a>
-            <ul>
-                <li>
-                    <a href="<?php echo base_url('index.php/Clientes'); ?>">Nuevo</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url('index.php/Clientes/consult_clientes'); ?>">Consultar</a>
-                </li>
-            </ul>
-        </li>
-        <li class="has-sub">
-            <a href="javascript:" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">
-                Productos <span class="holder" style="border-color: rgba(0, 0, 0, 0.35);"></span></a>
-            <ul>
-                <li>
-                    <a href="<?php echo base_url('index.php/Productos'); ?>">Nuevo</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url('index.php/Productos/consult_productos'); ?>">Consultar</a>
-                </li>
-            </ul>
-        </li>
-        <li class="has-sub">
-            <a href="javascript:" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">
-                Configuración <span class="holder" style="border-color: rgba(0, 0, 0, 0.35);"></span></a>
-            <ul>
-                <li>
-                    <a href="<?php echo base_url('index.php/Configuracion'); ?>">Nuevo</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url('index.php/Configuracion/consult_configuracion'); ?>">Consultar</a>
-                </li>
-            </ul>
-        </li>
-        <li class="has-sub">
-            <a href="javascript:" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">
-                Categoria <span class="holder" style="border-color: rgba(0, 0, 0, 0.35);"></span></a>
-            <ul>
-                <li>
-                    <a href="<?php echo base_url('index.php/Categoria'); ?>">Nuevo</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url('index.php/Categoria/consult_categoria'); ?>">Consultar</a>
-                </li>
-            </ul>
-        </li>
-        <li class="has-sub">
-            <a href="javascript:" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">
-                Forma pago <span class="holder" style="border-color: rgba(0, 0, 0, 0.35);"></span></a>
-            <ul>
-                <li>
-                    <a href="<?php echo base_url('index.php/Forma_pago'); ?>">Nuevo</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url('index.php/Forma_pago/consult_forma_pago'); ?>">Consultar</a>
-                </li>
-            </ul>
-        </li>
-        <li class="has-sub">
-            <a href="javascript:" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">
-                Garantia <span class="holder" style="border-color: rgba(0, 0, 0, 0.35);"></span></a>
-            <ul>
-                <li>
-                    <a href="<?php echo base_url('index.php/Garantia'); ?>">Nuevo</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url('index.php/Garantia/consult_garantia'); ?>">Consultar</a>
-                </li>
-            </ul>
-        </li>
-        <li class="has-sub">
-            <a href="javascript:" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">
-                Tiempo de Entrega <span class="holder" style="border-color: rgba(0, 0, 0, 0.35);"></span></a>
-            <ul>
-                <li>
-                    <a href="<?php echo base_url('index.php/Tiempo_entrega'); ?>">Nuevo</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url('index.php/Tiempo_entrega/consult_tiempo_entrega'); ?>">Consultar</a>
-                </li>
-            </ul>
-        </li>
-        <li class="has-sub">
-            <a href="javascript:" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">
-                Cotización <span class="holder" style="border-color: rgba(0, 0, 0, 0.35);"></span></a>
-            <ul>
-                <li>
-                    <a href="<?php echo base_url('index.php/Cotizacion'); ?>">Nuevo</a>
-                </li>
-                <li>
-                    <a href="<?php echo base_url('index.php/Cotizacion/consultaCotizacion'); ?>">Consultar</a>
-                </li>
-            </ul>
-        </li>
-        <li><a href="<?php echo base_url('index.php/login/logout'); ?>" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">CERRAR SESION</a></li>
-    </ul>
+
+    <?php if ($this->session->userdata('permisos') == 3) { ?>
+        <ul id="principalMenu">
+            <li class="active has-sub">
+                <a href="javascript:" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">
+                    Empresa <span class="holder" style="border-color: rgba(0, 0, 0, 0.35);"></span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url('index.php/Empresa'); ?>">Nuevo</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('index.php/Empresa/consult_empresa'); ?>">Consultar</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="has-sub">
+                <a href="javascript:" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">
+                    Usuario <span class="holder" style="border-color: rgba(0, 0, 0, 0.35);"></span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url('index.php/user'); ?>">Nuevo</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('index.php/user/consult_user'); ?>">Consultar</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="has-sub">
+                <a href="javascript:" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">
+                    Clientes <span class="holder" style="border-color: rgba(0, 0, 0, 0.35);"></span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url('index.php/Clientes'); ?>">Nuevo</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('index.php/Clientes/consult_clientes'); ?>">Consultar</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="has-sub">
+                <a href="javascript:" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">
+                    Productos <span class="holder" style="border-color: rgba(0, 0, 0, 0.35);"></span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url('index.php/Productos'); ?>">Nuevo</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('index.php/Productos/consult_productos'); ?>">Consultar</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="has-sub">
+                <a href="javascript:" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">
+                    Configuración <span class="holder" style="border-color: rgba(0, 0, 0, 0.35);"></span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url('index.php/Configuracion'); ?>">Nuevo</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('index.php/Configuracion/consult_configuracion'); ?>">Consultar</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="has-sub">
+                <a href="javascript:" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">
+                    Categoria <span class="holder" style="border-color: rgba(0, 0, 0, 0.35);"></span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url('index.php/Categoria'); ?>">Nuevo</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('index.php/Categoria/consult_categoria'); ?>">Consultar</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="has-sub">
+                <a href="javascript:" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">
+                    Forma pago <span class="holder" style="border-color: rgba(0, 0, 0, 0.35);"></span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url('index.php/Forma_pago'); ?>">Nuevo</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('index.php/Forma_pago/consult_forma_pago'); ?>">Consultar</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="has-sub">
+                <a href="javascript:" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">
+                    Garantia <span class="holder" style="border-color: rgba(0, 0, 0, 0.35);"></span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url('index.php/Garantia'); ?>">Nuevo</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('index.php/Garantia/consult_garantia'); ?>">Consultar</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="has-sub">
+                <a href="javascript:" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">
+                    Tiempo de Entrega <span class="holder" style="border-color: rgba(0, 0, 0, 0.35);"></span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url('index.php/Tiempo_entrega'); ?>">Nuevo</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('index.php/Tiempo_entrega/consult_tiempo_entrega'); ?>">Consultar</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="has-sub">
+                <a href="javascript:" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">
+                    Cotización <span class="holder" style="border-color: rgba(0, 0, 0, 0.35);"></span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url('index.php/Cotizacion'); ?>">Nuevo</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('index.php/Cotizacion/consultaCotizacion'); ?>">Consultar</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="<?php echo base_url('index.php/login/logout'); ?>" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">CERRAR SESION</a></li>
+        </ul>
+    <?php } else if ($this->session->userdata('permisos') != 3) { ?>
+        <ul id="principalMenu">
+            <li class="has-sub">
+                <a href="javascript:" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">
+                    Cotización <span class="holder" style="border-color: rgba(0, 0, 0, 0.35);"></span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url('index.php/Cotizacion'); ?>">Nuevo</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('index.php/Cotizacion/consultaCotizacion'); ?>">Consultar</a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="<?php echo base_url('index.php/login/logout'); ?>" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">CERRAR SESION</a></li>
+        </ul>
+    <?php } ?>
 </div>
 <div class="contenidoLayout">
     <div class="container">
