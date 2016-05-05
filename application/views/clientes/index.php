@@ -14,7 +14,7 @@
                             *                             NIT                        </label>
                     </div>
                     <div class="col-md-3">
-                                                    <input type="text" value="<?php echo (isset($datos[0]->nit)?$datos[0]->nit:'' ) ?>" class=" form-control obligatorio  " id="nit" name="nit">
+                                                    <input type="text" value="<?php echo (isset($datos[0]->nit)?$datos[0]->nit:'' ) ?>" class=" form-control obligatorio number " id="nit" name="nit">
 
                             
                                                 <br>
@@ -27,7 +27,7 @@
                             *                             Cliente                        </label>
                     </div>
                     <div class="col-md-3">
-                                                    <input type="text" value="<?php echo (isset($datos[0]->cliente)?$datos[0]->cliente:'' ) ?>" class=" form-control obligatorio  number" id="cliente" name="cliente">
+                                                    <input type="text" value="<?php echo (isset($datos[0]->cliente)?$datos[0]->cliente:'' ) ?>" class=" form-control obligatorio  " id="cliente" name="cliente">
 
                             
                                                 <br>

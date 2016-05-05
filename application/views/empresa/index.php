@@ -1,6 +1,6 @@
 <div class="widgetTitle" >
     <h5>
-        <i class="glyphicon glyphicon-ok"></i> Usuarios    </h5>
+        <i class="glyphicon glyphicon-ok"></i> Empresa    </h5>
 </div>
 <div class='well'>
     <form action="<?php echo base_url('index.php/')."/Empresa/save_empresa"; ?>" method="post" onsubmit="return campos()"  enctype="multipart/form-data">

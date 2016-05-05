@@ -1,19 +1,11 @@
 <div class="widgetTitle" >
     <h5>
-        <i class="glyphicon glyphicon-ok"></i> Usuarios    </h5>
+        <i class="glyphicon glyphicon-ok"></i> Empresa    </h5>
 </div>
 <div class='well'>
 <form action="<?php echo base_url('index.php/').'/Empresa/consult_empresa'; ?>" method="post" >
     <div class="row">
-                    <div class="col-md-3">
-                    <label for="id">
-                                            </label>
-                </div>
-                <div class="col-md-3">
                     
-                                            <input type="hidden" value="<?php echo (isset($post['id'])?$post['id']:'' ) ?>" class="form-control obligatorio  " id="id" name="id">
-                                            <br>
-                </div>
 
                             <div class="col-md-3">
                     <label for="nit">
@@ -35,82 +27,13 @@
                                             <br>
                 </div>
 
-                            <div class="col-md-3">
-                    <label for="ciudad">
-                    Ciudad                        </label>
-                </div>
-                <div class="col-md-3">
-                    
-                                            <input type="text" value="<?php echo (isset($post['ciudad'])?$post['ciudad']:'' ) ?>" class="form-control obligatorio  " id="ciudad" name="ciudad">
-                                            <br>
-                </div>
-
-                            <div class="col-md-3">
-                    <label for="telefono">
-                    Telefono                        </label>
-                </div>
-                <div class="col-md-3">
-                    
-                                            <input type="text" value="<?php echo (isset($post['telefono'])?$post['telefono']:'' ) ?>" class="form-control obligatorio  number" id="telefono" name="telefono">
-                                            <br>
-                </div>
-
-                            <div class="col-md-3">
-                    <label for="direccion">
-                    Dirección                        </label>
-                </div>
-                <div class="col-md-3">
-                    
-                                            <input type="text" value="<?php echo (isset($post['direccion'])?$post['direccion']:'' ) ?>" class="form-control obligatorio  " id="direccion" name="direccion">
-                                            <br>
-                </div>
-
-                            <div class="col-md-3">
-                    <label for="fax">
-                    Fax                        </label>
-                </div>
-                <div class="col-md-3">
-                    
-                                            <input type="text" value="<?php echo (isset($post['fax'])?$post['fax']:'' ) ?>" class="form-control obligatorio  number" id="fax" name="fax">
-                                            <br>
-                </div>
-
-                            <div class="col-md-3">
-                    <label for="pais">
-                    Pais                        </label>
-                </div>
-                <div class="col-md-3">
-                    
-                                            <input type="text" value="<?php echo (isset($post['pais'])?$post['pais']:'' ) ?>" class="form-control obligatorio  " id="pais" name="pais">
-                                            <br>
-                </div>
-
-                            <div class="col-md-3">
-                    <label for="direccion_web">
-                    Dirección web                        </label>
-                </div>
-                <div class="col-md-3">
-                    
-                                            <input type="text" value="<?php echo (isset($post['direccion_web'])?$post['direccion_web']:'' ) ?>" class="form-control obligatorio  " id="direccion_web" name="direccion_web">
-                                            <br>
-                </div>
-
-                            <div class="col-md-3">
-                    <label for="email">
-                    E-mail                        </label>
-                </div>
-                <div class="col-md-3">
-                    
-                                            <input type="email" value="<?php echo (isset($post['email'])?$post['email']:'' ) ?>" class="form-control obligatorio  " id="email" name="email">
-                                            <br>
-                </div>
-
                 </div>
     <button class="btn btn-dcs">Consultar</button>
 </form>
 
 <div class="row">
     <div class="col-md-12">
+    <div class="table-responsive">
         <table class="table table-bordered">
             <thead>
                                     <th></th>
@@ -149,6 +72,7 @@
 
             </tbody>
         </table>
+    </div>
     </div>
 </div>
 </div>
