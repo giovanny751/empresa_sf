@@ -11,7 +11,7 @@
 
             <div class="col-md-3">
                 <label for="usu_cedula">
-                    *                             Cedula                        </label>
+                    *                             Cédula                        </label>
             </div>
             <div class="col-md-3">
                 <input type="text" value="<?php echo (isset($datos[0]->usu_cedula) ? $datos[0]->usu_cedula : '' ) ?>" class=" form-control obligatorio  number" id="usu_cedula" name="usu_cedula">
@@ -37,7 +37,7 @@
 
             <div class="col-md-3">
                 <label for="usu_apellido">
-                    *                             Apellido                        </label>
+                    *                             Apellidos                        </label>
             </div>
             <div class="col-md-3">
                 <input type="text" value="<?php echo (isset($datos[0]->usu_apellido) ? $datos[0]->usu_apellido : '' ) ?>" class=" form-control obligatorio  " id="usu_apellido" name="usu_apellido">
@@ -66,7 +66,7 @@
                     *                             Contrasena                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" value="" class=" form-control obligatorio  " id="usu_contrasena" name="usu_contrasena">
+                <input type="password" value="" class=" form-control obligatorio  " id="usu_contrasena" name="usu_contrasena">
 
 
                 <br>

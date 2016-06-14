@@ -37,7 +37,7 @@
 
             <div class="col-md-3">
                 <label for="g_nacionalizacion">
-                    Gastos Nacionalizacion                         </label>
+                    Gastos Nacionalización                         </label>
             </div>
             <div class="col-md-3">
 
@@ -47,7 +47,7 @@
 
             <div class="col-md-3">
                 <label for="margen">
-                    Margen                        </label>
+                    Márgen                        </label>
             </div>
             <div class="col-md-3">
 
@@ -67,8 +67,8 @@
                 <th>Dolar</th>
                 <th>Drancel</th>
                 <th>Flete</th>
-                <th>Gastos Nacionalizacion </th>
-                <th>Margen</th>
+                <th>Gastos Nacionalización </th>
+                <th>Márgen</th>
                 <th>Acción</th>
                 </thead>
                 <tbody>

@@ -8,7 +8,7 @@
             
             <div class="col-md-3">
                 <label for="usu_cedula">
-                    Cedula                        </label>
+                    Cédula                        </label>
             </div>
             <div class="col-md-3">
 
@@ -47,16 +47,6 @@
             </div>
 
             <div class="col-md-3">
-                <label for="usu_contrasena">
-                    Contrasena                        </label>
-            </div>
-            <div class="col-md-3">
-
-                <input type="text" value="<?php echo (isset($post['usu_contrasena']) ? $post['usu_contrasena'] : '' ) ?>" class="form-control obligatorio  " id="usu_contrasena" name="usu_contrasena">
-                <br>
-            </div>
-
-            <div class="col-md-3">
                 <label for="usu_email">
                     E-mail                        </label>
             </div>
@@ -84,7 +74,7 @@
             <table class="table table-bordered">
                 <thead>
                 <th></th>
-                <th>Cedula</th>
+                <th>Cédula</th>
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Usuario</th>

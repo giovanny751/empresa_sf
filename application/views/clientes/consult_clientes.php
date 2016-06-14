@@ -68,7 +68,7 @@
 
             <div class="col-md-3">
                 <label for="telefono_cli">
-                    Telefono cliente                        </label>
+                    Teléfono cliente                        </label>
             </div>
             <div class="col-md-3">
 
@@ -91,7 +91,7 @@
                 <th>Cargo</th>
                 <th>Ciudad</th>
                 <th>E-mail</th>
-                <th>Telefono cliente</th>
+                <th>Teléfono cliente</th>
                 <th>Acción</th>
                 </thead>
                 <tbody>
@@ -101,7 +101,10 @@
                         $i = 0;
 
                         foreach ($value as $key2 => $value2) {
-                            echo "<td>" . $value->$key2 . "</td>";
+                            if ($key2 == 'nit')
+                                    echo "<td>" . $value->$key2.'-'.calcularDV($value->$key2) . "</td>";
+                                else
+                                    echo "<td>" . $value->$key2 . " </td>";
                             if ($i == 0) {
                                 $campo = $key2;
                                 $valor = "'" . $value->$key2 . "'";

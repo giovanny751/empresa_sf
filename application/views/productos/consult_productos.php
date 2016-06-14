@@ -13,7 +13,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['referencia']) ? $post['referencia'] : '' ) ?>" class="form-control obligatorio  number" id="referencia" name="referencia">
+                <input type="text" value="<?php echo (isset($post['referencia']) ? $post['referencia'] : '' ) ?>" class="form-control obligatorio " id="referencia" name="referencia">
                 <br>
             </div>
 

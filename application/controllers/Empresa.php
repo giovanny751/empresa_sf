@@ -18,6 +18,10 @@ class Empresa extends My_Controller {
         $this->data['post']=$this->input->post();
         $this->layout->view('empresa/index', $this->data);
     }
+    public function digito_ver() {
+        $nit = $this->input->post('nit');
+        echo calcularDV($nit);
+    }
     function consult_empresa(){
         $post=$this->input->post();
         $this->data['post']=$this->input->post();

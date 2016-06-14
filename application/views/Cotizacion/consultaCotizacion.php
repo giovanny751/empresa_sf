@@ -104,24 +104,23 @@
                 "<?php echo base_url("index.php/cotizacion/filtroBusqueda") ?>",
                 $('#frmCotizacion').serialize()
                 ).done(function (msg) {
-            $('#bodyBusqueda *').remove();
-            body = '';
+            var table = $('#tablaPrincipal').DataTable();
+            table.clear().draw();
             $.each(msg, function (key, val) {
-                body += "<tr>";
-                body += "<td>" + val.cotEnc_id + "</td>";
-                body += "<td>" + val.cliente + "</td>";
-                body += "<td>" + val.garantia + "</td>";
-                body += "<td>" + val.formaPago + "</td>";
-                body += "<td>" + val.validezOferta + "</td>";
-                body += "<td>" + val.tiempoEntrega + "</td>";
-                body += "<td>" + val.cantidad + "</td>";
-                body += "<td>" + CurrencyFormatted(val.valor_cotizacion) + "</td>";
-                body += "<td>" + val.estado + "</td>";
-                body += "<td>"+ (val.id_estado==3?"<a href='<?php echo base_url('index.php/Cotizacion/pdf') ?>/" + val.cotEnc_id + "' target='_black'>PDF</a>":'')+ "</td>";
-                body += "<td style='text-align:center'><button type='button' name='consultaCotizacion' encCot_id='" + val.cotEnc_id + "' class='btn btn-info consultarEncabezado'>Consultar</button></td>";
-                body += "</tr>";
-            });
-            $('#bodyBusqueda').append(body);
+                table.row.add([
+                    val.cotEnc_id,
+                    val.cliente,
+                    val.garantia,
+                    val.formaPago,
+                    val.validezOferta,
+                    val.tiempoEntrega,
+                    val.cantidad,
+                    CurrencyFormatted(val.valor_cotizacion),
+                    val.estado,
+                    (val.id_estado == 3 ? "<a href='<?php echo base_url('index.php/Cotizacion/pdf') ?>/" + val.cotEnc_id + "' target='_black'>PDF</a>" : ''),
+                    "<button type='button' name='consultaCotizacion' encCot_id='" + val.cotEnc_id + "' class='btn btn-info consultarEncabezado'>Consultar</button>"
+                ]).draw()
+            })
         }).fail(function () {
 
         });
@@ -137,6 +136,8 @@
     })
 
     function CurrencyFormatted(num) {
+        if(num==null)
+            num=0;
         num = num.toString().replace(/\$|\,/g, '');
         if (isNaN(num))
             num = "0";

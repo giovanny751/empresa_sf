@@ -18,7 +18,7 @@ class Cotizacion extends My_Controller {
         $this->load->model('Crea_formularios_model');
         $this->load->helper('security');
         $this->load->helper('miscellaneous');
-        $this->load->library('tcpdf');
+        $this->load->library('tcpdf/tcpdf.php');
         validate_login($this->session->userdata('usu_id'));
     }
 

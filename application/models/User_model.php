@@ -25,7 +25,6 @@ class User_model extends CI_Model {
         $this->db->join('empresa', 'empresa.id=user.emp_id', 'left');
         $this->db->where('user.activo', 'S');
         $query = $this->db->get('user');
-        echo $this->db->last_query();
         return $query->result_array();
     }
 

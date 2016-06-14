@@ -1,6 +1,9 @@
 <table style="border:1px solid #000">
     <tr >
-        <td rowspan="4" style="border:1px solid #000" width="30%"></td>
+        <td rowspan="4" style="border:1px solid #000" width="30%">
+            &nbsp;<br>&nbsp;
+            <img src="<?php echo base_url('img/logoaaorig.png');?>">
+        </td>
         <td rowspan="4" style="border:1px solid #000" width="30%">
             <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -26,44 +29,48 @@
 
 <table>
     <tr>
+        <td width="20%"></td>
         <td></td>
     </tr>
     <tr>
         <td></td>
+        <td></td>
     </tr>
     <tr>
+        <td></td>
         <td></td>
     </tr>
     <tr>
         <td>&nbsp;</td>
+        <td>&nbsp;</td>
     </tr>
     <tr>
         <td>Cliente:</td>
-        <td></td>
+        <td><?php  echo $cotizaciones[0]->cliente ?></td>
     </tr>
     <tr>
         <td>Contacto:</td>
-        <td></td>
+        <td><?php  echo $cotizaciones[0]->contacto ?></td>
     </tr>
     <tr>
         <td>Cargo:</td>
-        <td></td>
+        <td><?php  echo $cotizaciones[0]->cargo ?></td>
     </tr>
     <tr>
         <td>Ciudad:</td>
-        <td></td>
+        <td><?php  echo $cotizaciones[0]->ciudad ?></td>
     </tr>
     <tr>
         <td>Fecha:</td>
-        <td></td>
+        <td><?php echo date('d-m-Y'); ?></td>
     </tr>
     <tr>
         <td>Email:</td>
-        <td></td>
+        <td><?php  echo $cotizaciones[0]->email ?></td>
     </tr>
     <tr>
         <td>Teléfono:</td>
-        <td></td>
+        <td><?php  echo $cotizaciones[0]->telefono_cli; ?></td>
     </tr>
 </table>
 <p>
@@ -114,20 +121,20 @@
 
 <table>
     <tr>
-        <td>Forma de Pago:</td>
-        <td></td>
+        <td width="30%">Forma de Pago:</td>
+        <td><?php  echo $cotizaciones[0]->formaPago ?></td>
     </tr>
     <tr>
         <td>Tiempo de Entrega:</td>
-        <td></td>
+        <td><?php  echo $cotizaciones[0]->tiempoEntrega ?></td>
     </tr>
     <tr>
         <td>Garantia:</td>
-        <td></td>
+        <td><?php  echo $cotizaciones[0]->garantia ?></td>
     </tr>
     <tr>
         <td>Validez de la Oferta</td>
-        <td></td>
+        <td><?php  echo $cotizaciones[0]->validezOferta ?></td>
     </tr>
 </table>
 

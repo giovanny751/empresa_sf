@@ -107,6 +107,30 @@
             </li>
             <li class="has-sub">
                 <a href="javascript:" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">
+                    Pais <span class="holder" style="border-color: rgba(0, 0, 0, 0.35);"></span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url('index.php/Pais'); ?>">Nuevo</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('index.php/Pais/consult_pais'); ?>">Consultar</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="has-sub">
+                <a href="javascript:" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">
+                    Ciudad <span class="holder" style="border-color: rgba(0, 0, 0, 0.35);"></span></a>
+                <ul>
+                    <li>
+                        <a href="<?php echo base_url('index.php/Ciudad'); ?>">Nuevo</a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('index.php/Ciudad/consult_ciudad'); ?>">Consultar</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="has-sub">
+                <a href="javascript:" style="text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.35);">
                     Categoria <span class="holder" style="border-color: rgba(0, 0, 0, 0.35);"></span></a>
                 <ul>
                     <li>

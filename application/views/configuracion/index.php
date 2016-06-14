@@ -50,7 +50,7 @@
 
             <div class="col-md-3">
                 <label for="g_nacionalizacion">
-                    *                             Gastos Nacionalizacion                         </label>
+                    *                             Gastos Nacionalización                         </label>
             </div>
             <div class="col-md-3">
                 <input type="text" value="<?php echo (isset($datos[0]->g_nacionalizacion) ? $datos[0]->g_nacionalizacion : '' ) ?>" class=" form-control obligatorio  " id="g_nacionalizacion" name="g_nacionalizacion">
@@ -63,7 +63,7 @@
 
             <div class="col-md-3">
                 <label for="margen">
-                    *                             Margen                        </label>
+                    *                             Márgen                        </label>
             </div>
             <div class="col-md-3">
                 <input type="text" value="<?php echo (isset($datos[0]->margen) ? $datos[0]->margen : '' ) ?>" class=" form-control obligatorio  " id="margen" name="margen">
