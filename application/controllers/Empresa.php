@@ -22,6 +22,17 @@ class Empresa extends My_Controller {
         $nit = $this->input->post('nit');
         echo calcularDV($nit);
     }
+    function nit() {
+        $post = $this->input->post();
+        $this->data['post'] = $this->input->post();
+        echo $datos = $this->Empresa__model->nit($post);
+    }
+    function nit_cliente() {
+        $post = $this->input->post();
+        $this->data['post'] = $this->input->post();
+        echo $datos = $this->Empresa__model->nit_cliente($post);
+    }
+
     function consult_empresa(){
         $post=$this->input->post();
         $this->data['post']=$this->input->post();

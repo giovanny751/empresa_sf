@@ -18,6 +18,11 @@ class User extends My_Controller {
         $this->data['post']=$this->input->post();
         $this->layout->view('user/index', $this->data);
     }
+    function usu_usuario() {
+        $post = $this->input->post();
+        $this->data['post'] = $this->input->post();
+        echo $datos = $this->User__model->usu_usuario($post);
+    }
     function consult_user(){
         $post=$this->input->post();
         $this->data['post']=$this->input->post();

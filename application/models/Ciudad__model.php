@@ -37,7 +37,7 @@ class Ciudad__model extends CI_Model {
                 $this->db->like('ciu_id', $post['ciu_id']);
         if (isset($post['pai_id']))
             if ($post['pai_id'] != "")
-                $this->db->like('pai_id', $post['pai_id']);
+                $this->db->where('ciudad.pai_id', $post['pai_id']);
         if (isset($post['ciu_nombre']))
             if ($post['ciu_nombre'] != "")
                 $this->db->like('ciu_nombre', $post['ciu_nombre']);

@@ -224,6 +224,7 @@ function lista($name, $id, $class, $tabla, $option_value, $option_name, $value, 
                 $CI->db->where($campo, $igual);
             }
         }
+        $CI->db->order_by($option_name);
         $query = $CI->db->get($tabla); //var_dump($this->db1->last_query());echo '</br>';
         if ($query->num_rows() > 0) {
             $html = "<select id=$id class='$class' name=$name >";

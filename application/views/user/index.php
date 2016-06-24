@@ -11,10 +11,10 @@
 
             <div class="col-md-3">
                 <label for="usu_cedula">
-                    *                             Cédula                        </label>
+                   <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i> *                             Cédula                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" value="<?php echo (isset($datos[0]->usu_cedula) ? $datos[0]->usu_cedula : '' ) ?>" class=" form-control obligatorio  number" id="usu_cedula" name="usu_cedula">
+                <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->usu_cedula) ? $datos[0]->usu_cedula : '' ) ?>" class=" form-control obligatorio  number" id="usu_cedula" name="usu_cedula">
 
 
                 <br>
@@ -24,10 +24,10 @@
 
             <div class="col-md-3">
                 <label for="usu_nombre">
-                    *                             Nombre                        </label>
+                   <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i> *                             Nombre                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" value="<?php echo (isset($datos[0]->usu_nombre) ? $datos[0]->usu_nombre : '' ) ?>" class=" form-control obligatorio  " id="usu_nombre" name="usu_nombre">
+                <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->usu_nombre) ? $datos[0]->usu_nombre : '' ) ?>" class=" form-control obligatorio  " id="usu_nombre" name="usu_nombre">
 
 
                 <br>
@@ -37,10 +37,10 @@
 
             <div class="col-md-3">
                 <label for="usu_apellido">
-                    *                             Apellidos                        </label>
+                   <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i> *                             Apellidos                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" value="<?php echo (isset($datos[0]->usu_apellido) ? $datos[0]->usu_apellido : '' ) ?>" class=" form-control obligatorio  " id="usu_apellido" name="usu_apellido">
+                <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->usu_apellido) ? $datos[0]->usu_apellido : '' ) ?>" class=" form-control obligatorio  " id="usu_apellido" name="usu_apellido">
 
 
                 <br>
@@ -50,10 +50,10 @@
 
             <div class="col-md-3">
                 <label for="usu_usuario">
-                    *                             Usuario                        </label>
+                   <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i> *                             Usuario                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" value="<?php echo (isset($datos[0]->usu_usuario) ? $datos[0]->usu_usuario : '' ) ?>" class=" form-control obligatorio  " id="usu_usuario" name="usu_usuario">
+                <input type="text"  maxlength="10" value="<?php echo (isset($datos[0]->usu_usuario) ? $datos[0]->usu_usuario : '' ) ?>" class=" form-control obligatorio  " id="usu_usuario" name="usu_usuario">
 
 
                 <br>
@@ -63,10 +63,10 @@
 
             <div class="col-md-3">
                 <label for="usu_contrasena">
-                    *                             Contrasena                        </label>
+                   <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i> *                             Contrasena                        </label>
             </div>
             <div class="col-md-3">
-                <input type="password" value="" class=" form-control obligatorio  " id="usu_contrasena" name="usu_contrasena">
+                <input type="password" value="" maxlength="6" class=" form-control obligatorio  " id="usu_contrasena" name="usu_contrasena">
 
 
                 <br>
@@ -76,10 +76,10 @@
 
             <div class="col-md-3">
                 <label for="usu_email">
-                    *                             E-mail                        </label>
+                   <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i> *                             E-mail                        </label>
             </div>
             <div class="col-md-3">
-                <input type="email" value="<?php echo (isset($datos[0]->usu_email) ? $datos[0]->usu_email : '' ) ?>" class=" form-control obligatorio  " id="usu_email" name="usu_email">
+                <input type="email" maxlength="50" value="<?php echo (isset($datos[0]->usu_email) ? $datos[0]->usu_email : '' ) ?>" class=" form-control obligatorio  " id="usu_email" name="usu_email">
 
 
                 <br>
@@ -89,14 +89,14 @@
 
             <div class="col-md-3">
                 <label for="emp_id">
-                    *                             Empresa                        </label>
+                   <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i> *                             Empresa                        </label>
             </div>
             <div class="col-md-3">
                 <?php echo lista("emp_id", "emp_id", "form-control obligatorio", "empresa", "id", "nombre", (isset($datos[0]->emp_id) ? $datos[0]->emp_id : ''), array("ACTIVO" => "S"), /* readOnly? */ false); ?>                        <br>
             </div>
             <div class="col-md-3">
                 <label for="emp_id">
-                    *                             Permiso                        </label>
+                   <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i> *                             Permiso                        </label>
             </div>
             <div class="col-md-3">
                 <?php echo lista("permisos", "permisos", "form-control obligatorio", "permiso", "id", "nombre", (isset($datos[0]->permisos) ? $datos[0]->permisos : ''), array("ACTIVO" => "S"), /* readOnly? */ false); ?>                        <br>
@@ -121,6 +121,27 @@
     </form>
 </div>
 <script>
+    $('#usu_usuario').change(function () {
+        var usu_usuario = $('#usu_usuario').val();
+        var usu_id = $('#usu_id').val();
+        $('#boton_cargar').show();
+        $('#boton_guardar').hide();
+        $.post('<?php echo base_url('index.php/User/usu_usuario') ?>', {usu_usuario: usu_usuario, usu_id: usu_id})
+                .done(function (msg) {
+                    if (msg == 0) {
+                        alerta('verde', 'Usuario valido')
+                    } else {
+                        alerta('rojo', 'Usuario no valido')
+                        $('#usu_usuario').val('');
+                    }
+                    $('#boton_cargar').hide();
+                    $('#boton_guardar').show();
+                })
+                .fail(function (msg) {
+                    $('#boton_cargar').hide();
+                    $('#boton_guardar').show();
+                })
+    }) 
     function campos() {
         $('input[type="file"]').each(function (key, val) {
             var img = $(this).val();

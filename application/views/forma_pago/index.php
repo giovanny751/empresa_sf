@@ -3,33 +3,33 @@
         <i class="glyphicon glyphicon-ok"></i> Forma Pago    </h5>
 </div>
 <div class='well'>
-    <form action="<?php echo base_url('index.php/')."/Forma_pago/save_forma_pago"; ?>" method="post" onsubmit="return campos()"  enctype="multipart/form-data">
+    <form action="<?php echo base_url('index.php/') . "/Forma_pago/save_forma_pago"; ?>" method="post" onsubmit="return campos()"  enctype="multipart/form-data">
         <div class="row">
-                                    <?php $id=(isset($datos[0]->id)?$datos[0]->id:'' ) ?>
-                                                <input type="hidden" value="<?php echo (isset($datos[0]->id)?$datos[0]->id:'' ) ?>" class=" form-control   " id="id" name="id">
-                    
+            <?php $id = (isset($datos[0]->id) ? $datos[0]->id : '' ) ?>
+            <input type="hidden" value="<?php echo (isset($datos[0]->id) ? $datos[0]->id : '' ) ?>" class=" form-control   " id="id" name="id">
 
-                    <div class="col-md-3">
-                        <label for="nombre">
-                            *                             Nombre                        </label>
-                    </div>
-                    <div class="col-md-3">
-                                                    <input type="text" value="<?php echo (isset($datos[0]->nombre)?$datos[0]->nombre:'' ) ?>" class=" form-control obligatorio  " id="nombre" name="nombre">
 
-                            
-                                                <br>
-                    </div>
+            <div class="col-md-3">
+                <label for="nombre">
+                    <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i> *                             Nombre                        </label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" value="<?php echo (isset($datos[0]->nombre) ? $datos[0]->nombre : '' ) ?>" class=" form-control obligatorio  " id="nombre" name="nombre">
 
-                            </div>
-        <?php if(isset($post['campo'])){ ?>
-        <input type="hidden" name="<?php echo $post['campo']?>" value="<?php echo $post[$post['campo']]?>">
-        <input type="hidden" name="campo" value="<?php echo $post['campo']?>">
+
+                <br>
+            </div>
+
+        </div>
+        <?php if (isset($post['campo'])) { ?>
+            <input type="hidden" name="<?php echo $post['campo'] ?>" value="<?php echo $post[$post['campo']] ?>">
+            <input type="hidden" name="campo" value="<?php echo $post['campo'] ?>">
         <?php } ?>
         <div class="row">
             <span id="boton_guardar">
                 <button class="btn btn-dcs" >Guardar</button> 
                 <input class="btn btn-dcs" type="reset" value="Limpiar">
-                <a href="<?php echo base_url('index.php')."/Forma_pago/consult_forma_pago" ?>" class="btn btn-dcs">Listado </a>
+                <a href="<?php echo base_url('index.php') . "/Forma_pago/consult_forma_pago" ?>" class="btn btn-dcs">Listado </a>
             </span>
             <span id="boton_cargar" style="display: none">
                 <h2>Cargando ...</h2>
@@ -40,7 +40,7 @@
 </div>
 <script>
     function campos() {
-        $('input[type="file"]').each(function(key, val) {
+        $('input[type="file"]').each(function (key, val) {
             var img = $(this).val();
             if (img != "") {
                 var r = (img.indexOf('jpg') != -1) ? '' : ((img.indexOf('png') != -1) ? '' : ((img.indexOf('gif') != -1) ? '' : false))
@@ -58,11 +58,11 @@
             return true;
         }
     }
-    $('body').delegate('.number', 'keypress', function(tecla) {
+    $('body').delegate('.number', 'keypress', function (tecla) {
         if (tecla.charCode > 0 && tecla.charCode < 48 || tecla.charCode > 57)
             return false;
     });
-    $('.fecha').datepicker({ dateFormat: 'yy-mm-dd' });
+    $('.fecha').datepicker({dateFormat: 'yy-mm-dd'});
 
 
 </script>

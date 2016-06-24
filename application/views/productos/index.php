@@ -11,7 +11,7 @@
 
             <div class="col-md-3">
                 <label for="referencia">
-                    *                             Referencia                        </label>
+                   <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i> *                             Referencia                        </label>
             </div>
             <div class="col-md-3">
                 <input type="text" value="<?php echo (isset($datos[0]->referencia) ? $datos[0]->referencia : '' ) ?>" class=" form-control obligatorio " id="referencia" name="referencia">
@@ -24,7 +24,7 @@
 
             <div class="col-md-3">
                 <label for="Nombre">
-                    *                             Nombre                        </label>
+                   <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i> *                             Nombre                        </label>
             </div>
             <div class="col-md-3">
                 <input type="text" value="<?php echo (isset($datos[0]->Nombre) ? $datos[0]->Nombre : '' ) ?>" class=" form-control obligatorio  " id="Nombre" name="Nombre">
@@ -37,7 +37,7 @@
 
             <div class="col-md-3">
                 <label for="Descripcion">
-                    *                             Descripcion                        </label>
+                   <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i> *                             Descripcion                        </label>
             </div>
             <div class="col-md-3">
                 <input type="text" value="<?php echo (isset($datos[0]->Descripcion) ? $datos[0]->Descripcion : '' ) ?>" class=" form-control obligatorio  " id="Descripcion" name="Descripcion">
@@ -50,7 +50,7 @@
 
             <div class="col-md-3">
                 <label for="Categoria">
-                    *                             Categoria                        </label>
+                   <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i> *                             Categoria                        </label>
             </div>
             <div class="col-md-3">
                 <?php echo lista("Categoria", "Categoria", "form-control obligatorio", "categoria", "id", "nombre", (isset($datos[0]->Categoria) ? $datos[0]->Categoria : ''), array("ACTIVO" => "S"), /* readOnly? */ false); ?>                        <br>
@@ -60,7 +60,7 @@
 
             <div class="col-md-3">
                 <label for="costo_usd">
-                    *                             Costo USD                        </label>
+                   <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i> *                             Costo USD                        </label>
             </div>
             <div class="col-md-3">
                 <input type="text" value="<?php echo (isset($datos[0]->costo_usd) ? $datos[0]->costo_usd : '' ) ?>" class=" form-control obligatorio  " id="costo_usd" name="costo_usd">

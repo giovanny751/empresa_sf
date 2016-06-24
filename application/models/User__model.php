@@ -19,6 +19,15 @@ class User__model extends CI_Model {
         }
         return $id;
     }
+    public function usu_usuario($post) {
+        if (!empty($post['usu_id']))
+            $this->db->where_not_in('usu_id', $post['usu_id']);
+        $this->db->where('usu_usuario', $post['usu_usuario']);
+        $this->db->where('ACTIVO', 'S');
+        $datos = $this->db->get('user');
+        $datos = $datos->result();
+        return count($datos);
+    }
 
     function delete_user($post) {
         $this->db->set('ACTIVO', 'N');

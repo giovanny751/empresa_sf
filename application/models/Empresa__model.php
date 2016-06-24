@@ -18,6 +18,24 @@ class Empresa__model extends CI_Model {
         }
         return $id;
     }
+    public function nit($post) {
+        if (!empty($post['id']))
+            $this->db->where_not_in('id', $post['id']);
+        $this->db->where('nit', $post['nit']);
+        $this->db->where('ACTIVO', 'S');
+        $datos = $this->db->get('empresa');
+        $datos = $datos->result();
+        return count($datos);
+    }
+    public function nit_cliente($post) {
+        if (!empty($post['id']))
+            $this->db->where_not_in('id', $post['id']);
+        $this->db->where('nit', $post['nit']);
+        $this->db->where('ACTIVO', 'S');
+        $datos = $this->db->get('clientes');
+        $datos = $datos->result();
+        return count($datos);
+    }
 
     function delete_empresa($post) {
         $this->db->set('ACTIVO', 'N');

@@ -11,12 +11,13 @@
 
             <div class="col-md-3">
                 <label for="nit">
-                    *                             NIT                        </label>
+                    <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i>
+*                             NIT                        </label>
             </div>
             <div class="col-md-3">
                 <div class="row">
                     <div class="col-md-9">
-                        <input type="text" value="<?php echo (isset($datos[0]->nit) ? $datos[0]->nit : '' ) ?>" class=" form-control obligatorio  number" id="nit" name="nit">
+                        <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->nit) ? $datos[0]->nit : '' ) ?>" class=" form-control obligatorio  number" id="nit" name="nit">
                     </div>
                     <div class="col-md-3">
                         <div class="col-md" id="digito_ver" style="margin: 10 0;">
@@ -30,20 +31,22 @@
 
             <div class="col-md-3">
                 <label for="nombre">
+                    <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i>
                     *                             Nombre                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" value="<?php echo (isset($datos[0]->nombre) ? $datos[0]->nombre : '' ) ?>" class=" form-control obligatorio  " id="nombre" name="nombre">
+                <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->nombre) ? $datos[0]->nombre : '' ) ?>" class=" form-control obligatorio  " id="nombre" name="nombre">
 
 
                 <br>
             </div>
             <div class="col-md-3">
                 <label for="telefono">
+                    <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i>
                     *                             Teléfono                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" value="<?php echo (isset($datos[0]->telefono) ? $datos[0]->telefono : '' ) ?>" class=" form-control obligatorio  number" id="telefono" name="telefono">
+                <input type="text" maxlength="15" value="<?php echo (isset($datos[0]->telefono) ? $datos[0]->telefono : '' ) ?>" class=" form-control obligatorio  number" id="telefono" name="telefono">
 
 
                 <br>
@@ -53,10 +56,11 @@
 
             <div class="col-md-3">
                 <label for="direccion">
+                    <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i>
                     *                             Dirección                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" value="<?php echo (isset($datos[0]->direccion) ? $datos[0]->direccion : '' ) ?>" class=" form-control obligatorio  " id="direccion" name="direccion">
+                <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->direccion) ? $datos[0]->direccion : '' ) ?>" class=" form-control obligatorio  " id="direccion" name="direccion">
 
 
                 <br>
@@ -66,10 +70,11 @@
 
             <div class="col-md-3">
                 <label for="fax">
+                    <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i>
                     *                             Fax                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" value="<?php echo (isset($datos[0]->fax) ? $datos[0]->fax : '' ) ?>" class=" form-control obligatorio  number" id="fax" name="fax">
+                <input type="text" maxlength="15" value="<?php echo (isset($datos[0]->fax) ? $datos[0]->fax : '' ) ?>" class=" form-control obligatorio  number" id="fax" name="fax">
 
 
                 <br>
@@ -79,6 +84,7 @@
 
             <div class="col-md-3">
                 <label for="pais">
+                    <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i>
                     *                             Pais                        </label>
             </div>
             <div class="col-md-3">
@@ -87,6 +93,7 @@
             </div>
             <div class="col-md-3">
                 <label for="ciudad">
+                    <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i>
                     *                             Ciudad                        </label>
             </div>
             <div class="col-md-3">
@@ -98,6 +105,7 @@
 
             <div class="col-md-3">
                 <label for="direccion_web">
+                    <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i>
                     *                             Direcci&oacute;n web                        </label>
             </div>
             <div class="col-md-3">
@@ -111,10 +119,11 @@
 
             <div class="col-md-3">
                 <label for="email">
+                    <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i>
                     *                             E-mail                        </label>
             </div>
             <div class="col-md-3">
-                <input type="email" value="<?php echo (isset($datos[0]->email) ? $datos[0]->email : '' ) ?>" class=" form-control obligatorio  " id="email" name="email">
+                <input type="email"  maxlength="50" value="<?php echo (isset($datos[0]->email) ? $datos[0]->email : '' ) ?>" class=" form-control obligatorio  " id="email" name="email">
 
 
                 <br>
@@ -139,6 +148,29 @@
     </form>
 </div>
 <script>
+
+    $('#nit').change(function () {
+        var nit = $('#nit').val();
+        var id = $('#id').val();
+        $('#boton_cargar').show();
+        $('#boton_guardar').hide();
+        $.post('<?php echo base_url('index.php/Empresa/nit') ?>', {nit: nit, id: id})
+                .done(function (msg) {
+                    if (msg == 0) {
+                        alerta('verde', 'Nit valido')
+                    } else {
+                        alerta('rojo', 'Nit no valido')
+                        $('#nit').val('');
+                    }
+                    $('#boton_cargar').hide();
+                    $('#boton_guardar').show();
+                })
+                .fail(function (msg) {
+                    $('#boton_cargar').hide();
+                    $('#boton_guardar').show();
+                })
+    })
+    
     $('#nit').change(function () {
 //    if(this)
         var url = "<?= base_url("index.php/Empresa/digito_ver") ?>"
@@ -149,7 +181,13 @@
 
         })
     })
-    $('#nit').trigger('change');
+    <?php if(isset($datos[0]->id)){ ?>
+        $('#nit').trigger('change');
+    <?php } ?>
+        
+        
+
+    
     function campos() {
         $('input[type="file"]').each(function (key, val) {
             var img = $(this).val();
