@@ -11,7 +11,7 @@
 
                     <div class="col-md-3">
                         <label for="pai_id">
-                            <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i>*                             Pais                        </label>
+                            <i class="fa fa-question-circle" aria-hidden="true" title="Nombre del país de residencia."></i>*                             Pais                        </label>
                     </div>
                     <div class="col-md-3">
                         <?php echo lista("pai_id", "pai_id", "form-control obligatorio", "pais", "pai_id", "pai_nombre", (isset($datos[0]->pai_id)?$datos[0]->pai_id:'' ), array("ACTIVO" => "S"), /* readOnly? */ false); ?>                        <br>
@@ -21,7 +21,7 @@
 
                     <div class="col-md-3">
                         <label for="ciu_nombre">
-                            <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i>*                             Nombre ciudad                        </label>
+                            <i class="fa fa-question-circle" aria-hidden="true" title="Nombre de la ciudad de residencia."></i>*                             Nombre ciudad                        </label>
                     </div>
                     <div class="col-md-3">
                                                     <input type="text" value="<?php echo (isset($datos[0]->ciu_nombre)?$datos[0]->ciu_nombre:'' ) ?>" class=" form-control obligatorio  " id="ciu_nombre" name="ciu_nombre">

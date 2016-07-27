@@ -11,7 +11,7 @@
 
             <div class="col-md-3">
                 <label for="nombre">
-                    <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i>*                             Nombre                        </label>
+                    <i class="fa fa-question-circle" aria-hidden="true" title="Nombre del grupo, para el que se realizara clasificación de productos."></i>*                             Nombre                        </label>
             </div>
             <div class="col-md-3">
                 <input type="text" value="<?php echo (isset($datos[0]->nombre) ? $datos[0]->nombre : '' ) ?>" class=" form-control obligatorio  " id="nombre" name="nombre">

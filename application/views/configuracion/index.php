@@ -11,7 +11,7 @@
 
             <div class="col-md-3">
                 <label for="dolar">
-                   <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i> *                             Dolar                        </label>
+                   <i class="fa fa-question-circle" aria-hidden="true" title="Precio del dolar, TRM (tasa de cambio representativa del mercado) vigente."></i> *                             Dolar                        </label>
             </div>
             <div class="col-md-3">
                 <input type="text" value="<?php echo (isset($datos[0]->dolar) ? $datos[0]->dolar : '' ) ?>" class=" form-control obligatorio  " id="dolar" name="dolar">
@@ -24,7 +24,7 @@
 
             <div class="col-md-3">
                 <label for="arancel">
-                   <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i> *                             Arancel                        </label>
+                   <i class="fa fa-question-circle" aria-hidden="true" title="Impuesto que se cobra sobre las importaciones."></i> *                             Arancel                        </label>
             </div>
             <div class="col-md-3">
                 <input type="text" value="<?php echo (isset($datos[0]->arancel) ? $datos[0]->arancel : '' ) ?>" class=" form-control obligatorio  " id="arancel" name="arancel">
@@ -37,7 +37,7 @@
 
             <div class="col-md-3">
                 <label for="flete">
-                   <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i> *                             Flete                        </label>
+                   <i class="fa fa-question-circle" aria-hidden="true" title="Costo del transporte de mercancías."></i> *                             Flete                        </label>
             </div>
             <div class="col-md-3">
                 <input type="text" value="<?php echo (isset($datos[0]->flete) ? $datos[0]->flete : '' ) ?>" class=" form-control obligatorio  " id="flete" name="flete">
@@ -50,7 +50,7 @@
 
             <div class="col-md-3">
                 <label for="g_nacionalizacion">
-                   <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i> *                             Gastos Nacionalización                         </label>
+                   <i class="fa fa-question-circle" aria-hidden="true" title="Costo de nacionalización del producto."></i> *                             Gastos Nacionalización                         </label>
             </div>
             <div class="col-md-3">
                 <input type="text" value="<?php echo (isset($datos[0]->g_nacionalizacion) ? $datos[0]->g_nacionalizacion : '' ) ?>" class=" form-control obligatorio  " id="g_nacionalizacion" name="g_nacionalizacion">
@@ -63,7 +63,7 @@
 
             <div class="col-md-3">
                 <label for="margen">
-                   <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i> *                             Márgen                        </label>
+                   <i class="fa fa-question-circle" aria-hidden="true" title="Margen de ganancia del producto, es expresado en porcentaje."></i> *                             Márgen                        </label>
             </div>
             <div class="col-md-3">
                 <input type="text" value="<?php echo (isset($datos[0]->margen) ? $datos[0]->margen : '' ) ?>" class=" form-control obligatorio  " id="margen" name="margen">

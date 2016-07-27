@@ -9,7 +9,7 @@
         <div class='row'>
             <div class='col-md-6'>
                 <div class='form-group'>
-                    <label div class='col-md-6'><i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i> <span style='color: red'>*&nbsp;&nbsp;</span>Cliente</label>
+                    <label div class='col-md-6'><i class="fa fa-question-circle" aria-hidden="true" title="Nombre del cliente."></i> <span style='color: red'>*&nbsp;&nbsp;</span>Cliente</label>
                     <div class='col-md-6'>
                         <select name='cliente' id='cliente' class='form-control obligatorio'>  
                             <option value=''>::Seleccionar</option>
@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <div class='form-group'>
-                    <label div class='col-md-6'><i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i><span style='color: red'>*&nbsp;&nbsp;</span>Forma de pago</label>
+                    <label div class='col-md-6'><i class="fa fa-question-circle" aria-hidden="true" title="Forma en la que se realizara el pago de la cotización "></i><span style='color: red'>*&nbsp;&nbsp;</span>Forma de pago</label>
                     <div class='col-md-6'>
                         <select name='formaPago' id='formaPago' class='form-control obligatorio'>  
                             <option value=''>::Seleccionar</option>
@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class='form-group'>
-                    <label div class='col-md-6'><i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i><span style='color: red'>*&nbsp;&nbsp;</span>Tiempo de entrega</label>
+                    <label div class='col-md-6'><i class="fa fa-question-circle" aria-hidden="true" title="Tiempo de entrega de los productos."></i><span style='color: red'>*&nbsp;&nbsp;</span>Tiempo de entrega</label>
                     <div class='col-md-6'>
                         <select name='tiempoEntrega' id='tiempoEntrega' class='form-control obligatorio'>  
                             <option value=''>::Seleccionar</option>
@@ -44,7 +44,7 @@
             </div>
             <div class='col-md-6'>
                 <div class='form-group'>
-                    <label div class='col-md-6'><i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i><span style='color: red'>*&nbsp;&nbsp;</span>Garantía</label>
+                    <label div class='col-md-6'><i class="fa fa-question-circle" aria-hidden="true" title="Tiempo de garantía de los productos."></i><span style='color: red'>*&nbsp;&nbsp;</span>Garantía</label>
                     <div class='col-md-6'>
                         <select name='garantia' id='garantia' class='form-control obligatorio'>  
                             <option value=''>::Seleccionar</option>
@@ -55,7 +55,7 @@
                     </div>
                 </div>
                 <div class='form-group'>
-                    <label div class='col-md-6'><i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i><span style='color: red'>*&nbsp;&nbsp;</span>Validez de la oferta</label>
+                    <label div class='col-md-6'><i class="fa fa-question-circle" aria-hidden="true" title="Tiempo de validez de la cotización."></i><span style='color: red'>*&nbsp;&nbsp;</span>Validez de la oferta</label>
                     <div class='col-md-6'>
                         <select name='validezOferta' id='validezOferta' class='form-control obligatorio'>  
                             <option value=''>::Seleccionar</option>
@@ -66,7 +66,7 @@
                     </div>
                 </div>
                 <div class='form-group'>
-                    <label div class='col-md-6'><i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i><span style='color: red'>*&nbsp;&nbsp;</span>Estado</label>
+                    <label div class='col-md-6'><i class="fa fa-question-circle" aria-hidden="true" title="Estado de la cotización. "></i><span style='color: red'>*&nbsp;&nbsp;</span>Estado</label>
                     <div class='col-md-6'>
                         <select name='est_id' id='est_id' class='form-control obligatorio'>  
                             <option value=''>::Seleccionar</option>
@@ -221,7 +221,7 @@
                     $('#frmCotizacion').serialize()
                     ).done(function (msg) {
 						 $('#guardarFormulario').hide();
-						 alert('Datos Guardados Con Exto')
+						 alert('Datos Guardados Con Éxito.')
 						location.reload();
             }).fail(function () {
 

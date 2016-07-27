@@ -11,7 +11,7 @@
 
             <div class="col-md-3">
                 <label for="nit">
-                    <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i>*                             NIT                        </label>
+                    <i class="fa fa-question-circle" aria-hidden="true" title="Número de identificación tributaria, asignado por la DIAN."></i>*                             NIT                        </label>
             </div>
             <div class="col-md-3">
                 <div class="row">
@@ -30,7 +30,7 @@
 
             <div class="col-md-3">
                 <label for="cliente">
-                    <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i>*                             Cliente                        </label>
+                    <i class="fa fa-question-circle" aria-hidden="true" title="Nombre de quien utiliza los servicios de la empresa."></i>*                             Cliente                        </label>
             </div>
             <div class="col-md-3">
                 <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->cliente) ? $datos[0]->cliente : '' ) ?>" class=" form-control obligatorio  " id="cliente" name="cliente">
@@ -43,7 +43,7 @@
 
             <div class="col-md-3">
                 <label for="contacto">
-                    <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i>*                             Contacto                        </label>
+                    <i class="fa fa-question-circle" aria-hidden="true" title="Nombre de la persona con la que se va ha tener comunicación."></i>*                             Contacto                        </label>
             </div>
             <div class="col-md-3">
                 <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->contacto) ? $datos[0]->contacto : '' ) ?>" class=" form-control obligatorio  " id="contacto" name="contacto">
@@ -56,7 +56,7 @@
 
             <div class="col-md-3">
                 <label for="cargo">
-                    <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i> *                             Cargo                        </label>
+                    <i class="fa fa-question-circle" aria-hidden="true" title="Función de la cual es responsable el contacto en la organización."></i> *                             Cargo                        </label>
             </div>
             <div class="col-md-3">
                 <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->cargo) ? $datos[0]->cargo : '' ) ?>" class=" form-control obligatorio  " id="cargo" name="cargo">
@@ -69,7 +69,7 @@
 
             <div class="col-md-3">
                 <label for="ciudad">
-                    <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i>*                             Ciudad                        </label>
+                    <i class="fa fa-question-circle" aria-hidden="true" title="Seleccione la ciudad de residencia del cliente."></i>*                             Ciudad                        </label>
             </div>
             <div class="col-md-3">
                 <?php echo lista("ciudad", "ciudad", "form-control obligatorio", "ciudad", "ciu_id", "ciu_nombre", (isset($datos[0]->ciudad) ? $datos[0]->ciudad : ''), array("ACTIVO" => "S"), /* readOnly? */ false); ?>                    <br>
@@ -80,7 +80,7 @@
 
             <div class="col-md-3">
                 <label for="email">
-                    <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i> *                             E-mail                        </label>
+                    <i class="fa fa-question-circle" aria-hidden="true" title="Ejemplo@um.com"></i> *                             E-mail                        </label>
             </div>
             <div class="col-md-3">
                 <input type="email" maxlength="50" value="<?php echo (isset($datos[0]->email) ? $datos[0]->email : '' ) ?>" class=" form-control obligatorio  " id="email" name="email">
@@ -93,7 +93,7 @@
 
             <div class="col-md-3">
                 <label for="telefono_cli">
-                    <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i> *                             Teléfono cliente                        </label>
+                    <i class="fa fa-question-circle" aria-hidden="true" title="Número de contacto del cliente."></i> *                             Teléfono cliente                        </label>
             </div>
             <div class="col-md-3">
                 <input type="text" maxlength="15" value="<?php echo (isset($datos[0]->telefono_cli) ? $datos[0]->telefono_cli : '' ) ?>" class=" form-control obligatorio  number" id="telefono_cli" name="telefono_cli">

@@ -11,7 +11,7 @@
 
             <div class="col-md-3">
                 <label for="nit">
-                    <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i>
+                    <i class="fa fa-question-circle" aria-hidden="true" title="Número de identificación tributaria, asignado por la DIAN."></i>
 *                             NIT                        </label>
             </div>
             <div class="col-md-3">
@@ -31,7 +31,7 @@
 
             <div class="col-md-3">
                 <label for="nombre">
-                    <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i>
+                    <i class="fa fa-question-circle" aria-hidden="true" title="Nombre completo de la empresa."></i>
                     *                             Nombre                        </label>
             </div>
             <div class="col-md-3">
@@ -42,7 +42,7 @@
             </div>
             <div class="col-md-3">
                 <label for="telefono">
-                    <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i>
+                    <i class="fa fa-question-circle" aria-hidden="true" title="Número de contacto de la empresa."></i>
                     *                             Teléfono                        </label>
             </div>
             <div class="col-md-3">
@@ -56,7 +56,7 @@
 
             <div class="col-md-3">
                 <label for="direccion">
-                    <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i>
+                    <i class="fa fa-question-circle" aria-hidden="true" title="Dirección de residencia de la empresa."></i>
                     *                             Dirección                        </label>
             </div>
             <div class="col-md-3">
@@ -70,7 +70,7 @@
 
             <div class="col-md-3">
                 <label for="fax">
-                    <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i>
+                    <i class="fa fa-question-circle" aria-hidden="true" title="Número de contacto de la empresa."></i>
                     *                             Fax                        </label>
             </div>
             <div class="col-md-3">
@@ -84,8 +84,8 @@
 
             <div class="col-md-3">
                 <label for="pais">
-                    <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i>
-                    *                             Pais                        </label>
+                    <i class="fa fa-question-circle" aria-hidden="true" title="Seleccione el país de residencia de la empresa."></i>
+                    *                             País                        </label>
             </div>
             <div class="col-md-3">
                 <?php echo lista("pais", "pais", "form-control obligatorio", "pais", "pai_id", "pai_nombre", (isset($datos[0]->pais) ? $datos[0]->pais : ''), array("ACTIVO" => "S"), /* readOnly? */ false); ?>                    <br>
@@ -93,7 +93,7 @@
             </div>
             <div class="col-md-3">
                 <label for="ciudad">
-                    <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i>
+                    <i class="fa fa-question-circle" aria-hidden="true" title="Seleccione la ciudad de residencia de la empresa"></i>
                     *                             Ciudad                        </label>
             </div>
             <div class="col-md-3">
@@ -105,7 +105,7 @@
 
             <div class="col-md-3">
                 <label for="direccion_web">
-                    <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i>
+                    <i class="fa fa-question-circle" aria-hidden="true" title="Dirección de la página web de la empresa."></i>
                     *                             Direcci&oacute;n web                        </label>
             </div>
             <div class="col-md-3">
@@ -119,7 +119,7 @@
 
             <div class="col-md-3">
                 <label for="email">
-                    <i class="fa fa-question-circle" aria-hidden="true" title="pendiente"></i>
+                    <i class="fa fa-question-circle" aria-hidden="true" title="Ejemplo@um.com"></i>
                     *                             E-mail                        </label>
             </div>
             <div class="col-md-3">
