@@ -47,14 +47,14 @@
                 <label class="control-label visible-ie8 visible-ie9">Username</label>
                 <div class="input-icon">
                     <i class="fa fa-user"></i>
-                    <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Usuario" name="username"/>
+                    <input class="form-control placeholder-no-fix" type="text" maxlength="20" autocomplete="off" placeholder="Usuario" name="username"/>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label visible-ie8 visible-ie9">Password</label>
                 <div class="input-icon">
                     <i class="fa fa-lock"></i>
-                    <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password"/>
+                    <input class="form-control placeholder-no-fix" type="password" maxlength="11" autocomplete="off" placeholder="Password" name="password"/>
                 </div>
             </div>
             <div class="form-actions" align="center">
@@ -90,7 +90,7 @@
                 </div>
                 <div class="form-actions">
                     <button type="button" id="back-btn" class="btn">
-                        <i class="m-icon-swapleft"></i> Atas </button>
+                        <i class="m-icon-swapleft"></i> Atras </button>
                     <button type="submit" class="btn blue pull-right">
                         Enviar <i class="m-icon-swapright m-icon-white"></i>
                     </button>

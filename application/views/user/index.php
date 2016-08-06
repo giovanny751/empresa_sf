@@ -53,7 +53,7 @@
                    <i class="fa fa-question-circle" aria-hidden="true" title="Nombre del usuario con el que va acceder al sistema."></i> *                             Usuario                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text"  maxlength="10" value="<?php echo (isset($datos[0]->usu_usuario) ? $datos[0]->usu_usuario : '' ) ?>" class=" form-control obligatorio  " id="usu_usuario" name="usu_usuario">
+                <input type="text"  maxlength="20" value="<?php echo (isset($datos[0]->usu_usuario) ? $datos[0]->usu_usuario : '' ) ?>" class=" form-control obligatorio  " id="usu_usuario" name="usu_usuario">
 
 
                 <br>
@@ -66,7 +66,7 @@
                    <i class="fa fa-question-circle" aria-hidden="true" title="Contraseña de 6 caracteres combinando mayusculas, minusculas, números y caracteres especiales como simbolos o signos de puntuaciòn ,-#$@."></i> *                             Contraseña                        </label>
             </div>
             <div class="col-md-3">
-                <input type="password" value="" maxlength="6" class=" form-control obligatorio  " id="usu_contrasena" name="usu_contrasena">
+                <input type="password" value="" maxlength="11" class=" form-control obligatorio  " id="usu_contrasena" name="usu_contrasena">
 
 
                 <br>

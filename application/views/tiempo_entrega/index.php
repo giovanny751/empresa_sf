@@ -3,33 +3,33 @@
         <i class="glyphicon glyphicon-ok"></i> Tiempo de Entrega    </h5>
 </div>
 <div class='well'>
-    <form action="<?php echo base_url('index.php/')."/Tiempo_entrega/save_tiempo_entrega"; ?>" method="post" onsubmit="return campos()"  enctype="multipart/form-data">
+    <form action="<?php echo base_url('index.php/') . "/Tiempo_entrega/save_tiempo_entrega"; ?>" method="post" onsubmit="return campos()"  enctype="multipart/form-data">
         <div class="row">
-                                    <?php $id=(isset($datos[0]->id)?$datos[0]->id:'' ) ?>
-                                                <input type="hidden" value="<?php echo (isset($datos[0]->id)?$datos[0]->id:'' ) ?>" class=" form-control   number" id="id" name="id">
-                    
+            <?php $id = (isset($datos[0]->id) ? $datos[0]->id : '' ) ?>
+            <input type="hidden" value="<?php echo (isset($datos[0]->id) ? $datos[0]->id : '' ) ?>" class=" form-control   number" id="id" name="id">
 
-                    <div class="col-md-3">
-                        <label for="nombre">
-                           <i class="fa fa-question-circle" aria-hidden="true" title="Tiempo de entrega de los productos."></i> *                             Nombre                        </label>
-                    </div>
-                    <div class="col-md-3">
-                                                    <input type="text" value="<?php echo (isset($datos[0]->nombre)?$datos[0]->nombre:'' ) ?>" class=" form-control obligatorio  number" id="nombre" name="nombre">
 
-                            
-                                                <br>
-                    </div>
+            <div class="col-md-3">
+                <label for="nombre">
+                    <i class="fa fa-question-circle" aria-hidden="true" title="Tiempo de entrega de los productos."></i> *                             Nombre                        </label>
+            </div>
+            <div class="col-md-3">
+                <input type="text" value="<?php echo (isset($datos[0]->nombre) ? $datos[0]->nombre : '' ) ?>" class=" form-control obligatorio  " id="nombre" name="nombre">
 
-                            </div>
-        <?php if(isset($post['campo'])){ ?>
-        <input type="hidden" name="<?php echo $post['campo']?>" value="<?php echo $post[$post['campo']]?>">
-        <input type="hidden" name="campo" value="<?php echo $post['campo']?>">
+
+                <br>
+            </div>
+
+        </div>
+        <?php if (isset($post['campo'])) { ?>
+            <input type="hidden" name="<?php echo $post['campo'] ?>" value="<?php echo $post[$post['campo']] ?>">
+            <input type="hidden" name="campo" value="<?php echo $post['campo'] ?>">
         <?php } ?>
         <div class="row">
             <span id="boton_guardar">
                 <button class="btn btn-dcs" >Guardar</button> 
                 <input class="btn btn-dcs" type="reset" value="Limpiar">
-                <a href="<?php echo base_url('index.php')."/Tiempo_entrega/consult_tiempo_entrega" ?>" class="btn btn-dcs">Listado </a>
+                <a href="<?php echo base_url('index.php') . "/Tiempo_entrega/consult_tiempo_entrega" ?>" class="btn btn-dcs">Listado </a>
             </span>
             <span id="boton_cargar" style="display: none">
                 <h2>Cargando ...</h2>
@@ -40,7 +40,7 @@
 </div>
 <script>
     function campos() {
-        $('input[type="file"]').each(function(key, val) {
+        $('input[type="file"]').each(function (key, val) {
             var img = $(this).val();
             if (img != "") {
                 var r = (img.indexOf('jpg') != -1) ? '' : ((img.indexOf('png') != -1) ? '' : ((img.indexOf('gif') != -1) ? '' : false))
@@ -58,11 +58,11 @@
             return true;
         }
     }
-    $('body').delegate('.number', 'keypress', function(tecla) {
+    $('body').delegate('.number', 'keypress', function (tecla) {
         if (tecla.charCode > 0 && tecla.charCode < 48 || tecla.charCode > 57)
             return false;
     });
-    $('.fecha').datepicker({ dateFormat: 'yy-mm-dd' });
+    $('.fecha').datepicker({dateFormat: 'yy-mm-dd'});
 
 
 </script>

@@ -1,19 +1,11 @@
 <div class="widgetTitle" >
     <h5>
-        <i class="glyphicon glyphicon-ok"></i> Tiempo de Entrega    </h5>
+        <i class="glyphicon glyphicon-ok"></i> Validez de la oferta    </h5>
 </div>
 <div class='well'>
-    <form action="<?php echo base_url('index.php/') . '/Tiempo_entrega/consult_tiempo_entrega'; ?>" method="post" >
+    <form action="<?php echo base_url('index.php/') . '/Validez_oferta/consult_validez_oferta'; ?>" method="post" >
         <div class="row">
-            <div class="col-md-3">
-                <label for="id">
-                    id                        </label>
-            </div>
-            <div class="col-md-3">
-
-                <input type="hidden" value="<?php echo (isset($post['id']) ? $post['id'] : '' ) ?>" class="form-control   number" id="id" name="id">
-                <br>
-            </div>
+            
 
             <div class="col-md-3">
                 <label for="nombre">
@@ -66,15 +58,15 @@
 </div>
 <div class="row">
     <div class="col-md-12" style="float:right">
-        <a href="<?php echo base_url() . "/index.php/Tiempo_entrega/index" ?>" class="btn btn-dcs" >Nuevo</a>
+        <a href="<?php echo base_url() . "/index.php/Validez_oferta/index" ?>" class="btn btn-dcs" >Nuevo</a>
     </div>
 </div>
 <?php if (isset($campo)) { ?>
-    <form action="<?php echo base_url('index.php/') . "/Tiempo_entrega/edit_tiempo_entrega"; ?>" method="post" id="editar">
+    <form action="<?php echo base_url('index.php/') . "/Validez_oferta/edit_validez_oferta"; ?>" method="post" id="editar">
         <input type="hidden" name="<?php echo $campo ?>" id="<?php echo $campo ?>2">
         <input type="hidden" name="campo" value="<?php echo $campo ?>">
     </form>
-    <form action="<?php echo base_url('index.php/') . "/Tiempo_entrega/delete_tiempo_entrega"; ?>" method="post" id="delete">
+    <form action="<?php echo base_url('index.php/') . "/Validez_oferta/delete_validez_oferta"; ?>" method="post" id="delete">
         <input type="hidden" name="<?php echo $campo ?>" id="<?php echo $campo ?>3">
         <input type="hidden" name="campo" value="<?php echo $campo ?>">
     </form>

@@ -14,7 +14,7 @@
                    <i class="fa fa-question-circle" aria-hidden="true" title="Código para identificación del producto."></i> *                             Referencia                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" value="<?php echo (isset($datos[0]->referencia) ? $datos[0]->referencia : '' ) ?>" class=" form-control obligatorio " id="referencia" name="referencia">
+                <input type="text" maxlength="15"  value="<?php echo (isset($datos[0]->referencia) ? $datos[0]->referencia : '' ) ?>" class=" form-control obligatorio " id="referencia" name="referencia">
 
 
                 <br>
@@ -27,7 +27,7 @@
                    <i class="fa fa-question-circle" aria-hidden="true" title="Nombre del producto."></i> *                             Nombre                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" value="<?php echo (isset($datos[0]->Nombre) ? $datos[0]->Nombre : '' ) ?>" class=" form-control obligatorio  " id="Nombre" name="Nombre">
+                <input type="text" maxlength="60" value="<?php echo (isset($datos[0]->Nombre) ? $datos[0]->Nombre : '' ) ?>" class=" form-control obligatorio  " id="Nombre" name="Nombre">
 
 
                 <br>
@@ -40,7 +40,7 @@
                    <i class="fa fa-question-circle" aria-hidden="true" title="Descripción detallada del producto."></i> *                             Descripcion                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" value="<?php echo (isset($datos[0]->Descripcion) ? $datos[0]->Descripcion : '' ) ?>" class=" form-control obligatorio  " id="Descripcion" name="Descripcion">
+                <input type="text" maxlength="100" value="<?php echo (isset($datos[0]->Descripcion) ? $datos[0]->Descripcion : '' ) ?>" class=" form-control obligatorio  " id="Descripcion" name="Descripcion">
 
 
                 <br>
@@ -63,7 +63,7 @@
                    <i class="fa fa-question-circle" aria-hidden="true" title="Valor del producto en dolares."></i> *                             Costo USD                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" value="<?php echo (isset($datos[0]->costo_usd) ? $datos[0]->costo_usd : '' ) ?>" class=" form-control obligatorio  " id="costo_usd" name="costo_usd">
+                <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->costo_usd) ? $datos[0]->costo_usd : '' ) ?>" class=" form-control obligatorio  " id="costo_usd" name="costo_usd">
 
 
                 <br>

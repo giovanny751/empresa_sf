@@ -109,7 +109,7 @@
                     *                             Direcci&oacute;n web                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" value="<?php echo (isset($datos[0]->direccion_web) ? $datos[0]->direccion_web : '' ) ?>" class=" form-control obligatorio  " id="direccion_web" name="direccion_web">
+                <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->direccion_web) ? $datos[0]->direccion_web : '' ) ?>" class=" form-control obligatorio  " id="direccion_web" name="direccion_web">
 
 
                 <br>

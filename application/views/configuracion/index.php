@@ -14,7 +14,7 @@
                    <i class="fa fa-question-circle" aria-hidden="true" title="Precio del dolar, TRM (tasa de cambio representativa del mercado) vigente."></i> *                             Dolar                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" value="<?php echo (isset($datos[0]->dolar) ? $datos[0]->dolar : '' ) ?>" class=" form-control obligatorio  " id="dolar" name="dolar">
+                <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->dolar) ? $datos[0]->dolar : '' ) ?>" class=" form-control obligatorio  " id="dolar" name="dolar">
 
 
                 <br>
@@ -27,7 +27,7 @@
                    <i class="fa fa-question-circle" aria-hidden="true" title="Impuesto que se cobra sobre las importaciones."></i> *                             Arancel                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" value="<?php echo (isset($datos[0]->arancel) ? $datos[0]->arancel : '' ) ?>" class=" form-control obligatorio  " id="arancel" name="arancel">
+                <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->arancel) ? $datos[0]->arancel : '' ) ?>" class=" form-control obligatorio  " id="arancel" name="arancel">
 
 
                 <br>
@@ -40,7 +40,7 @@
                    <i class="fa fa-question-circle" aria-hidden="true" title="Costo del transporte de mercancías."></i> *                             Flete                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" value="<?php echo (isset($datos[0]->flete) ? $datos[0]->flete : '' ) ?>" class=" form-control obligatorio  " id="flete" name="flete">
+                <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->flete) ? $datos[0]->flete : '' ) ?>" class=" form-control obligatorio  " id="flete" name="flete">
 
 
                 <br>
@@ -53,7 +53,7 @@
                    <i class="fa fa-question-circle" aria-hidden="true" title="Costo de nacionalización del producto."></i> *                             Gastos Nacionalización                         </label>
             </div>
             <div class="col-md-3">
-                <input type="text" value="<?php echo (isset($datos[0]->g_nacionalizacion) ? $datos[0]->g_nacionalizacion : '' ) ?>" class=" form-control obligatorio  " id="g_nacionalizacion" name="g_nacionalizacion">
+                <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->g_nacionalizacion) ? $datos[0]->g_nacionalizacion : '' ) ?>" class=" form-control obligatorio  " id="g_nacionalizacion" name="g_nacionalizacion">
 
 
                 <br>
@@ -66,7 +66,7 @@
                    <i class="fa fa-question-circle" aria-hidden="true" title="Margen de ganancia del producto, es expresado en porcentaje."></i> *                             Márgen                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" value="<?php echo (isset($datos[0]->margen) ? $datos[0]->margen : '' ) ?>" class=" form-control obligatorio  " id="margen" name="margen">
+                <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->margen) ? $datos[0]->margen : '' ) ?>" class=" form-control obligatorio  " id="margen" name="margen">
 
 
                 <br>
