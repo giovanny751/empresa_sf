@@ -1,12 +1,13 @@
 <div class="widgetTitle" >
     <h5>
-        <i class="glyphicon glyphicon-ok"></i> Ciudad    </h5>
+        <i class="glyphicon glyphicon-ok"></i> Consultar Ciudad    </h5>
 </div>
 <div class='well'>
     <form action="<?php echo base_url('index.php/') . '/Ciudad/consult_ciudad'; ?>" method="post" >
         <div class="row">
             <div class="col-md-3">
                 <label for="pai_id">
+				<i class="fa fa-question-circle" aria-hidden="true" title="Seleccionar nombre del país de residencia."></i>
                     Pais                        </label>
             </div>
             <div class="col-md-3">
@@ -20,7 +21,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['ciu_nombre']) ? $post['ciu_nombre'] : '' ) ?>" class="form-control obligatorio  " id="ciu_nombre" name="ciu_nombre">
+                <input type="text" value="<?php echo (isset($post['ciu_nombre']) ? $post['ciu_nombre'] : '' ) ?>" class="form-control obligatorio  " id="ciu_nombre" name="ciu_nombre" title="Digite nombre de la ciudad de residencia.">
                 <br>
             </div>
 

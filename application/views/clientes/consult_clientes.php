@@ -1,6 +1,6 @@
 <div class="widgetTitle" >
     <h5>
-        <i class="glyphicon glyphicon-ok"></i> Clientes    </h5>
+        <i class="glyphicon glyphicon-ok"></i> Consultar Clientes    </h5>
 </div>
 <div class='well'>
     <form action="<?php echo base_url('index.php/') . '/Clientes/consult_clientes'; ?>" method="post" >
@@ -12,7 +12,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['nit']) ? $post['nit'] : '' ) ?>" class="form-control obligatorio  number" id="nit" name="nit">
+                <input type="text" value="<?php echo (isset($post['nit']) ? $post['nit'] : '' ) ?>" class="form-control obligatorio  number" id="nit" name="nit" title="Digite el NIT de la empresa sin digito verificador." >
                 <br>
             </div>
 
@@ -22,7 +22,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['cliente']) ? $post['cliente'] : '' ) ?>" class="form-control obligatorio  " id="cliente" name="cliente">
+                <input type="text" value="<?php echo (isset($post['cliente']) ? $post['cliente'] : '' ) ?>" class="form-control obligatorio  " id="cliente" name="cliente" title="Digite el nombre del cliente.">
                 <br>
             </div>
 
@@ -32,7 +32,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['contacto']) ? $post['contacto'] : '' ) ?>" class="form-control obligatorio  " id="contacto" name="contacto">
+                <input type="text" value="<?php echo (isset($post['contacto']) ? $post['contacto'] : '' ) ?>" class="form-control obligatorio  " id="contacto" name="contacto" title="Digite el nombre de la persona con la que se va ha tener comunicación.">
                 <br>
             </div>
 
@@ -42,12 +42,13 @@
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['cargo']) ? $post['cargo'] : '' ) ?>" class="form-control obligatorio  " id="cargo" name="cargo">
+                <input type="text" value="<?php echo (isset($post['cargo']) ? $post['cargo'] : '' ) ?>" class="form-control obligatorio  " id="cargo" name="cargo" title="Digite la función de la cual es responsable el contacto en la organización.">
                 <br>
             </div>
 
             <div class="col-md-3">
                 <label for="ciudad">
+				<i class="fa fa-question-circle" aria-hidden="true" title="Seleccione la ciudad de residencia del cliente."></i>
                     Ciudad                        </label>
             </div>
             <div class="col-md-3">
@@ -62,7 +63,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="email" value="<?php echo (isset($post['email']) ? $post['email'] : '' ) ?>" class="form-control obligatorio  " id="email" name="email">
+                <input type="email" value="<?php echo (isset($post['email']) ? $post['email'] : '' ) ?>" class="form-control obligatorio  " id="email" name="email" title="Ejemplo@um.com">
                 <br>
             </div>
 
@@ -72,7 +73,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['telefono_cli']) ? $post['telefono_cli'] : '' ) ?>" class="form-control obligatorio  number" id="telefono_cli" name="telefono_cli">
+                <input type="text" value="<?php echo (isset($post['telefono_cli']) ? $post['telefono_cli'] : '' ) ?>" class="form-control obligatorio  number" id="telefono_cli" name="telefono_cli" title="Digite el número de contacto del cliente.">
                 <br>
             </div>
 

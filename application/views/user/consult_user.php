@@ -1,6 +1,6 @@
 <div class="widgetTitle" >
     <h5>
-        <i class="glyphicon glyphicon-ok"></i> Usuarios    </h5>
+        <i class="glyphicon glyphicon-ok"></i> Consultar Usuarios    </h5>
 </div>
 <div class='well'>
     <form action="<?php echo base_url('index.php/') . '/User/consult_user'; ?>" method="post" >
@@ -12,7 +12,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['usu_cedula']) ? $post['usu_cedula'] : '' ) ?>" class="form-control obligatorio  number" id="usu_cedula" name="usu_cedula">
+                <input type="text" value="<?php echo (isset($post['usu_cedula']) ? $post['usu_cedula'] : '' ) ?>" class="form-control obligatorio  number" id="usu_cedula" name="usu_cedula" title="Digite el número correspondiente al documento de identificación.">
                 <br>
             </div>
 
@@ -22,7 +22,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['usu_nombre']) ? $post['usu_nombre'] : '' ) ?>" class="form-control obligatorio  " id="usu_nombre" name="usu_nombre">
+                <input type="text" value="<?php echo (isset($post['usu_nombre']) ? $post['usu_nombre'] : '' ) ?>" class="form-control obligatorio  " id="usu_nombre" name="usu_nombre" title="	Digite el nombre del usuario.">
                 <br>
             </div>
 
@@ -32,7 +32,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['usu_apellido']) ? $post['usu_apellido'] : '' ) ?>" class="form-control obligatorio  " id="usu_apellido" name="usu_apellido">
+                <input type="text" value="<?php echo (isset($post['usu_apellido']) ? $post['usu_apellido'] : '' ) ?>" class="form-control obligatorio  " id="usu_apellido" name="usu_apellido" title=" Digite los apellidos completos.">
                 <br>
             </div>
 
@@ -42,7 +42,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['usu_usuario']) ? $post['usu_usuario'] : '' ) ?>" class="form-control obligatorio  " id="usu_usuario" name="usu_usuario">
+                <input type="text" value="<?php echo (isset($post['usu_usuario']) ? $post['usu_usuario'] : '' ) ?>" class="form-control obligatorio  " id="usu_usuario" name="usu_usuario" title="Digite el nombre del usuario con el que accede al sistema.">
                 <br>
             </div>
 
@@ -52,15 +52,17 @@
             </div>
             <div class="col-md-3">
 
-                <input type="email" value="<?php echo (isset($post['usu_email']) ? $post['usu_email'] : '' ) ?>" class="form-control obligatorio  " id="usu_email" name="usu_email">
+                <input type="email" value="<?php echo (isset($post['usu_email']) ? $post['usu_email'] : '' ) ?>" class="form-control obligatorio  " id="usu_email" name="usu_email" title="Ejemplo@um.com".>
                 <br>
             </div>
 
             <div class="col-md-3">
                 <label for="emp_id">
+				<i class="fa fa-question-circle" aria-hidden="true" title="Seleccione la empresa a la cual pertenece el usuario."></i>
                     Empresa                        </label>
             </div>
             <div class="col-md-3">
+			
 
                 <?php echo lista("emp_id", "emp_id", "form-control obligatorio", "empresa", "id", "nombre", (isset($datos[0]->emp_id) ? $datos[0]->emp_id : ''), array("ACTIVO" => "S"), /* readOnly? */ false); ?>                    <br>
             </div>

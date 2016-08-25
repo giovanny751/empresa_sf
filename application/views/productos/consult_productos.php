@@ -1,6 +1,6 @@
 <div class="widgetTitle" >
     <h5>
-        <i class="glyphicon glyphicon-ok"></i> Productos    </h5>
+        <i class="glyphicon glyphicon-ok"></i> Consultar Productos    </h5>
 </div>
 <div class='well'>
     <form action="<?php echo base_url('index.php/') . '/Productos/consult_productos'; ?>" method="post" >
@@ -13,7 +13,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['referencia']) ? $post['referencia'] : '' ) ?>" class="form-control obligatorio " id="referencia" name="referencia">
+                <input type="text" value="<?php echo (isset($post['referencia']) ? $post['referencia'] : '' ) ?>" class="form-control obligatorio " id="referencia" name="referencia" title=" Digite el código de identificación del producto.">
                 <br>
             </div>
 
@@ -23,7 +23,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['Nombre']) ? $post['Nombre'] : '' ) ?>" class="form-control obligatorio  " id="Nombre" name="Nombre">
+                <input type="text" value="<?php echo (isset($post['Nombre']) ? $post['Nombre'] : '' ) ?>" class="form-control obligatorio  " id="Nombre" name="Nombre" title="Digite el nombre del producto.">
                 <br>
             </div>
 
@@ -33,12 +33,13 @@
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['Descripcion']) ? $post['Descripcion'] : '' ) ?>" class="form-control obligatorio  " id="Descripcion" name="Descripcion">
+                <input type="text" value="<?php echo (isset($post['Descripcion']) ? $post['Descripcion'] : '' ) ?>" class="form-control obligatorio  " id="Descripcion" name="Descripcion" title="Digite la descripción del producto.">
                 <br>
             </div>
 
             <div class="col-md-3">
                 <label for="Categoria">
+				<i class="fa fa-question-circle" aria-hidden="true" title="Seleccione la categoria a la que pertenece el producto."></i>
                     Categoria                        </label>
             </div>
             <div class="col-md-3">

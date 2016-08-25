@@ -478,8 +478,8 @@
         }
 
     });
-    $('input[type="text"]').attr('maxlength','70')
-    $('.number').attr('maxlength','11')
+    //$('input[type="text"]').attr('maxlength','70')
+    //$('.number').attr('maxlength','11')
 </script>
 <style>
     .blockOverlay{

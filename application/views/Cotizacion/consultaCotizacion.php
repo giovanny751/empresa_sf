@@ -1,7 +1,7 @@
 <div class="widgetTitle" >
     <h5>
         <i class="glyphicon glyphicon-ok"></i> 
-        Busqueda Cotizaciones
+        Consultar Cotizaciones
     </h5>
 </div>
 <div class='well'>
@@ -9,7 +9,7 @@
         <form class='form-horizontal' id='frmCotizacion' method="post">
             <div class='col-md-6'>
                 <div class='form-group'>
-                    <label div class='col-md-6'>Cliente</label>
+                    <label div class='col-md-6'> <i class="fa fa-question-circle" aria-hidden="true" title=" Seleccionar nombre del cliente."></i>  Cliente  </label> 
                     <div class='col-md-6'>
                         <select name='cliente' id='cliente' class='form-control obligatorio'>  
                             <option value=''>::Seleccionar</option>
@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <div class='form-group'>
-                    <label div class='col-md-6'>Forma de pago</label>
+                    <label div class='col-md-6'> <i class="fa fa-question-circle" aria-hidden="true" title="Seleccionar forma en la que se realizara el pago de la cotización."></i> Forma de pago</label>
                     <div class='col-md-6'>
                         <select name='formaPago' id='formaPago' class='form-control obligatorio'>  
                             <option value=''>::Seleccionar</option>
@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class='form-group'>
-                    <label div class='col-md-6'>Tiempo de entrega</label>
+                    <label div class='col-md-6'><i class="fa fa-question-circle" aria-hidden="true" title="Seleccionar el tiempo de entrega de los productos."></i> Tiempo de entrega</label>
                     <div class='col-md-6'>
                         <select name='tiempoEntrega' id='tiempoEntrega' class='form-control obligatorio'>  
                             <option value=''>::Seleccionar</option>
@@ -46,7 +46,7 @@
 
             <div class='col-md-6'>
                 <div class='form-group'>
-                    <label div class='col-md-6'>Garantía</label>
+                    <label div class='col-md-6'><i class="fa fa-question-circle" aria-hidden="true" title="Seleccionar tiempo de garantía de los productos."></i> Garantía</label>
                     <div class='col-md-6'>
                         <select name='garantia' id='garantia' class='form-control obligatorio'>  
                             <option value=''>::Seleccionar</option>
@@ -57,7 +57,7 @@
                     </div>
                 </div>
                 <div class='form-group'>
-                    <label div class='col-md-6'>Validez de la oferta</label>
+                    <label div class='col-md-6'><i class="fa fa-question-circle" aria-hidden="true" title="Seleccionar tiempo de validez de la cotización."></i> Validez de la oferta</label>
                     <div class='col-md-6'>
                         <select name='validezOferta' id='validezOferta' class='form-control obligatorio'>  
                             <option value=''>::Seleccionar</option>

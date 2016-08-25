@@ -11,10 +11,10 @@
 
             <div class="col-md-3">
                 <label for="dolar">
-                   <i class="fa fa-question-circle" aria-hidden="true" title="Precio del dolar, TRM (tasa de cambio representativa del mercado) vigente."></i> *                             Dolar                        </label>
+                *                             Dolar                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->dolar) ? $datos[0]->dolar : '' ) ?>" class=" form-control obligatorio  " id="dolar" name="dolar">
+                <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->dolar) ? $datos[0]->dolar : '' ) ?>" class=" form-control obligatorio  " id="dolar" name="dolar" title=" Ingresar el precio del dolar, TRM (tasa de cambio representativa del mercado) vigente.">
 
 
                 <br>
@@ -24,10 +24,10 @@
 
             <div class="col-md-3">
                 <label for="arancel">
-                   <i class="fa fa-question-circle" aria-hidden="true" title="Impuesto que se cobra sobre las importaciones."></i> *                             Arancel                        </label>
+                  *                             Arancel                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->arancel) ? $datos[0]->arancel : '' ) ?>" class=" form-control obligatorio  " id="arancel" name="arancel">
+                <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->arancel) ? $datos[0]->arancel : '' ) ?>" class=" form-control obligatorio  " id="arancel" name="arancel" title=" Ingresar el impuesto que se cobra sobre las importaciones.">
 
 
                 <br>
@@ -37,10 +37,10 @@
 
             <div class="col-md-3">
                 <label for="flete">
-                   <i class="fa fa-question-circle" aria-hidden="true" title="Costo del transporte de mercancías."></i> *                             Flete                        </label>
+                *                             Flete                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->flete) ? $datos[0]->flete : '' ) ?>" class=" form-control obligatorio  " id="flete" name="flete">
+                <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->flete) ? $datos[0]->flete : '' ) ?>" class=" form-control obligatorio  " id="flete" name="flete" title="Ingresar el costo del transporte de mercancías.">
 
 
                 <br>
@@ -50,10 +50,10 @@
 
             <div class="col-md-3">
                 <label for="g_nacionalizacion">
-                   <i class="fa fa-question-circle" aria-hidden="true" title="Costo de nacionalización del producto."></i> *                             Gastos Nacionalización                         </label>
+                 *                             Gastos Nacionalización                         </label>
             </div>
             <div class="col-md-3">
-                <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->g_nacionalizacion) ? $datos[0]->g_nacionalizacion : '' ) ?>" class=" form-control obligatorio  " id="g_nacionalizacion" name="g_nacionalizacion">
+                <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->g_nacionalizacion) ? $datos[0]->g_nacionalizacion : '' ) ?>" class=" form-control obligatorio  " id="g_nacionalizacion" name="g_nacionalizacion" title="Ingresar el costo de nacionalización del producto.">
 
 
                 <br>
@@ -63,10 +63,10 @@
 
             <div class="col-md-3">
                 <label for="margen">
-                   <i class="fa fa-question-circle" aria-hidden="true" title="Margen de ganancia del producto, es expresado en porcentaje."></i> *                             Márgen                        </label>
+                  *                             Márgen                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->margen) ? $datos[0]->margen : '' ) ?>" class=" form-control obligatorio  " id="margen" name="margen">
+                <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->margen) ? $datos[0]->margen : '' ) ?>" class=" form-control obligatorio  " id="margen" name="margen" title="Ingresar el margen de ganancia del producto, es expresado en porcentaje.">
 
 
                 <br>

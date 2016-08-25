@@ -11,13 +11,12 @@
 
             <div class="col-md-3">
                 <label for="nit">
-                    <i class="fa fa-question-circle" aria-hidden="true" title="Número de identificación tributaria, asignado por la DIAN."></i>
 *                             NIT                        </label>
             </div>
             <div class="col-md-3">
                 <div class="row">
                     <div class="col-md-9">
-                        <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->nit) ? $datos[0]->nit : '' ) ?>" class=" form-control obligatorio  number" id="nit" name="nit">
+                        <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->nit) ? $datos[0]->nit : '' ) ?>" class=" form-control obligatorio  number" id="nit" name="nit"  title="Ingresar el NIT de la empresa sin dígito verificador.">
                     </div>
                     <div class="col-md-3">
                         <div class="col-md" id="digito_ver" style="margin: 10 0;">
@@ -31,22 +30,21 @@
 
             <div class="col-md-3">
                 <label for="nombre">
-                    <i class="fa fa-question-circle" aria-hidden="true" title="Nombre completo de la empresa."></i>
                     *                             Nombre                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->nombre) ? $datos[0]->nombre : '' ) ?>" class=" form-control obligatorio  " id="nombre" name="nombre">
+                <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->nombre) ? $datos[0]->nombre : '' ) ?>" class=" form-control obligatorio  " id="nombre" name="nombre" title="Ingresar el nombre completo de la empresa.">
 
 
                 <br>
             </div>
             <div class="col-md-3">
                 <label for="telefono">
-                    <i class="fa fa-question-circle" aria-hidden="true" title="Número de contacto de la empresa."></i>
+                    
                     *                             Teléfono                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" maxlength="15" value="<?php echo (isset($datos[0]->telefono) ? $datos[0]->telefono : '' ) ?>" class=" form-control obligatorio  number" id="telefono" name="telefono">
+                <input type="text" maxlength="15" value="<?php echo (isset($datos[0]->telefono) ? $datos[0]->telefono : '' ) ?>" class=" form-control obligatorio  number" id="telefono" name="telefono" title="Ingresar el número de contacto de la empresa.">
 
 
                 <br>
@@ -56,11 +54,10 @@
 
             <div class="col-md-3">
                 <label for="direccion">
-                    <i class="fa fa-question-circle" aria-hidden="true" title="Dirección de residencia de la empresa."></i>
                     *                             Dirección                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->direccion) ? $datos[0]->direccion : '' ) ?>" class=" form-control obligatorio  " id="direccion" name="direccion">
+                <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->direccion) ? $datos[0]->direccion : '' ) ?>" class=" form-control obligatorio  " id="direccion" name="direccion" title="Ingresar la dirección de residencia de la empresa.">
 
 
                 <br>
@@ -70,11 +67,10 @@
 
             <div class="col-md-3">
                 <label for="fax">
-                    <i class="fa fa-question-circle" aria-hidden="true" title="Número de contacto de la empresa."></i>
                     *                             Fax                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" maxlength="15" value="<?php echo (isset($datos[0]->fax) ? $datos[0]->fax : '' ) ?>" class=" form-control obligatorio  number" id="fax" name="fax">
+                <input type="text" maxlength="15" value="<?php echo (isset($datos[0]->fax) ? $datos[0]->fax : '' ) ?>" class=" form-control obligatorio  number" id="fax" name="fax" title="Ingresar el número de contacto de la empresa.">
 
 
                 <br>
@@ -84,11 +80,11 @@
 
             <div class="col-md-3">
                 <label for="pais">
-                    <i class="fa fa-question-circle" aria-hidden="true" title="Seleccione el país de residencia de la empresa."></i>
+				<i class="fa fa-question-circle" aria-hidden="true" title="Seleccione el pais de residencia de la empresa"></i>
                     *                             País                        </label>
             </div>
             <div class="col-md-3">
-                <?php echo lista("pais", "pais", "form-control obligatorio", "pais", "pai_id", "pai_nombre", (isset($datos[0]->pais) ? $datos[0]->pais : ''), array("ACTIVO" => "S"), /* readOnly? */ false); ?>                    <br>
+                <?php echo lista("pais", "pais", "form-control obligatorio", "pais", "pai_id", "pai_nombre", (isset($datos[0]->pais) ? $datos[0]->pais : ''), array("ACTIVO" => "S"), /* readOnly? */ false); ?>    <br>
                 <br>
             </div>
             <div class="col-md-3">
@@ -105,11 +101,10 @@
 
             <div class="col-md-3">
                 <label for="direccion_web">
-                    <i class="fa fa-question-circle" aria-hidden="true" title="Dirección de la página web de la empresa."></i>
                     *                             Direcci&oacute;n web                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->direccion_web) ? $datos[0]->direccion_web : '' ) ?>" class=" form-control obligatorio  " id="direccion_web" name="direccion_web">
+                <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->direccion_web) ? $datos[0]->direccion_web : '' ) ?>" class=" form-control obligatorio  " id="direccion_web" name="direccion_web" title="Ingresar la dirección de la página web de la empresa.">
 
 
                 <br>
@@ -119,11 +114,10 @@
 
             <div class="col-md-3">
                 <label for="email">
-                    <i class="fa fa-question-circle" aria-hidden="true" title="Ejemplo@um.com"></i>
                     *                             E-mail                        </label>
             </div>
             <div class="col-md-3">
-                <input type="email"  maxlength="50" value="<?php echo (isset($datos[0]->email) ? $datos[0]->email : '' ) ?>" class=" form-control obligatorio  " id="email" name="email">
+                <input type="email"  maxlength="50" value="<?php echo (isset($datos[0]->email) ? $datos[0]->email : '' ) ?>" class=" form-control obligatorio  " id="email" name="email" title="Ejemplo@um.com">
 
 
                 <br>

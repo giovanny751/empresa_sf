@@ -1,6 +1,6 @@
 <div class="widgetTitle" >
     <h5>
-        <i class="glyphicon glyphicon-ok"></i> Pais    </h5>
+        <i class="glyphicon glyphicon-ok"></i> Consultar Pais    </h5>
 </div>
 <div class='well'>
     <form action="<?php echo base_url('index.php/') . '/Pais/consult_pais'; ?>" method="post" >
@@ -13,7 +13,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['pai_nombre']) ? $post['pai_nombre'] : '' ) ?>" class="form-control obligatorio  " id="pai_nombre" name="pai_nombre">
+                <input type="text" value="<?php echo (isset($post['pai_nombre']) ? $post['pai_nombre'] : '' ) ?>" class="form-control obligatorio  " id="pai_nombre" name="pai_nombre" title="Digite el nombre del país de residencia.">
                 <br>
             </div>
 

@@ -1,30 +1,19 @@
 <div class="widgetTitle" >
     <h5>
-        <i class="glyphicon glyphicon-ok"></i> Tiempo de Entrega    </h5>
+        <i class="glyphicon glyphicon-ok"></i> Consultar Tiempo de Entrega    </h5>
 </div>
 <div class='well'>
     <form action="<?php echo base_url('index.php/') . '/Tiempo_entrega/consult_tiempo_entrega'; ?>" method="post" >
         <div class="row">
             <div class="col-md-3">
-                <label for="id">
-                    id                        </label>
+                <label for="nombre"> 
+				Nombre                           </label>
             </div>
             <div class="col-md-3">
 
-                <input type="hidden" value="<?php echo (isset($post['id']) ? $post['id'] : '' ) ?>" class="form-control   number" id="id" name="id">
+                <input type="text" value="<?php echo (isset($post['nombre']) ? $post['nombre'] : '' ) ?>" class="form-control obligatorio " id="nombre" name="nombre" title="Digitar tiempo de entrega de los productos.">
                 <br>
             </div>
-
-            <div class="col-md-3">
-                <label for="nombre">
-                    Nombre                        </label>
-            </div>
-            <div class="col-md-3">
-
-                <input type="text" value="<?php echo (isset($post['nombre']) ? $post['nombre'] : '' ) ?>" class="form-control obligatorio  " id="nombre" name="nombre">
-                <br>
-            </div>
-
         </div>
         <button class="btn btn-dcs">Consultar</button>
     </form>

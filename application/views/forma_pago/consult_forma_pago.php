@@ -1,6 +1,6 @@
 <div class="widgetTitle" >
     <h5>
-        <i class="glyphicon glyphicon-ok"></i> Forma Pago    </h5>
+        <i class="glyphicon glyphicon-ok"></i> Consultar Forma de Pago    </h5>
 </div>
 <div class='well'>
 <form action="<?php echo base_url('index.php/').'/Forma_pago/consult_forma_pago'; ?>" method="post" >
@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-md-3">
                     
-                                            <input type="text" value="<?php echo (isset($post['nombre'])?$post['nombre']:'' ) ?>" class="form-control obligatorio  " id="nombre" name="nombre">
+                                            <input type="text" value="<?php echo (isset($post['nombre'])?$post['nombre']:'' ) ?>" class="form-control obligatorio  " id="nombre" name="nombre" title="Digitar la forma en la que se realizara el pago de la cotización.">
                                             <br>
                 </div>
 

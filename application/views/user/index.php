@@ -11,10 +11,10 @@
 
             <div class="col-md-3">
                 <label for="usu_cedula">
-                   <i class="fa fa-question-circle" aria-hidden="true" title="Número correspondiente al documento de identificación. "></i> *                             Cédula                        </label>
+                   *                             Cédula                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->usu_cedula) ? $datos[0]->usu_cedula : '' ) ?>" class=" form-control obligatorio  number" id="usu_cedula" name="usu_cedula">
+                <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->usu_cedula) ? $datos[0]->usu_cedula : '' ) ?>" class=" form-control obligatorio  number" id="usu_cedula" name="usu_cedula" title="Ingresar el número correspondiente al documento de identificación. ">
 
 
                 <br>
@@ -24,10 +24,10 @@
 
             <div class="col-md-3"> 
                 <label for="usu_nombre">
-                   <i class="fa fa-question-circle" aria-hidden="true" title="Nombre completo. "></i> *                             Nombre                        </label>
+                    *                             Nombre                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->usu_nombre) ? $datos[0]->usu_nombre : '' ) ?>" class=" form-control obligatorio  " id="usu_nombre" name="usu_nombre">
+                <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->usu_nombre) ? $datos[0]->usu_nombre : '' ) ?>" class=" form-control obligatorio  " id="usu_nombre" name="usu_nombre" title="Ingresar nombre completo. ">
 
 
                 <br>
@@ -37,10 +37,10 @@
 
             <div class="col-md-3">
                 <label for="usu_apellido">
-                   <i class="fa fa-question-circle" aria-hidden="true" title="Apellidos completos. "></i> *                             Apellidos                        </label>
+                   *                             Apellidos                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->usu_apellido) ? $datos[0]->usu_apellido : '' ) ?>" class=" form-control obligatorio  " id="usu_apellido" name="usu_apellido">
+                <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->usu_apellido) ? $datos[0]->usu_apellido : '' ) ?>" class=" form-control obligatorio  " id="usu_apellido" name="usu_apellido" title="Ingresar apellidos completos. ">
 
 
                 <br>
@@ -50,10 +50,10 @@
 
             <div class="col-md-3">
                 <label for="usu_usuario">
-                   <i class="fa fa-question-circle" aria-hidden="true" title="Nombre del usuario con el que va acceder al sistema."></i> *                             Usuario                        </label>
+                   *                             Usuario                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text"  maxlength="20" value="<?php echo (isset($datos[0]->usu_usuario) ? $datos[0]->usu_usuario : '' ) ?>" class=" form-control obligatorio  " id="usu_usuario" name="usu_usuario">
+                <input type="text"  maxlength="20" value="<?php echo (isset($datos[0]->usu_usuario) ? $datos[0]->usu_usuario : '' ) ?>" class=" form-control obligatorio  " id="usu_usuario" name="usu_usuario" title="Ingresar el nombre del usuario con el que va acceder al sistema.">
 
 
                 <br>
@@ -63,10 +63,10 @@
 
             <div class="col-md-3">
                 <label for="usu_contrasena">
-                   <i class="fa fa-question-circle" aria-hidden="true" title="Contraseña de 6 caracteres combinando mayusculas, minusculas, números y caracteres especiales como simbolos o signos de puntuaciòn ,-#$@."></i> *                             Contraseña                        </label>
+                   *                             Contraseña                        </label>
             </div>
             <div class="col-md-3">
-                <input type="password" value="" maxlength="11" class=" form-control obligatorio  " id="usu_contrasena" name="usu_contrasena">
+                <input type="password" value="" maxlength="11" class=" form-control obligatorio  " id="usu_contrasena" name="usu_contrasena" title="Ingresar una contraseña de 11 caracteres combinando mayusculas, minusculas, números y caracteres especiales como simbolos o signos de puntuaciòn ,-#$@.">
 
 
                 <br>
@@ -76,10 +76,10 @@
 
             <div class="col-md-3">
                 <label for="usu_email">
-                   <i class="fa fa-question-circle" aria-hidden="true" title="Ejemplo@um.com"></i> *                             E-mail                        </label>
+                  *                             E-mail                        </label>
             </div>
             <div class="col-md-3">
-                <input type="email" maxlength="50" value="<?php echo (isset($datos[0]->usu_email) ? $datos[0]->usu_email : '' ) ?>" class=" form-control obligatorio  " id="usu_email" name="usu_email">
+                <input type="email" maxlength="50" value="<?php echo (isset($datos[0]->usu_email) ? $datos[0]->usu_email : '' ) ?>" class=" form-control obligatorio  " id="usu_email" name="usu_email" title="Ejemplo@um.com">
 
 
                 <br>

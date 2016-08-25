@@ -1,6 +1,6 @@
 <div class="widgetTitle" >
     <h5>
-        <i class="glyphicon glyphicon-ok"></i> Empresa    </h5>
+        <i class="glyphicon glyphicon-ok"></i> Consultar Empresa    </h5>
 </div>
 <div class='well'>
     <form action="<?php echo base_url('index.php/') . '/Empresa/consult_empresa'; ?>" method="post" >
@@ -13,7 +13,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['nit']) ? $post['nit'] : '' ) ?>" class="form-control obligatorio  number" id="nit" name="nit">
+                <input type="text" value="<?php echo (isset($post['nit']) ? $post['nit'] : '' ) ?>" class="form-control obligatorio  number" id="nit" name="nit" title="Digite el NIT de la empresa sin dígito verificador.">
                 <br>
             </div>
 
@@ -23,7 +23,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['nombre']) ? $post['nombre'] : '' ) ?>" class="form-control obligatorio  " id="nombre" name="nombre">
+                <input type="text" value="<?php echo (isset($post['nombre']) ? $post['nombre'] : '' ) ?>" class="form-control obligatorio  " id="nombre" name="nombre" title="Digite el nombre de la empresa.">
                 <br>
             </div>
 

@@ -1,6 +1,6 @@
 <div class="widgetTitle" >
     <h5>
-        <i class="glyphicon glyphicon-ok"></i> Categoria    </h5>
+        <i class="glyphicon glyphicon-ok"></i> Consultar Categoria    </h5>
 </div>
 <div class='well'>
 <form action="<?php echo base_url('index.php/').'/Categoria/consult_categoria'; ?>" method="post" >
@@ -9,11 +9,11 @@
 
                             <div class="col-md-3">
                     <label for="nombre">
-                    Nombre                        </label>
+                    Categoria                        </label>
                 </div>
                 <div class="col-md-3">
                     
-                                            <input type="text" value="<?php echo (isset($post['nombre'])?$post['nombre']:'' ) ?>" class="form-control obligatorio  " id="nombre" name="nombre">
+                                            <input type="text" value="<?php echo (isset($post['nombre'])?$post['nombre']:'' ) ?>" class="form-control obligatorio  " id="nombre" name="nombre" title="Digitar nombre de la categoria.">
                                             <br>
                 </div>
 

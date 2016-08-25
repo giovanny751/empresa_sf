@@ -1,6 +1,6 @@
 <div class="widgetTitle" >
     <h5>
-        <i class="glyphicon glyphicon-ok"></i> Configuración    </h5>
+        <i class="glyphicon glyphicon-ok"></i> 	Consultar Configuración    </h5>
 </div>
 <div class='well'>
     <form action="<?php echo base_url('index.php/') . '/Configuracion/consult_configuracion'; ?>" method="post" >
@@ -11,7 +11,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['dolar']) ? $post['dolar'] : '' ) ?>" class="form-control obligatorio  " id="dolar" name="dolar">
+                <input type="text" value="<?php echo (isset($post['dolar']) ? $post['dolar'] : '' ) ?>" class="form-control obligatorio  " id="dolar" name="dolar" title="Digite el precio del dolar, TRM (tasa de cambio representativa del mercado) vigente.">
                 <br>
             </div>
 
@@ -21,7 +21,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['arancel']) ? $post['arancel'] : '' ) ?>" class="form-control obligatorio  " id="arancel" name="arancel">
+                <input type="text" value="<?php echo (isset($post['arancel']) ? $post['arancel'] : '' ) ?>" class="form-control obligatorio  " id="arancel" name="arancel" title=" Digite el impuesto que se cobra sobre las importaciones.">
                 <br>
             </div>
 
@@ -31,7 +31,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['flete']) ? $post['flete'] : '' ) ?>" class="form-control obligatorio  " id="flete" name="flete">
+                <input type="text" value="<?php echo (isset($post['flete']) ? $post['flete'] : '' ) ?>" class="form-control obligatorio  " id="flete" name="flete" title="Digite  el costo del transporte de mercancías.">
                 <br>
             </div>
 
@@ -41,7 +41,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['g_nacionalizacion']) ? $post['g_nacionalizacion'] : '' ) ?>" class="form-control obligatorio  " id="g_nacionalizacion" name="g_nacionalizacion">
+                <input type="text" value="<?php echo (isset($post['g_nacionalizacion']) ? $post['g_nacionalizacion'] : '' ) ?>" class="form-control obligatorio  " id="g_nacionalizacion" name="g_nacionalizacion" title="Digite el costo de nacionalización del producto.">
                 <br>
             </div>
 
@@ -51,7 +51,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['margen']) ? $post['margen'] : '' ) ?>" class="form-control obligatorio  " id="margen" name="margen">
+                <input type="text" value="<?php echo (isset($post['margen']) ? $post['margen'] : '' ) ?>" class="form-control obligatorio  " id="margen" name="margen" title="Digite el margen de ganancia del producto, expresado en porcentaje.">
                 <br>
             </div>
 
