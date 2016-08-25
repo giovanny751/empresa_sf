@@ -214,7 +214,7 @@ $pdf->Output('example_001.pdf', 'I');
 // END OF FILE
 //============================================================+
 }
-function lista($name, $id, $class, $tabla, $option_value, $option_name, $value, $where, $bloqued) {
+function lista($name, $id, $class, $tabla, $option_value, $option_name, $value, $where, $bloqued,$attr=null) {
     $CI = & get_instance();
         if (!isset($value)) {
             $value = "";
@@ -235,12 +235,12 @@ function lista($name, $id, $class, $tabla, $option_value, $option_name, $value, 
             }
             foreach ($query->result() as $row) {
                 if ($row->$option_value == $value) {
-                    $html.="<option value=" . $row->$option_value . " selected>" . $row->$option_name . "</option>";
+                    $html.="<option value='" . $row->$option_value . "' selected>" . $row->$option_name . "</option>";
                 } else {
                     if ($bloqued) {
-                        $html.="<option  disabled=disabled  value=" . $row->$option_value . " >" . $row->$option_name . "</option>";
+                        $html.="<option  disabled=disabled  value='" . $row->$option_value . "' >" . $row->$option_name . "</option>";
                     } else {
-                        $html.="<option   value=" . $row->$option_value . " onlyRead >" . $row->$option_name . "</option>";
+                        $html.="<option   value='" . $row->$option_value . "' onlyRead  atri='".($attr!=null?$row->$attr:'')."' >" . $row->$option_name . "</option>";
                     }
                 }
             }

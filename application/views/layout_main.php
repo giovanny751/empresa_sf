@@ -478,6 +478,14 @@
         }
 
     });
+    
+    $('#pais').change(function(){
+        $('#ciudad').val('');
+        $(this).val()
+        $('#ciudad option').hide();
+        $('#ciudad option[atri="'+$(this).val()+'"]').show()
+    })
+    
     //$('input[type="text"]').attr('maxlength','70')
     //$('.number').attr('maxlength','11')
 </script>

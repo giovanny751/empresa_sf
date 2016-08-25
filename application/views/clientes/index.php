@@ -30,11 +30,11 @@
 
             <div class="col-md-3">
                 <label for="cliente">
-                   *                             Cliente                        </label>
+                    *                             Cliente                        </label>
             </div>
             <div class="col-md-3">
                 <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->cliente) ? $datos[0]->cliente : '' ) ?>" class=" form-control obligatorio  " id="cliente" name="cliente" title="Nombre de quien utiliza los servicios de la empresa."
-				>
+                       >
 
 
                 <br>
@@ -44,7 +44,7 @@
 
             <div class="col-md-3">
                 <label for="contacto">
-				*                             Contacto                        </label>
+                    *                             Contacto                        </label>
             </div>
             <div class="col-md-3">
                 <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->contacto) ? $datos[0]->contacto : '' ) ?>" class=" form-control obligatorio  " id="contacto" name="contacto" title="Ingresar el nombre de la persona con la que se va ha tener comunicación.">
@@ -57,7 +57,7 @@
 
             <div class="col-md-3">
                 <label for="cargo">
-                 *                             Cargo                        </label>
+                    *                             Cargo                        </label>
             </div>
             <div class="col-md-3">
                 <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->cargo) ? $datos[0]->cargo : '' ) ?>" class=" form-control obligatorio  " id="cargo" name="cargo" title="Ingresar la función de la cual es responsable el contacto en la organización.">
@@ -73,7 +73,7 @@
                     <i class="fa fa-question-circle" aria-hidden="true" title="Seleccione la ciudad de residencia del cliente."></i>*                             Ciudad                        </label>
             </div>
             <div class="col-md-3">
-               <?php echo lista("ciudad", "ciudad", "form-control obligatorio", "ciudad", "ciu_id", "ciu_nombre", (isset($datos[0]->ciudad) ? $datos[0]->ciudad : ''), array("ACTIVO" => "S"), /* readOnly? */ false); ?>  <br>
+                <?php echo lista("ciudad", "ciudad", "form-control obligatorio", "ciudad", "ciu_id", "ciu_nombre", (isset($datos[0]->ciudad) ? $datos[0]->ciudad : ''), array("ACTIVO" => "S"), /* readOnly? */ false); ?>  <br>
                 <br>
             </div>
 
@@ -81,7 +81,7 @@
 
             <div class="col-md-3">
                 <label for="email">
-                *                             E-mail                        </label>
+                    *                             E-mail                        </label>
             </div>
             <div class="col-md-3">
                 <input type="email" maxlength="50" value="<?php echo (isset($datos[0]->email) ? $datos[0]->email : '' ) ?>" class=" form-control obligatorio  " id="email" name="email" title="Ejemplo@um.com">

@@ -11,7 +11,7 @@
 
             <div class="col-md-3">
                 <label for="nit">
-*                             NIT                        </label>
+                    *                             NIT                        </label>
             </div>
             <div class="col-md-3">
                 <div class="row">
@@ -40,7 +40,7 @@
             </div>
             <div class="col-md-3">
                 <label for="telefono">
-                    
+
                     *                             Teléfono                        </label>
             </div>
             <div class="col-md-3">
@@ -80,7 +80,7 @@
 
             <div class="col-md-3">
                 <label for="pais">
-				<i class="fa fa-question-circle" aria-hidden="true" title="Seleccione el pais de residencia de la empresa"></i>
+                    <i class="fa fa-question-circle" aria-hidden="true" title="Seleccione el pais de residencia de la empresa"></i>
                     *                             País                        </label>
             </div>
             <div class="col-md-3">
@@ -93,7 +93,7 @@
                     *                             Ciudad                        </label>
             </div>
             <div class="col-md-3">
-                <?php echo lista("ciudad", "ciudad", "form-control obligatorio", "ciudad", "ciu_id", "ciu_nombre", (isset($datos[0]->ciudad) ? $datos[0]->ciudad : ''), array("ACTIVO" => "S"), /* readOnly? */ false); ?>                    <br>
+                <?php echo lista("ciudad", "ciudad", "form-control obligatorio", "ciudad", "ciu_id", "ciu_nombre", (isset($datos[0]->ciudad) ? $datos[0]->ciudad : ''), array("ACTIVO" => "S"), /* readOnly? */ false,'pai_id'); ?>                    <br>
                 <br>
             </div>
 
@@ -164,7 +164,7 @@
                     $('#boton_guardar').show();
                 })
     })
-    
+
     $('#nit').change(function () {
 //    if(this)
         var url = "<?= base_url("index.php/Empresa/digito_ver") ?>"
@@ -175,13 +175,13 @@
 
         })
     })
-    <?php if(isset($datos[0]->id)){ ?>
+<?php if (isset($datos[0]->id)) { ?>
         $('#nit').trigger('change');
-    <?php } ?>
-        
-        
+<?php } ?>
 
-    
+
+
+
     function campos() {
         $('input[type="file"]').each(function (key, val) {
             var img = $(this).val();
