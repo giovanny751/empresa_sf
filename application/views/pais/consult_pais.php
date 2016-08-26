@@ -93,4 +93,7 @@
         rtl: Metronic.isRTL(),
         autoclose: true
     });
+    $(function(){
+    $('#pai_nombre').focus();
+})
 </script>

@@ -129,4 +129,7 @@
         rtl: Metronic.isRTL(),
         autoclose: true
     });
+    $(function(){
+    $('#referencia').focus();
+})
 </script>

@@ -74,5 +74,8 @@
     });
     $('.fecha').datepicker({ dateFormat: 'yy-mm-dd' });
 
+$(function(){
+    $('#ciu_nombre').focus();
+})
 
 </script>

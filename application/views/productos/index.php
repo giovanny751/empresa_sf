@@ -113,5 +113,7 @@
     });
     $('.fecha').datepicker({dateFormat: 'yy-mm-dd'});
 
-
+$(function(){
+    $('#referencia').focus();
+})
 </script>

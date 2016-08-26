@@ -7,11 +7,11 @@ class User__model extends CI_Model {
     }
 
     function save_user($post) {
+        $post['usu_contrasena'] = sha1($post['usu_contrasena']);
         if (isset($post['campo'])) {
             $this->db->where($post["campo"], $post[$post["campo"]]);
             $id = $post[$post["campo"]];
             unset($post['campo']);
-            $post['usu_contrasena']=  sha1($post['usu_contrasena']);
             $this->db->update('user', $post);
         } else {
             $this->db->insert('user', $post);
@@ -23,6 +23,15 @@ class User__model extends CI_Model {
         if (!empty($post['usu_id']))
             $this->db->where_not_in('usu_id', $post['usu_id']);
         $this->db->where('usu_usuario', $post['usu_usuario']);
+        $this->db->where('ACTIVO', 'S');
+        $datos = $this->db->get('user');
+        $datos = $datos->result();
+        return count($datos);
+    }
+    public function usu_cedula($post) {
+        if (!empty($post['usu_id']))
+            $this->db->where_not_in('usu_id', $post['usu_id']);
+        $this->db->where('usu_cedula', $post['usu_cedula']);
         $this->db->where('ACTIVO', 'S');
         $datos = $this->db->get('user');
         $datos = $datos->result();

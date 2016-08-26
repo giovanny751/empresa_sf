@@ -116,4 +116,7 @@
         rtl: Metronic.isRTL(),
         autoclose: true
     });
+    $(function(){
+    $('#nit').focus();
+})
 </script>

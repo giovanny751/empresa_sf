@@ -63,6 +63,8 @@
             return false;
     });
     $('.fecha').datepicker({ dateFormat: 'yy-mm-dd' });
-
+$(function(){
+    $('#pai_nombre').focus();
+})
 
 </script>

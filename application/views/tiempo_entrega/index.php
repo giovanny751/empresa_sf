@@ -64,5 +64,7 @@
     });
     $('.fecha').datepicker({dateFormat: 'yy-mm-dd'});
 
-
+$(function(){
+    $('#nombre').focus();
+})
 </script>

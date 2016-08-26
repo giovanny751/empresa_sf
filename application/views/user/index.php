@@ -121,6 +121,27 @@
     </form>
 </div>
 <script>
+    $('#usu_cedula').change(function () {
+        var usu_cedula = $('#usu_cedula').val();
+        var usu_id = $('#usu_id').val();
+        $('#boton_cargar').show();
+        $('#boton_guardar').hide();
+        $.post('<?php echo base_url('index.php/User/usu_cedula') ?>', {usu_cedula: usu_cedula, usu_id: usu_id})
+                .done(function (msg) {
+                    if (msg == 0) {
+                        alerta('verde', 'Cedula valido')
+                    } else {
+                        alerta('rojo', 'Cedula no valida')
+                        $('#usu_cedula').val('');
+                    }
+                    $('#boton_cargar').hide();
+                    $('#boton_guardar').show();
+                })
+                .fail(function (msg) {
+                    $('#boton_cargar').hide();
+                    $('#boton_guardar').show();
+                })
+    }) 
     $('#usu_usuario').change(function () {
         var usu_usuario = $('#usu_usuario').val();
         var usu_id = $('#usu_id').val();
@@ -167,5 +188,7 @@
     });
     $('.fecha').datepicker({dateFormat: 'yy-mm-dd'});
 
-
+$(function(){
+    $('#usu_cedula').focus();
+})
 </script>

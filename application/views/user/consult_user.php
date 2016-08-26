@@ -5,7 +5,7 @@
 <div class='well'>
     <form action="<?php echo base_url('index.php/') . '/User/consult_user'; ?>" method="post" >
         <div class="row">
-            
+
             <div class="col-md-3">
                 <label for="usu_cedula">
                     Cédula                        </label>
@@ -58,11 +58,11 @@
 
             <div class="col-md-3">
                 <label for="emp_id">
-				<i class="fa fa-question-circle" aria-hidden="true" title="Seleccione la empresa a la cual pertenece el usuario."></i>
+                    <i class="fa fa-question-circle" aria-hidden="true" title="Seleccione la empresa a la cual pertenece el usuario."></i>
                     Empresa                        </label>
             </div>
             <div class="col-md-3">
-			
+
 
                 <?php echo lista("emp_id", "emp_id", "form-control obligatorio", "empresa", "id", "nombre", (isset($datos[0]->emp_id) ? $datos[0]->emp_id : ''), array("ACTIVO" => "S"), /* readOnly? */ false); ?>                    <br>
             </div>
@@ -148,4 +148,7 @@
         rtl: Metronic.isRTL(),
         autoclose: true
     });
+    $(function () {
+        $('#usu_cedula').focus();
+    })
 </script>

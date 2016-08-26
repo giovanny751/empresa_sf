@@ -135,4 +135,7 @@
         rtl: Metronic.isRTL(),
         autoclose: true
     });
+    $(function(){
+    $('#dolar').focus();
+})
 </script>

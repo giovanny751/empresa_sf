@@ -90,4 +90,7 @@
         rtl: Metronic.isRTL(),
         autoclose: true
     });
+    $(function(){
+    $('#nombre').focus();
+})
 </script>

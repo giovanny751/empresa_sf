@@ -23,6 +23,11 @@ class User extends My_Controller {
         $this->data['post'] = $this->input->post();
         echo $datos = $this->User__model->usu_usuario($post);
     }
+    function usu_cedula() {
+        $post = $this->input->post();
+        $this->data['post'] = $this->input->post();
+        echo $datos = $this->User__model->usu_cedula($post);
+    }
     function consult_user(){
         $post=$this->input->post();
         $this->data['post']=$this->input->post();
