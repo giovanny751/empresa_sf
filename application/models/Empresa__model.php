@@ -91,10 +91,10 @@ class Empresa__model extends CI_Model {
         $this->db->select('ciu_nombre');
         $this->db->select('telefono');
         $this->db->select('direccion');
-        $this->db->select('fax');
-        $this->db->select('pai_nombre');
-        $this->db->select('direccion_web');
-        $this->db->select('email');
+//        $this->db->select('fax');
+//        $this->db->select('pai_nombre');
+//        $this->db->select('direccion_web');
+//        $this->db->select('email');
         $this->db->where('empresa.ACTIVO', 'S');
         $datos = $this->db->get('empresa');
         $datos = $datos->result();

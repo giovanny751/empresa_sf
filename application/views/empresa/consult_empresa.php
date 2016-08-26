@@ -42,10 +42,10 @@
                     <th>Ciudad</th>
                     <th>Teléfono</th>
                     <th>Dirección</th>
-                    <th>Fax</th>
+<!--                    <th>Fax</th>
                     <th>Pais</th>
                     <th>Dirección web</th>
-                    <th>E-mail</th>
+                    <th>E-mail</th>-->
                     <th>Acción</th>
                     </thead>
                     <tbody>

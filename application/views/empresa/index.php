@@ -16,7 +16,7 @@
             <div class="col-md-3">
                 <div class="row">
                     <div class="col-md-9">
-                        <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->nit) ? $datos[0]->nit : '' ) ?>" class=" form-control obligatorio  number" id="nit" name="nit"  title="Ingresar el NIT de la empresa sin dígito verificador.">
+                        <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->nit) ? $datos[0]->nit : '' ) ?>" <?php echo (isset($datos[0]->nit) ? 'disabled="disabled"' : '' ) ?> class=" form-control obligatorio  number" id="nit" name="nit"  title="Ingresar el NIT de la empresa sin dígito verificador.">
                     </div>
                     <div class="col-md-3">
                         <div class="col-md" id="digito_ver" style="margin: 10 0;">
@@ -93,7 +93,7 @@
                     *                             Ciudad                        </label>
             </div>
             <div class="col-md-3">
-                <?php echo lista("ciudad", "ciudad", "form-control obligatorio", "ciudad", "ciu_id", "ciu_nombre", (isset($datos[0]->ciudad) ? $datos[0]->ciudad : ''), array("ACTIVO" => "S"), /* readOnly? */ false,'pai_id'); ?>                    <br>
+                <?php echo lista("ciudad", "ciudad", "form-control obligatorio", "ciudad", "ciu_id", "ciu_nombre", (isset($datos[0]->ciudad) ? $datos[0]->ciudad : ''), array("ACTIVO" => "S"), /* readOnly? */ false, 'pai_id'); ?>                    <br>
                 <br>
             </div>
 
@@ -142,7 +142,7 @@
     </form>
 </div>
 <script>
-
+    ss = 0;
     $('#nit').change(function () {
         var nit = $('#nit').val();
         var id = $('#id').val();
@@ -150,11 +150,15 @@
         $('#boton_guardar').hide();
         $.post('<?php echo base_url('index.php/Empresa/nit') ?>', {nit: nit, id: id})
                 .done(function (msg) {
-                    if (msg == 0) {
-                        alerta('verde', 'Nit valido')
+                    if (ss == 0) {
+                        if (msg == 0) {
+                            alerta('verde', 'Nit no registrado')
+                        } else {
+                            alerta('rojo', 'Nit ya registrado')
+                            $('#nit').val('');
+                        }
                     } else {
-                        alerta('rojo', 'Nit no valido')
-                        $('#nit').val('');
+                        ss = 0;
                     }
                     $('#boton_cargar').hide();
                     $('#boton_guardar').show();
@@ -176,6 +180,7 @@
         })
     })
 <?php if (isset($datos[0]->id)) { ?>
+        ss = 1;
         $('#nit').trigger('change');
 <?php } ?>
 
