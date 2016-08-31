@@ -66,14 +66,22 @@
                 <br>
             </div>
 
-
+            <div class="col-md-3">
+                <label for="pais">
+                    <i class="fa fa-question-circle" aria-hidden="true" title="Seleccione el pais de residencia de la empresa"></i>
+                    *                             País                        </label>
+            </div>
+            <div class="col-md-3">
+                <?php echo lista("pais", "pais", "form-control obligatorio", "pais", "pai_id", "pai_nombre", (isset($datos[0]->pais) ? $datos[0]->pais : ''), array("ACTIVO" => "S"), /* readOnly? */ false); ?>    <br>
+                <br>
+            </div>
 
             <div class="col-md-3">
                 <label for="ciudad">
                     <i class="fa fa-question-circle" aria-hidden="true" title="Seleccione la ciudad de residencia del cliente."></i>*                             Ciudad                        </label>
             </div>
             <div class="col-md-3">
-                <?php echo lista("ciudad", "ciudad", "form-control obligatorio", "ciudad", "ciu_id", "ciu_nombre", (isset($datos[0]->ciudad) ? $datos[0]->ciudad : ''), array("ACTIVO" => "S"), /* readOnly? */ false); ?>  <br>
+                <?php echo lista("ciudad", "ciudad", "form-control obligatorio", "ciudad", "ciu_id", "ciu_nombre", (isset($datos[0]->ciudad) ? $datos[0]->ciudad : ''), array("ACTIVO" => "S"), /* readOnly? */ false,'pai_id'); ?>  <br>
                 <br>
             </div>
 

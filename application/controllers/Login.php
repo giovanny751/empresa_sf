@@ -51,7 +51,7 @@ class Login extends My_Controller {
                 
             
         } else {
-            $this->session->set_flashdata(array('message' => 'Su n&uacute;mero de documento no se encuentra registrado en el sistema.', 'message_type' => 'warning'));
+            $this->session->set_flashdata(array('message' => 'Usuario y/o contraseña invalida.', 'message_type' => 'warning'));
             redirect('', 'refresh');
         }
     }

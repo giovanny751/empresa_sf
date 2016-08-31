@@ -53,7 +53,7 @@
                    *                             Usuario                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text"  maxlength="20" value="<?php echo (isset($datos[0]->usu_usuario) ? $datos[0]->usu_usuario : '' ) ?>" class=" form-control obligatorio  " id="usu_usuario" name="usu_usuario" title="Ingresar el nombre del usuario con el que va acceder al sistema.">
+                <input type="text" autocomplete="off"  maxlength="20" value="<?php echo (isset($datos[0]->usu_usuario) ? $datos[0]->usu_usuario : '' ) ?>" class=" form-control obligatorio  " id="usu_usuario" name="usu_usuario" title="Ingresar el nombre del usuario con el que va acceder al sistema.">
 
 
                 <br>
@@ -129,7 +129,7 @@
         $.post('<?php echo base_url('index.php/User/usu_cedula') ?>', {usu_cedula: usu_cedula, usu_id: usu_id})
                 .done(function (msg) {
                     if (msg == 0) {
-                        alerta('verde', 'Cedula valido')
+                        alerta('verde', 'Cedula valida')
                     } else {
                         alerta('rojo', 'Cedula no valida')
                         $('#usu_cedula').val('');

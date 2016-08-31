@@ -48,7 +48,6 @@
 
             <div class="col-md-3">
                 <label for="ciudad">
-				<i class="fa fa-question-circle" aria-hidden="true" title="Seleccione la ciudad de residencia del cliente."></i>
                     Ciudad                        </label>
             </div>
             <div class="col-md-3">
@@ -103,9 +102,9 @@
 
                         foreach ($value as $key2 => $value2) {
                             if ($key2 == 'nit')
-                                    echo "<td>" . $value->$key2.'-'.calcularDV($value->$key2) . "</td>";
-                                else
-                                    echo "<td>" . $value->$key2 . " </td>";
+                                echo "<td>" . $value->$key2 . '-' . calcularDV($value->$key2) . "</td>";
+                            else
+                                echo "<td>" . $value->$key2 . " </td>";
                             if ($i == 0) {
                                 $campo = $key2;
                                 $valor = "'" . $value->$key2 . "'";
@@ -162,7 +161,7 @@
         rtl: Metronic.isRTL(),
         autoclose: true
     });
-    $(function(){
-    $('#nit').focus();
-})
+    $(function () {
+        $('#nit').focus();
+    })
 </script>
