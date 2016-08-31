@@ -27,7 +27,8 @@ class Cotizacion extends My_Controller {
         $this->load->model("Cotizacion_model");
 
         if (!empty($this->input->post("encCot_id"))) {
-            $this->data['consultaEncabezado'] = $this->Cotizacion_model->consultaEncabezado($this->input->post("encCot_id"))[0];
+            $this->data['encCot_id'] = $this->input->post("encCot_id");
+            $this->data['consultaEncabezado'] = $this->Cotizacion_model->consultaEncabezado($this->input->post('encCot_id'))[0];
             $this->data['consultaProductos'] = $this->Cotizacion_model->consultaProductosCotizacion($this->input->post("encCot_id"));
 //           var_dump($this->data['consultaProductos']);die;
         }
@@ -49,15 +50,21 @@ class Cotizacion extends My_Controller {
     function guardarCotizacion() {
         try {
             $this->load->model("Cotizacion_model");
+            $post = $this->input->post();
             $cotizacion = array(
                 "id_cliente" => $this->input->post("cliente"),
                 "id_formaPago" => $this->input->post("formaPago"),
                 "id_tiempoEntrega" => $this->input->post("tiempoEntrega"),
                 "id_garantia" => $this->input->post("garantia"),
                 "encCot_nota" => (!empty($this->input->post("nota"))) ? $this->input->post("nota") : "",
-                "id_validezOferta" => $this->input->post("validezOferta")
+                "id_validezOferta" => $this->input->post("validezOferta"),
+                "est_id" => $this->input->post("est_id")
             );
-            $idEncabezadoCotizacion = $this->Cotizacion_model->guardarEncabezadoCotizacion($cotizacion);
+            if (!empty($post['encCot_id'])) {
+                $idEncabezadoCotizacion = $this->Cotizacion_model->actualizarEncabezadoCotizacion($cotizacion,$post['encCot_id']);
+            } else {
+                $idEncabezadoCotizacion = $this->Cotizacion_model->guardarEncabezadoCotizacion($cotizacion);
+            }
 
             if (empty($idEncabezadoCotizacion))
                 throw new Exception('No fue posible guardar el encabezado de la cotización');
@@ -103,8 +110,8 @@ class Cotizacion extends My_Controller {
         $this->load->model("Cotizacion_model");
         $this->data['cotizaciones'] = $this->Cotizacion_model->consultaEncabezadoCotizaciones2($dato);
         $this->data['consultaProductos'] = $this->Cotizacion_model->consultaProductosCotizacion($dato);
-        $html=$this->load->view("Cotizacion/factura", $this->data,true);
-        
+        $html = $this->load->view("Cotizacion/factura", $this->data, true);
+
         pdf($html);
     }
 
