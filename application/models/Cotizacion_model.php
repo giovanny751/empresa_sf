@@ -93,8 +93,8 @@ class Cotizacion_model extends CI_Model {
         $this->db->select("tiempo_entrega.nombre as tiempoEntrega");
         $this->db->select("estados.nombre estado");
         $this->db->select("estados.id id_estado");
-        $this->db->select("(select count(*) from producto_cotizacion where encCot_id=encabezado_cotizacion.encCot_id) cantidad", false);
-        $this->db->select("(select sum(proCot_costo) from producto_cotizacion where encCot_id=encabezado_cotizacion.encCot_id) valor_cotizacion", false);
+        $this->db->select("(select sum(proCot_cantidad) from producto_cotizacion where encCot_id=encabezado_cotizacion.encCot_id) cantidad", false);
+        $this->db->select("(select sum(proCot_costo * proCot_cantidad) from producto_cotizacion where encCot_id=encabezado_cotizacion.encCot_id) valor_cotizacion", false);
         $this->db->join("clientes", "clientes.id = encabezado_cotizacion.id_cliente");
         $this->db->join("forma_pago", "forma_pago.id = encabezado_cotizacion.id_formaPago");
         $this->db->join("garantia", "garantia.id = encabezado_cotizacion.id_garantia");
@@ -104,7 +104,7 @@ class Cotizacion_model extends CI_Model {
 //        $this->db->where("est_id", '1');
         $data = $this->db->get("encabezado_cotizacion");
 
-        print_y($data);
+//        print_y($data);
         return $data->result();
     }
 

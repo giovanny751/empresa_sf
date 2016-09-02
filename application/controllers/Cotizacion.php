@@ -61,7 +61,7 @@ class Cotizacion extends My_Controller {
                 "est_id" => $this->input->post("est_id")
             );
             if (!empty($post['encCot_id'])) {
-                $idEncabezadoCotizacion = $this->Cotizacion_model->actualizarEncabezadoCotizacion($cotizacion,$post['encCot_id']);
+                $idEncabezadoCotizacion = $this->Cotizacion_model->actualizarEncabezadoCotizacion($cotizacion, $post['encCot_id']);
             } else {
                 $idEncabezadoCotizacion = $this->Cotizacion_model->guardarEncabezadoCotizacion($cotizacion);
             }
@@ -71,16 +71,18 @@ class Cotizacion extends My_Controller {
 
             $producto = $this->input->post('IdProducto');
             $costoPro = $this->input->post('costoPro');
-            $productoCotizacion = array();
-            for ($i = 0; $i < count($producto); $i++) {
-                $productoCotizacion[] = array(
-                    "id_Producto" => $producto[$i],
-                    "proCot_costo" => $costoPro[$i],
-                    "encCot_id" => $idEncabezadoCotizacion,
-                    "proCot_cantidad" => $this->input->post("cantidadProductos")[$i],
-                );
+            if (count($producto)) {
+                $productoCotizacion = array();
+                for ($i = 0; $i < count($producto); $i++) {
+                    $productoCotizacion[] = array(
+                        "id_Producto" => $producto[$i],
+                        "proCot_costo" => $costoPro[$i],
+                        "encCot_id" => $idEncabezadoCotizacion,
+                        "proCot_cantidad" => $this->input->post("cantidadProductos")[$i],
+                    );
+                }
+                $idEncabezadoCotizacion = $this->Cotizacion_model->guardarProductoCotizacion($productoCotizacion);
             }
-            $idEncabezadoCotizacion = $this->Cotizacion_model->guardarProductoCotizacion($productoCotizacion);
         } catch (exception $e) {
             
         } finally {
