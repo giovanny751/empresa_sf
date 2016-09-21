@@ -18,14 +18,24 @@ class User_model extends CI_Model {
         parent::__construct();
     }
 
-    public function get_user($username, $pass) {
+    public function get_user($username, $pass, $i = 0) {
         $this->db->select('user.*,empresa.nombre empresa', false);
         $this->db->where('usu_usuario', $username);
         $this->db->where('usu_contrasena', sha1($pass));
         $this->db->join('empresa', 'empresa.id=user.emp_id', 'left');
         $this->db->where('user.activo', 'S');
         $query = $this->db->get('user');
-        return $query->result_array();
+        $query = $query->result_array();
+        if ($i == 0)
+            if (count($query)) {
+                $this->db->set('session', sha1(date("Y-m-d H:i:s")));
+                $this->db->where('usu_usuario', $username);
+                $this->db->where('usu_contrasena', sha1($pass));
+                $this->db->update('user');
+                $query=$this->get_user($username, $pass, 1);
+            }
+
+        return $query;
     }
 
     public function validacionusuario($iduser) {
