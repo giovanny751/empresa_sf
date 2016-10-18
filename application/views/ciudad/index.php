@@ -11,7 +11,7 @@
 
                     <div class="col-md-3">
                         <label for="pai_id">
-                            <i class="fa fa-question-circle" aria-hidden="true" title="Seleccionar nombre del país de residencia."></i>*                             Pais                        </label>
+                            <i class="fa fa-question-circle" aria-hidden="true" title="Seleccione el país donde se encuentra ubicada la empresa."></i>*                             Pais                        </label>
                     </div>
                     <div class="col-md-3">
                         <?php echo lista("pai_id", "pai_id", "form-control obligatorio", "pais", "pai_id", "pai_nombre", (isset($datos[0]->pai_id)?$datos[0]->pai_id:'' ), array("ACTIVO" => "S"), /* readOnly? */ false); ?>                        <br>
@@ -24,7 +24,7 @@
                            *                             Nombre ciudad                        </label>
                     </div>
                     <div class="col-md-3">
-                                                    <input type="text" value="<?php echo (isset($datos[0]->ciu_nombre)?$datos[0]->ciu_nombre:'' ) ?>" class=" form-control obligatorio  " id="ciu_nombre" name="ciu_nombre" title="Ingresar nombre de la ciudad de residencia.">
+                                                    <input type="text" value="<?php echo (isset($datos[0]->ciu_nombre)?$datos[0]->ciu_nombre:'' ) ?>" class=" form-control obligatorio  " id="ciu_nombre" name="ciu_nombre" title="Ingresar la ciudad donde se encuentra ubicada la empresa.">
 
                             
                                                 <br>

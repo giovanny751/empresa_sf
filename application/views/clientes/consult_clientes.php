@@ -22,7 +22,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['cliente']) ? $post['cliente'] : '' ) ?>" class="form-control obligatorio  " id="cliente" name="cliente" title="Digite el nombre del cliente.">
+                <input type="text" value="<?php echo (isset($post['cliente']) ? $post['cliente'] : '' ) ?>" class="form-control obligatorio  " id="cliente" name="cliente" title="Digité el nombre completo de la empresa o la razón social.">
                 <br>
             </div>
 
@@ -62,7 +62,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="email" value="<?php echo (isset($post['email']) ? $post['email'] : '' ) ?>" class="form-control obligatorio  " id="email" name="email" title="Ejemplo@um.com">
+                <input type="email" value="<?php echo (isset($post['email']) ? $post['email'] : '' ) ?>" class="form-control obligatorio  " id="email" name="email" title="Ingrese el e-mail de contacto de la empresa. Ejemplo@um.com">
                 <br>
             </div>
 

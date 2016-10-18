@@ -52,7 +52,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="email" value="<?php echo (isset($post['usu_email']) ? $post['usu_email'] : '' ) ?>" class="form-control obligatorio  " id="usu_email" name="usu_email" title="Ejemplo@um.com".>
+                <input type="email" value="<?php echo (isset($post['usu_email']) ? $post['usu_email'] : '' ) ?>" class="form-control obligatorio  " id="usu_email" name="usu_email" title="Ingrese el e-mail de contacto de la empresa. Ejemplo@um.com".>
                 <br>
             </div>
 

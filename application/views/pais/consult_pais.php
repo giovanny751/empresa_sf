@@ -13,7 +13,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['pai_nombre']) ? $post['pai_nombre'] : '' ) ?>" class="form-control obligatorio  " id="pai_nombre" name="pai_nombre" title="Digite el nombre del país de residencia.">
+                <input type="text" value="<?php echo (isset($post['pai_nombre']) ? $post['pai_nombre'] : '' ) ?>" class="form-control obligatorio  " id="pai_nombre" name="pai_nombre" title="Digité el país donde se encuentra ubicada la empresa.">
                 <br>
             </div>
 

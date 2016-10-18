@@ -6,7 +6,7 @@ function validate_login($logged_in) {
         $CI->session->set_flashdata(array('message' => '<strong>Error</strong> Debe Iniciar una Sesion.', 'message_type' => 'danger'));
         redirect('index.php/login', 'location');
     } else {
-        echo $CI->session->userdata('session');
+         $CI->session->userdata('session');
         $CI->db->where('session', $CI->session->userdata('session'));
 //        $CI->db->where('usu_usuario', $username);
 //        $CI->db->where('usu_contrasena', sha1($pass));

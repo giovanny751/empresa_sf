@@ -14,11 +14,12 @@
                     *                             Nombre                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->nombre) ? $datos[0]->nombre : '' ) ?>" class=" form-control obligatorio number " id="nombre" name="nombre" title="Ingresar tiempo de entrega de los productos.">
+                <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->nombre) ? $datos[0]->nombre : '' ) ?>" class=" form-control obligatorio " id="nombre" name="nombre" title="Ingresar tiempo de entrega de los productos.">
 
 
                 <br>
             </div>
+               
 
         </div>
         <?php if (isset($post['campo'])) { ?>

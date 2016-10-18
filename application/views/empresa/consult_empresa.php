@@ -13,7 +13,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['nit']) ? $post['nit'] : '' ) ?>" class="form-control obligatorio  number" id="nit" name="nit" title="Digite el NIT de la empresa sin dígito verificador.">
+                <input type="text" value="<?php echo (isset($post['nit']) ? $post['nit'] : '' ) ?>" class="form-control obligatorio  number" id="nit" name="nit" title="Digité el NIT de la empresa sin dígito verificador.">
                 <br>
             </div>
 
@@ -23,7 +23,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['nombre']) ? $post['nombre'] : '' ) ?>" class="form-control obligatorio  " id="nombre" name="nombre" title="Digite el nombre de la empresa.">
+                <input type="text" value="<?php echo (isset($post['nombre']) ? $post['nombre'] : '' ) ?>" class="form-control obligatorio  " id="nombre" name="nombre" title="Digite el nombre completo de la empresa o la razón social.">
                 <br>
             </div>
 

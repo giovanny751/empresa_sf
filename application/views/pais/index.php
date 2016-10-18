@@ -1,6 +1,6 @@
 <div class="widgetTitle" >
     <h5>
-        <i class="glyphicon glyphicon-ok"></i> Pais    </h5>
+        <i class="glyphicon glyphicon-ok"></i> País    </h5>
 </div>
 <div class='well'>
     <form action="<?php echo base_url('index.php/')."/Pais/save_pais"; ?>" method="post" onsubmit="return campos()"  enctype="multipart/form-data">
@@ -14,7 +14,7 @@
                            *                             Nombre                        </label>
                     </div>
                     <div class="col-md-3">
-                                                    <input type="text" value="<?php echo (isset($datos[0]->pai_nombre)?$datos[0]->pai_nombre:'' ) ?>" class=" form-control obligatorio  " id="pai_nombre" name="pai_nombre" title=" Ingresar el nombre del país de residencia.">
+                                                    <input type="text" value="<?php echo (isset($datos[0]->pai_nombre)?$datos[0]->pai_nombre:'' ) ?>" class=" form-control obligatorio  " id="pai_nombre" name="pai_nombre" title=" Ingresar el país donde se encuentra ubicada la empresa.">
 
                             
                                                 <br>

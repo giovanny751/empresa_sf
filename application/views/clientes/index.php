@@ -33,7 +33,7 @@
                     *                             Cliente                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->cliente) ? $datos[0]->cliente : '' ) ?>" class=" form-control obligatorio  " id="cliente" name="cliente" title="Nombre de quien utiliza los servicios de la empresa."
+                <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->cliente) ? $datos[0]->cliente : '' ) ?>" class=" form-control obligatorio  " id="cliente" name="cliente" title="Ingresar el nombre completo de la empresa o la razón social."
                        >
 
 
@@ -68,7 +68,7 @@
 
             <div class="col-md-3">
                 <label for="pais">
-                    <i class="fa fa-question-circle" aria-hidden="true" title="Seleccione el pais de residencia de la empresa"></i>
+                    <i class="fa fa-question-circle" aria-hidden="true" title="Seleccione el país donde se encuentra ubicada la empresa."></i>
                     *                             País                        </label>
             </div>
             <div class="col-md-3">
@@ -78,7 +78,7 @@
 
             <div class="col-md-3">
                 <label for="ciudad">
-                    <i class="fa fa-question-circle" aria-hidden="true" title="Seleccione la ciudad de residencia del cliente."></i>*                             Ciudad                        </label>
+                    <i class="fa fa-question-circle" aria-hidden="true" title="Seleccione la ciudad donde se encuentra ubicada la empresa."></i>*                             Ciudad                        </label>
             </div>
             <div class="col-md-3">
                 <?php echo lista("ciudad", "ciudad", "form-control obligatorio", "ciudad", "ciu_id", "ciu_nombre", (isset($datos[0]->ciudad) ? $datos[0]->ciudad : ''), array("ACTIVO" => "S"), /* readOnly? */ false,'pai_id'); ?>  <br>
@@ -92,7 +92,7 @@
                     *                             E-mail                        </label>
             </div>
             <div class="col-md-3">
-                <input type="email" maxlength="50" value="<?php echo (isset($datos[0]->email) ? $datos[0]->email : '' ) ?>" class=" form-control obligatorio  " id="email" name="email" title="Ejemplo@um.com">
+                <input type="email" maxlength="50" value="<?php echo (isset($datos[0]->email) ? $datos[0]->email : '' ) ?>" class=" form-control obligatorio  " id="email" name="email" title="Ingrese el e-mail de contacto de la empresa. Ejemplo@um.com">
 
 
                 <br>

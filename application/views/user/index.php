@@ -66,7 +66,7 @@
                    *                             Contraseña                        </label>
             </div>
             <div class="col-md-3">
-                <input type="password" value="" maxlength="11" class=" form-control obligatorio  " id="usu_contrasena" name="usu_contrasena" title="Ingresar una contraseña de 11 caracteres combinando mayusculas, minusculas, números y caracteres especiales como simbolos o signos de puntuaciòn ,-#$@.">
+                <input type="password" value="" maxlength="11" class=" form-control obligatorio  " id="usu_contrasena" name="usu_contrasena" title="Ingresar una contraseña de maximo 11 caracteres combinando mayúsculas, minúsculas, números y caracteres especiales como símbolos o signos de puntuación ,-#$@.">
 
 
                 <br>
@@ -79,7 +79,7 @@
                   *                             E-mail                        </label>
             </div>
             <div class="col-md-3">
-                <input type="email" maxlength="50" value="<?php echo (isset($datos[0]->usu_email) ? $datos[0]->usu_email : '' ) ?>" class=" form-control obligatorio  " id="usu_email" name="usu_email" title="Ejemplo@um.com">
+                <input type="email" maxlength="50" value="<?php echo (isset($datos[0]->usu_email) ? $datos[0]->usu_email : '' ) ?>" class=" form-control obligatorio  " id="usu_email" name="usu_email" title="Ingrese el e-mail de contacto de la empresa. Ejemplo@um.com">
 
 
                 <br>
@@ -129,9 +129,9 @@
         $.post('<?php echo base_url('index.php/User/usu_cedula') ?>', {usu_cedula: usu_cedula, usu_id: usu_id})
                 .done(function (msg) {
                     if (msg == 0) {
-                        alerta('verde', 'Cedula valida')
+                        alerta('verde', 'Cédula ya existe.')
                     } else {
-                        alerta('rojo', 'Cedula no valida')
+                        alerta('rojo', 'Cédula no registrada')
                         $('#usu_cedula').val('');
                     }
                     $('#boton_cargar').hide();
@@ -150,9 +150,9 @@
         $.post('<?php echo base_url('index.php/User/usu_usuario') ?>', {usu_usuario: usu_usuario, usu_id: usu_id})
                 .done(function (msg) {
                     if (msg == 0) {
-                        alerta('verde', 'Usuario valido')
+                        alerta('verde', 'Usuario válido')
                     } else {
-                        alerta('rojo', 'Usuario no valido')
+                        alerta('rojo', 'Usuario no válido')
                         $('#usu_usuario').val('');
                     }
                     $('#boton_cargar').hide();
