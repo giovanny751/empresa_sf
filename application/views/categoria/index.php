@@ -1,6 +1,6 @@
 <div class="widgetTitle" >
     <h5>
-        <i class="glyphicon glyphicon-ok"></i> Categoria    </h5>
+        <i class="glyphicon glyphicon-ok"></i> Categoría    </h5>
 </div>
 <div class='well'>
     <form action="<?php echo base_url('index.php/') . "/Categoria/save_categoria"; ?>" method="post" onsubmit="return campos()"  enctype="multipart/form-data">

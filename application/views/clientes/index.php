@@ -47,7 +47,7 @@
                     *                             Contacto                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->contacto) ? $datos[0]->contacto : '' ) ?>" class=" form-control obligatorio  " id="contacto" name="contacto" title="Ingresar el nombre del contacto de la empresa.">
+                <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->contacto) ? $datos[0]->contacto : '' ) ?>" class=" form-control obligatorio  " id="contacto" name="contacto" title="Ingresar el nombre del contacto del cliente.">
 
 
                 <br>
@@ -60,7 +60,7 @@
                     *                             Cargo                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->cargo) ? $datos[0]->cargo : '' ) ?>" class=" form-control obligatorio  " id="cargo" name="cargo" title="Ingresar el cargo del cual es responsable el contacto en la organización.">
+                <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->cargo) ? $datos[0]->cargo : '' ) ?>" class=" form-control obligatorio  " id="cargo" name="cargo" title="Ingresar el cargo del cual es responsable el contacto del cliente.">
 
 
                 <br>
@@ -105,7 +105,7 @@
                     *                             Teléfono cliente                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" maxlength="15" value="<?php echo (isset($datos[0]->telefono_cli) ? $datos[0]->telefono_cli : '' ) ?>" class=" form-control obligatorio  number" id="telefono_cli" name="telefono_cli" title="Ingresar el número telefónico del cliente.">
+                <input type="text" maxlength="15" value="<?php echo (isset($datos[0]->telefono_cli) ? $datos[0]->telefono_cli : '' ) ?>" class=" form-control obligatorio  number" id="telefono_cli" name="telefono_cli" title="Ingresar el número telefónico del contacto del cliente.">
 
 
                 <br>
