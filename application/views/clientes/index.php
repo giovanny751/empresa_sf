@@ -213,7 +213,13 @@
     });
     $('.fecha').datepicker({dateFormat: 'yy-mm-dd'});
 
-$(function(){
-    $('#nit').focus();
-})
+<?php if (isset($datos[0]->nit)) { ?>
+        $(function () {
+            $('#cliente').focus();
+        })
+<?php } else { ?>
+        $(function () {
+            $('#nit').focus();
+        })
+<?php } ?>
 </script>

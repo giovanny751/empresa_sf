@@ -191,4 +191,14 @@
 $(function(){
     $('#usu_cedula').focus();
 })
+
+<?php if (isset($datos[0]->usu_cedula)) { ?>
+        $(function () {
+            $('#usu_nombre').focus();
+        })
+<?php } else { ?>
+        $(function () {
+            $('#usu_cedula').focus();
+        })
+<?php } ?>
 </script>
