@@ -16,7 +16,7 @@
             <div class="col-md-3">
                 <div class="row">
                     <div class="col-md-9">
-                        <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->nit) ? $datos[0]->nit : '' ) ?>" <?php echo (isset($datos[0]->nit) ? 'disabled="disabled"' : '' ) ?> class=" form-control obligatorio  number" id="nit" name="nit" title="Ingresar el NIT de la empresa sin digito verificador."    >
+                        <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->nit) ? $datos[0]->nit : '' ) ?>" <?php echo (isset($datos[0]->nit) ? 'disabled="disabled"' : '' ) ?> class=" form-control obligatorio  number" id="nit" name="nit" title="Ingresar el NIT de la empresa sin dígito verificador."    >
                     </div>
                     <div class="col-md-3">
                         <div class="col-md" id="digito_ver" style="margin: 10 0;">
@@ -47,7 +47,7 @@
                     *                             Contacto                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->contacto) ? $datos[0]->contacto : '' ) ?>" class=" form-control obligatorio  " id="contacto" name="contacto" title="Ingresar el nombre de la persona con la que se va ha tener comunicación.">
+                <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->contacto) ? $datos[0]->contacto : '' ) ?>" class=" form-control obligatorio  " id="contacto" name="contacto" title="Ingresar el nombre del contacto de la empresa.">
 
 
                 <br>
@@ -60,7 +60,7 @@
                     *                             Cargo                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->cargo) ? $datos[0]->cargo : '' ) ?>" class=" form-control obligatorio  " id="cargo" name="cargo" title="Ingresar la función de la cual es responsable el contacto en la organización.">
+                <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->cargo) ? $datos[0]->cargo : '' ) ?>" class=" form-control obligatorio  " id="cargo" name="cargo" title="Ingresar el cargo del cual es responsable el contacto en la organización.">
 
 
                 <br>
@@ -105,7 +105,7 @@
                     *                             Teléfono cliente                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" maxlength="15" value="<?php echo (isset($datos[0]->telefono_cli) ? $datos[0]->telefono_cli : '' ) ?>" class=" form-control obligatorio  number" id="telefono_cli" name="telefono_cli" title="Ingresar el número de contacto del cliente.">
+                <input type="text" maxlength="15" value="<?php echo (isset($datos[0]->telefono_cli) ? $datos[0]->telefono_cli : '' ) ?>" class=" form-control obligatorio  number" id="telefono_cli" name="telefono_cli" title="Ingresar el número telefónico del cliente.">
 
 
                 <br>

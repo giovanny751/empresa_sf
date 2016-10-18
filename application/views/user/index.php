@@ -27,7 +27,7 @@
                     *                             Nombre                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->usu_nombre) ? $datos[0]->usu_nombre : '' ) ?>" class=" form-control obligatorio  " id="usu_nombre" name="usu_nombre" title="Ingresar nombre completo. ">
+                <input type="text" maxlength="50" value="<?php echo (isset($datos[0]->usu_nombre) ? $datos[0]->usu_nombre : '' ) ?>" class=" form-control obligatorio  " id="usu_nombre" name="usu_nombre" title="Ingresar nombre completo del usuario. ">
 
 
                 <br>
@@ -53,7 +53,7 @@
                    *                             Usuario                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" autocomplete="off"  maxlength="20" value="<?php echo (isset($datos[0]->usu_usuario) ? $datos[0]->usu_usuario : '' ) ?>" class=" form-control obligatorio  " id="usu_usuario" name="usu_usuario" title="Ingresar el nombre del usuario con el que va acceder al sistema.">
+                <input type="text" autocomplete="off"  maxlength="20" value="<?php echo (isset($datos[0]->usu_usuario) ? $datos[0]->usu_usuario : '' ) ?>" class=" form-control obligatorio  " id="usu_usuario" name="usu_usuario" title="Ingresar el usuario con el que va acceder al sistema.">
 
 
                 <br>
@@ -129,9 +129,9 @@
         $.post('<?php echo base_url('index.php/User/usu_cedula') ?>', {usu_cedula: usu_cedula, usu_id: usu_id})
                 .done(function (msg) {
                     if (msg == 0) {
-                        alerta('verde', 'Cédula ya existe.')
+                        alerta('verde', 'Cédula válida.')
                     } else {
-                        alerta('rojo', 'Cédula no registrada')
+                        alerta('rojo', 'Cédula ya existe.')
                         $('#usu_cedula').val('');
                     }
                     $('#boton_cargar').hide();
@@ -152,7 +152,7 @@
                     if (msg == 0) {
                         alerta('verde', 'Usuario válido')
                     } else {
-                        alerta('rojo', 'Usuario no válido')
+                        alerta('rojo', 'Usuario ya existe')
                         $('#usu_usuario').val('');
                     }
                     $('#boton_cargar').hide();

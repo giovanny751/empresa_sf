@@ -12,7 +12,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['nit']) ? $post['nit'] : '' ) ?>" class="form-control obligatorio  number" id="nit" name="nit" title="Digite el NIT de la empresa sin digito verificador." >
+                <input type="text" value="<?php echo (isset($post['nit']) ? $post['nit'] : '' ) ?>" class="form-control obligatorio  number" id="nit" name="nit" title="Digité el NIT de la empresa sin dígito verificador." >
                 <br>
             </div>
 
@@ -32,7 +32,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['contacto']) ? $post['contacto'] : '' ) ?>" class="form-control obligatorio  " id="contacto" name="contacto" title="Digite el nombre de la persona con la que se va ha tener comunicación.">
+                <input type="text" value="<?php echo (isset($post['contacto']) ? $post['contacto'] : '' ) ?>" class="form-control obligatorio  " id="contacto" name="contacto" title="Ingresar el nombre del contacto de la empresa.">
                 <br>
             </div>
 
@@ -42,7 +42,7 @@
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['cargo']) ? $post['cargo'] : '' ) ?>" class="form-control obligatorio  " id="cargo" name="cargo" title="Digite la función de la cual es responsable el contacto en la organización.">
+                <input type="text" value="<?php echo (isset($post['cargo']) ? $post['cargo'] : '' ) ?>" class="form-control obligatorio  " id="cargo" name="cargo" title="Digité el cargo del cual es responsable el contacto en la organización.">
                 <br>
             </div>
 
