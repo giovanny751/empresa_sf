@@ -131,6 +131,11 @@
 </div>
 <script>
     ss = 0;
+    function pais() {
+        $('#pais').val()
+        $('#ciudad option').hide();
+        $('#ciudad option[atri="' + $('#pais').val() + '"]').show()
+    }
     $('#nit').change(function () {
         var nit = $('#nit').val();
         var id = $('#id').val();
@@ -172,8 +177,16 @@
         })
     })
 <?php if (isset($datos[0]->id)) { ?>
-        ss = 1
+        ss = 1;
         $('#nit').trigger('change');
+        pais();
+<?php } else { ?>
+        $(function () {
+            $('#pais').trigger('change');
+            $('input[type="reset"]').click(function(){
+                $('#digito_ver').html('');
+            });
+        })
 <?php } ?>
     function campos() {
         $('input[type="file"]').each(function (key, val) {

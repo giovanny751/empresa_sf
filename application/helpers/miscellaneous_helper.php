@@ -235,7 +235,7 @@ function lista($name, $id, $class, $tabla, $option_value, $option_name, $value, 
             }
             foreach ($query->result() as $row) {
                 if ($row->$option_value == $value) {
-                    $html.="<option value='" . $row->$option_value . "' selected>" . $row->$option_name . "</option>";
+                    $html.="<option value='" . $row->$option_value . "' atri='".($attr!=null?$row->$attr:'')."' selected>" . $row->$option_name . "</option>";
                 } else {
                     if ($bloqued) {
                         $html.="<option  disabled=disabled  value='" . $row->$option_value . "' >" . $row->$option_name . "</option>";

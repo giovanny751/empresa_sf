@@ -144,7 +144,7 @@
 </div>
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -152,7 +152,7 @@
             </div>
             <div class="modal-body form-horizontal">
                 <div class="row" >
-                    <table class='table table-bordered table-hover' >
+                    <table class='table table-bordered table-hover' id="tabla_product">
                         <thead>
                         <th>Referencia</th>
                         <th>Nombre</th>
@@ -173,17 +173,18 @@
         $.post(
                 "<?php echo base_url("index.php/cotizacion/consultaProductos") ?>"
                 ).done(function (msg) {
-            $('#bodyProducto *').remove();
-            cuerpo = "";
+                    
+                    var table=$('#tabla_product').DataTable()
+                    table.clear().draw();
             $.each(msg, function (key, val) {
-                cuerpo += "<tr>";
-                cuerpo += "<td class='columnaReferencia'><input class='idProducto' type='hidden' name='idProducto' value='" + val.id + "' class='idProducto' >" + val.referencia + "</td>";
-                cuerpo += "<td class='nombreProducto'>" + val.Nombre + "</td>";
-                cuerpo += "<td class='costo_prod'>" + val.costo_cop + "</td>";
-                cuerpo += "<td class='cantidadProducto'><input type='text' name='cantidad' class='form-control cantidad' style='text-align:center'></td>";
-                cuerpo += "</tr>";
+                
+                table.row.add([
+                    "<span class='columnaReferencia'><input class='idProducto' type='hidden' name='idProducto' value='" + val.id + "' class='idProducto' >" + val.referencia + "</span>",
+                    "<span class='nombreProducto'>" + val.Nombre + "</span>",
+                    "<span class='costo_prod'>" + val.costo_cop + "</span>",
+                    "<span class='cantidadProducto'><input type='text' name='cantidad' class='form-control cantidad' style='text-align:center'></span>"
+                ]).draw()
             })
-            $('#bodyProducto').append(cuerpo);
             $('#myModal').modal();
         }).fail(function (msg) {
 
@@ -295,6 +296,8 @@
         $('#guardarFormulario').show();
 <?php } ?>
 
+
+$('#tabla_product').DataTable()
 
 
 </script>

@@ -142,6 +142,13 @@
     </form>
 </div>
 <script>
+    function pais() {
+        $('#pais').val()
+        $('#ciudad option').hide();
+        $('#ciudad option[atri="' + $('#pais').val() + '"]').show()
+    }
+
+
     ss = 0;
     $('#nit').change(function () {
         var nit = $('#nit').val();
@@ -186,6 +193,14 @@
 <?php if (isset($datos[0]->id)) { ?>
         ss = 1;
         $('#nit').trigger('change');
+        pais();
+<?php } else { ?>
+        $(function () {
+            $('#pais').trigger('change');
+            $('input[type="reset"]').click(function(){
+                $('#digito_ver').html('');
+            });
+        })
 <?php } ?>
 
 
@@ -217,13 +232,13 @@
     $('.fecha').datepicker({dateFormat: 'yy-mm-dd'});
 
 
-<?php if(isset($datos[0]->nit)){?>
-    $(function () {
-        $('#nombre').focus();
-    })
-<?php }else{?>
-    $(function () {
-        $('#nit').focus();
-    })
-<?php }?>
+<?php if (isset($datos[0]->nit)) { ?>
+        $(function () {
+            $('#nombre').focus();
+        })
+<?php } else { ?>
+        $(function () {
+            $('#nit').focus();
+        })
+<?php } ?>
 </script>
