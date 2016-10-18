@@ -14,7 +14,7 @@
                    *                             Cédula                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->usu_cedula) ? $datos[0]->usu_cedula : '' ) ?>" class=" form-control obligatorio  number" id="usu_cedula" name="usu_cedula" title="Ingresar el número correspondiente al documento de identificación. ">
+                <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->usu_cedula) ? $datos[0]->usu_cedula : '' ) ?>" <?php echo (isset($datos[0]->usu_cedula) ? 'disabled="disabled"' : '' ) ?>  class=" form-control obligatorio  number" id="usu_cedula" name="usu_cedula" title="Ingresar el número correspondiente al documento de identificación. ">
 
 
                 <br>
@@ -66,7 +66,7 @@
                    *                             Contraseña                        </label>
             </div>
             <div class="col-md-3">
-                <input type="password" value="" maxlength="11" class=" form-control obligatorio  " id="usu_contrasena" name="usu_contrasena" title="Ingresar una contraseña de maximo 11 caracteres combinando mayúsculas, minúsculas, números y caracteres especiales como símbolos o signos de puntuación ,-#$@.">
+                <input type="password" value="" maxlength="11" class=" form-control <?php echo (isset($datos[0]->usu_cedula) ? '' : 'obligatorio' ) ?>  " id="usu_contrasena" name="usu_contrasena" title="Ingresar una contraseña de maximo 11 caracteres combinando mayúsculas, minúsculas, números y caracteres especiales como símbolos o signos de puntuación ,-#$@.">
 
 
                 <br>

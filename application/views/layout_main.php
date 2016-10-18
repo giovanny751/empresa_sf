@@ -493,13 +493,16 @@
     //$('.number').attr('maxlength','11')
 
 
-
+$('table').addClass('table-hover');
 
 
 </script>
 <style>
     .blockOverlay{
         z-index:10000 !important;
+    }
+    .table-hover tr:hover{
+        background: #CCC !important;
     }
 </style>
 

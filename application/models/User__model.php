@@ -7,7 +7,11 @@ class User__model extends CI_Model {
     }
 
     function save_user($post) {
+        if($post['usu_contrasena']!=''){
         $post['usu_contrasena'] = sha1($post['usu_contrasena']);
+        }else{
+            unset($post['usu_contrasena']);
+        }
         if (isset($post['campo'])) {
             $this->db->where($post["campo"], $post[$post["campo"]]);
             $id = $post[$post["campo"]];

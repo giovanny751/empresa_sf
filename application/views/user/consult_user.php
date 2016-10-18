@@ -86,11 +86,13 @@
                 </thead>
                 <tbody>
                     <?php
+                    
                     foreach ($datos as $key => $value) {
                         echo "<tr>";
                         $i = 0;
-
+                        $d=array();
                         foreach ($value as $key2 => $value2) {
+                            $d[]=$value->$key2;
                             echo "<td>" . $value->$key2 . "</td>";
                             if ($i == 0) {
                                 $campo = $key2;
@@ -100,7 +102,7 @@
                         }
                         echo "<td>"
                         . '<a href="javascript:" class="btn btn-dcs" onclick="editar(' . $valor . ')"><i class="fa fa-pencil"></i></a>'
-                        . '<a href="javascript:" class="btn btn-danger" onclick="delete_(' . $valor . ')"><i class="fa fa-trash-o"></i></a>'
+                        . '<a href="javascript:"  class="btn btn-danger" onclick="delete_(' . $valor . ','."'".$d[1]."'".','."'".$d[2]."'".')"><i class="fa fa-trash-o"></i></a>'
                         . "</td>";
                         echo "</tr>";
                     }
@@ -131,8 +133,9 @@
         $('#<?php echo $campo ?>2').val(num);
         $('#editar').submit();
     }
-    function delete_(num) {
-        var r = confirm('Confirma que desea eliminar el registro');
+    function delete_(num,cedula,nombre) {
+        
+        var r = confirm('Cédula:'+cedula+'\nNombre:'+nombre+'\n¿Confirma que desea eliminar el registro?');
         if (r == false) {
             return false;
         }

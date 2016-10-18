@@ -216,7 +216,14 @@
     });
     $('.fecha').datepicker({dateFormat: 'yy-mm-dd'});
 
+
+<?php if(isset($datos[0]->nit)){?>
+    $(function () {
+        $('#nombre').focus();
+    })
+<?php }else{?>
     $(function () {
         $('#nit').focus();
     })
+<?php }?>
 </script>
