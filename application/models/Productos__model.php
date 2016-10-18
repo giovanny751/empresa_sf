@@ -94,13 +94,14 @@ class Productos__model extends CI_Model {
         if (isset($post['activo']))
             if ($post['activo'] != "")
                 $this->db->like('activo', $post['activo']);
-        $this->db->select('id');
+        $this->db->select('productos.id');
         $this->db->select('referencia');
-        $this->db->select('Nombre');
+        $this->db->select('productos.Nombre');
         $this->db->select('Descripcion');
-        $this->db->select('Categoria');
+        $this->db->select('categoria.nombre nomb');
         $this->db->select('costo_cop');
-        $this->db->where('ACTIVO', 'S');
+        $this->db->where('productos.ACTIVO', 'S');
+        $this->db->join('categoria','categoria.id=productos.Categoria');
         $datos = $this->db->get('productos');
         $datos = $datos->result();
         return $datos;
