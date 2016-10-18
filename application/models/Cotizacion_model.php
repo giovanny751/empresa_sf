@@ -112,6 +112,7 @@ class Cotizacion_model extends CI_Model {
         $this->db->where("encCot_id", $dato);
         $this->db->select("encabezado_cotizacion.encCot_id as cotEnc_id");
         $this->db->select("clientes.*");
+        $this->db->select("ciu_nombre");
         $this->db->select("garantia.nombre as garantia");
         $this->db->select("forma_pago.nombre as formaPago");
         $this->db->select("validez_oferta.nombre as validezOferta");
@@ -125,6 +126,7 @@ class Cotizacion_model extends CI_Model {
         $this->db->join("tiempo_entrega", "tiempo_entrega.id = encabezado_cotizacion.id_tiempoEntrega");
         $this->db->join("validez_oferta", "validez_oferta.id = encabezado_cotizacion.id_validezOferta");
         $this->db->join("estados", "encabezado_cotizacion.est_id=estados.id");
+        $this->db->join("ciudad", "clientes.ciudad=ciudad.ciu_id");
 
         $data = $this->db->get("encabezado_cotizacion");
         return $data->result();

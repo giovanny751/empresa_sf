@@ -1,29 +1,29 @@
-<table style="border:1px solid #000">
+<table style="border:1px solid #999">
     <tr >
-        <td rowspan="4" style="border:1px solid #000" width="30%">
+        <td rowspan="4" style="border:1px solid #999" width="30%">
             &nbsp;<br>&nbsp;
             <img src="<?php echo base_url('img/logoaaorig.png');?>">
         </td>
-        <td rowspan="4" style="border:1px solid #000" width="30%">
+        <td rowspan="4" style="border:1px solid #999" width="30%">
             <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;COTIZACION
         </td>
-        <td rowspan="1" style="border:1px solid #000" width="25%">Codigo</td>
-        <td rowspan="1" style="border:1px solid #000" width="15%">CO-REG-3</td>
+        <td rowspan="1" style="border:1px solid #999" width="25%">Codigo</td>
+        <td rowspan="1" style="border:1px solid #999" width="15%">CO-REG-3</td>
     </tr>
-    <tr style="border:1px solid #000">
-        <td rowspan="1" style="border:1px solid #000">Versión</td>
-        <td rowspan="1" style="border:1px solid #000">1</td>
+    <tr style="border:1px solid #999">
+        <td rowspan="1" style="border:1px solid #999">Versión</td>
+        <td rowspan="1" style="border:1px solid #999">1</td>
     </tr>
-    <tr style="border:1px solid #000">
-        <td rowspan="1" style="border:1px solid #000">Número</td>
-        <td rowspan="1" style="border:1px solid #000">0130</td>
+    <tr style="border:1px solid #999">
+        <td rowspan="1" style="border:1px solid #999">Número</td>
+        <td rowspan="1" style="border:1px solid #999">0130</td>
     </tr>
-    <tr style="border:1px solid #000">
-        <td rowspan="1" style="border:1px solid #000">Fecha de implementación</td>
-        <td rowspan="1" style="border:1px solid #000"><?php echo date('Y-m-d'); ?></td>
+    <tr style="border:1px solid #999">
+        <td rowspan="1" style="border:1px solid #999">Fecha de implementación</td>
+        <td rowspan="1" style="border:1px solid #999"><?php echo date('Y-m-d'); ?></td>
     </tr>
 </table>
 
@@ -58,7 +58,7 @@
     </tr>
     <tr>
         <td>Ciudad:</td>
-        <td><?php  echo $cotizaciones[0]->ciudad ?></td>
+        <td><?php  echo $cotizaciones[0]->ciu_nombre ?></td>
     </tr>
     <tr>
         <td>Fecha:</td>
@@ -74,17 +74,17 @@
     </tr>
 </table>
 <p>
-<hr>
+
 <p>
     <br>
 <table>
     <tr>
-        <td style="border:1px solid #000" width="10%">&nbsp;&nbsp;ITEM</td>
-        <td style="border:1px solid #000" width="30%">&nbsp;&nbsp;DESCRIPCIÓN</td>
-        <td style="border:1px solid #000" width="10%">&nbsp;&nbsp;CANT.</td>
-        <td style="border:1px solid #000" width="15%">&nbsp;&nbsp;V/UNIT.</td>
-        <td style="border:1px solid #000" width="15%">&nbsp;&nbsp;IVA 16%</td>
-        <td style="border:1px solid #000" width="20%">&nbsp;&nbsp;V/TOTAL</td>
+        <td style="border:1px solid #999" width="10%">&nbsp;&nbsp;ITEM</td>
+        <td style="border:1px solid #999" width="30%">&nbsp;&nbsp;DESCRIPCIÓN</td>
+        <td style="border:1px solid #999" width="10%">&nbsp;&nbsp;CANT.</td>
+        <td style="border:1px solid #999" width="15%">&nbsp;&nbsp;V/UNIT.</td>
+        <td style="border:1px solid #999" width="15%">&nbsp;&nbsp;IVA 16%</td>
+        <td style="border:1px solid #999" width="20%">&nbsp;&nbsp;V/TOTAL</td>
     </tr>
     <?php
     $i = 0;
@@ -93,12 +93,12 @@
         foreach ($consultaProductos as $c):
             ?>
             <tr>
-                <td style="border:1px solid #000" >&nbsp;&nbsp;&nbsp;<?php echo ++$i ?></td>
-                <td style="border:1px solid #000"><?php echo $c->Nombre ?></td>
-                <td style="border:1px solid #000">&nbsp;&nbsp;<?php echo number_format($c->proCot_cantidad) ?></td>
-                <td style="border:1px solid #000">&nbsp;&nbsp;<?php echo number_format($c->proCot_costo - ($c->proCot_costo * 0.16)) ?></td>
-                <td style="border:1px solid #000">&nbsp;&nbsp;<?php echo number_format(($c->proCot_costo * 0.16)) ?></td>
-                <td style="border:1px solid #000">&nbsp;&nbsp;<?php echo number_format($c->proCot_costo * $c->proCot_cantidad) ?></td>
+                <td style="border:1px solid #999" >&nbsp;&nbsp;&nbsp;<?php echo ++$i ?></td>
+                <td style="border:1px solid #999"><?php echo $c->Nombre ?></td>
+                <td style="border:1px solid #999">&nbsp;&nbsp;<?php echo number_format($c->proCot_cantidad) ?></td>
+                <td style="border:1px solid #999">&nbsp;&nbsp;<?php echo number_format($c->proCot_costo - ($c->proCot_costo * 0.16)) ?></td>
+                <td style="border:1px solid #999">&nbsp;&nbsp;<?php echo number_format(($c->proCot_costo * 0.16)) ?></td>
+                <td style="border:1px solid #999">&nbsp;&nbsp;<?php echo number_format($c->proCot_costo * $c->proCot_cantidad) ?></td>
             </tr>
             <?php
             $resultado+=$c->proCot_costo * $c->proCot_cantidad;
@@ -108,10 +108,10 @@
         <td></td>
         <td></td>
         <td></td>
-        <td style="border:1px solid #000" colspan="2">
+        <td style="border:1px solid #999" colspan="2">
             Total
         </td>
-        <td style="border:1px solid #000">
+        <td style="border:1px solid #999">
             <?php echo number_format($resultado); ?>
         </td>
     </tr>
