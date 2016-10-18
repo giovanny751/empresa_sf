@@ -1,6 +1,6 @@
 <div class="widgetTitle" >
     <h5>
-        <i class="glyphicon glyphicon-ok"></i> Consultar Categoria    </h5>
+        <i class="glyphicon glyphicon-ok"></i> Consultar Categoría    </h5>
 </div>
 <div class='well'>
      <?php if ($this->session->flashdata('message')) { ?>
@@ -14,11 +14,11 @@
 
             <div class="col-md-3">
                 <label for="nombre">
-                    Categoria                        </label>
+                    Categoría                        </label>
             </div>
             <div class="col-md-3">
 
-                <input type="text" value="<?php echo (isset($post['nombre']) ? $post['nombre'] : '' ) ?>" class="form-control obligatorio  " id="nombre" name="nombre" title="Digitar nombre de la categoria.">
+                <input type="text" value="<?php echo (isset($post['nombre']) ? $post['nombre'] : '' ) ?>" class="form-control obligatorio  " id="nombre" name="nombre" title="Digitar nombre de la categoría.">
                 <br>
             </div>
 

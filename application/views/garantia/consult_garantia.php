@@ -1,6 +1,6 @@
 <div class="widgetTitle" >
     <h5>
-        <i class="glyphicon glyphicon-ok"></i> Consultar Garantia    </h5>
+        <i class="glyphicon glyphicon-ok"></i> Consultar Garantía    </h5>
 </div>
 <div class='well'>
 <form action="<?php echo base_url('index.php/').'/Garantia/consult_garantia'; ?>" method="post" >

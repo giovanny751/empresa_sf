@@ -9,7 +9,7 @@
         <form class='form-horizontal' id='frmCotizacion' method="post">
             <div class='col-md-6'>
                 <div class='form-group'>
-                    <label div class='col-md-6'> <i class="fa fa-question-circle" aria-hidden="true" title=" Seleccionar nombre del cliente."></i>  Cliente  </label> 
+                    <label div class='col-md-6'> <i class="fa fa-question-circle" aria-hidden="true" title=" Seleccionar el nombre de la empresa o la razón social."></i>  Cliente  </label> 
                     <div class='col-md-6'>
                         <select name='cliente' id='cliente' class='form-control obligatorio'>  
                             <option value=''>::Seleccionar</option>

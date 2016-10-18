@@ -1,6 +1,6 @@
 <div class="widgetTitle" >
     <h5>
-        <i class="glyphicon glyphicon-ok"></i> Consultar Pais    </h5>
+        <i class="glyphicon glyphicon-ok"></i> Consultar País    </h5>
 </div>
 <div class='well'>
     <form action="<?php echo base_url('index.php/') . '/Pais/consult_pais'; ?>" method="post" >
