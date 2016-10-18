@@ -144,6 +144,7 @@
                         } else {
                             alerta('rojo', 'Nit ya registrado')
                             $('#nit').val('');
+                            $('#digito_ver').html('')
                         }
                     } else {
                         ss = 0;
@@ -163,6 +164,9 @@
         $.post(url, {nit: $(this).val()})
                 .done(function (msg) {
                     $('#digito_ver').html('- ' + msg)
+                    if ($('#nit').val() == '') {
+                        $('#digito_ver').html('')
+                    }
                 }).fail(function () {
 
         })
