@@ -37,6 +37,8 @@
 
 <script type="text/javascript" src="https://cdn.datatables.net/r/dt/dt-1.10.9/datatables.min.js"></script>
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <header>
     <span class="tituloH"><?php echo $this->session->userdata('empresa'); ?></span>
@@ -319,6 +321,7 @@
     }
 </style>
 <script>
+    $('input').tooltip();
     $('.limpiar').click(function () {
         $('select,input').val('');
     });
@@ -478,16 +481,21 @@
         }
 
     });
-    
-    $('#pais').change(function(){
+
+    $('#pais').change(function () {
         $('#ciudad').val('');
         $(this).val()
         $('#ciudad option').hide();
-        $('#ciudad option[atri="'+$(this).val()+'"]').show()
+        $('#ciudad option[atri="' + $(this).val() + '"]').show()
     })
-    
+
     //$('input[type="text"]').attr('maxlength','70')
     //$('.number').attr('maxlength','11')
+
+
+
+
+
 </script>
 <style>
     .blockOverlay{

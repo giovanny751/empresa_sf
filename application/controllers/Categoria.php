@@ -33,7 +33,10 @@ class Categoria extends My_Controller {
     }
     function delete_categoria(){
         $post=$this->input->post();
-        $this->Categoria__model->delete_categoria($post);
+        $i=$this->Categoria__model->delete_categoria($post);
+        if($i>0){
+            $this->session->set_flashdata(array('message' => 'No se puede eliminar la categoria porque tiene productos asociados', 'message_type' => 'warning'));
+        }
         redirect('index.php/Categoria/consult_categoria', 'location');
     }
     function edit_categoria(){
