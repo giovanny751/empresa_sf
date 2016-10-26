@@ -6,7 +6,7 @@
 </div>
 <div class='well'>
     <form class='form-horizontal' id='frmCotizacion' method="post">
-        <input type="hidden" name="encCot_id" id="encCot_id" value="<?php echo (isset($encCot_id)?$encCot_id:'') ?>">
+        <input type="hidden" name="encCot_id" id="encCot_id" value="<?php echo (isset($encCot_id) ? $encCot_id : '') ?>">
         <div class='row'>
             <div class='col-md-6'>
                 <div class='form-group'>
@@ -93,6 +93,7 @@
                         <th>Referencia</th>
                         <th>Nombre</th>
                         <th>Valor Unitario</th>
+                        <th>Rentabilidad</th>
                         <th>Cantidad</th>
                         <th>Valor Total</th>
                         <th>Eliminar</th>
@@ -107,12 +108,14 @@
                                         <td><?php echo $c->referencia ?></td>
                                         <td><input type='hidden' value='<?php echo $c->id_Producto ?>' name='IdProducto[]'><?php echo $c->Nombre ?></td>
                                         <td><input type='hidden' value='<?php echo $c->proCot_costo ?>' name='costoPro[]'><?php echo $c->proCot_costo ?></td>
+                                        <td><input type='text' style='text-align:center' value='<?php echo $c->proCot_margen ?>' name='margenProductos[]' class='margenProductos'></td>
                                         <td><input type='text' style='text-align:center' value='<?php echo $c->proCot_cantidad ?>' name='cantidadProductos[]' class='cantidadProductos'></td>
-                                        <td><span class='valor_total'><?php echo number_format($c->proCot_costo * $c->proCot_cantidad) ?></span></td>
+                                        <?php $valor=(($c->proCot_margen/100)*($c->proCot_costo * $c->proCot_cantidad))+($c->proCot_costo * $c->proCot_cantidad) ?>
+                                        <td><span class='valor_total'><?php echo number_format($valor) ?></span></td>
                                         <td><button type='button' class='btn btn-danger eliminar'>Eliminar</button></td>
                                     </tr>
                                     <?php
-                                    $resultado+=$c->proCot_costo * $c->proCot_cantidad;
+                                    $resultado+=$valor;
                                 endforeach;
                             ?>
                         </tbody>
@@ -144,7 +147,7 @@
 </div>
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -152,6 +155,19 @@
             </div>
             <div class="modal-body form-horizontal">
                 <div class="row" >
+                    <div class="col-md-3" >
+                        Buscar     
+                    </div>
+                    <div class="col-md-9" >
+                        <input id="buscar" class="form-control">
+                        <br>
+                    </div>
+                    <div class="col-md-12" style="text-align: center">
+                        <button class="btn btn-success buscar_producto" type="button">Buscar</button>
+                    </div>
+                </div>
+                <div class="row" >
+                <div class="col-md-12" >
                     <table class='table table-bordered table-hover' >
                         <thead>
                         <th>Referencia</th>
@@ -164,14 +180,24 @@
                         </tbody>
                     </table>
                 </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 <script>
+
+    $('.buscar_producto').click(function () {
+        buscarProducto()
+    })
+
     $('body').delegate("#agregar", "click", function () {
+        buscarProducto();
+    });
+
+    function buscarProducto() {
         $.post(
-                "<?php echo base_url("index.php/cotizacion/consultaProductos") ?>"
+                "<?php echo base_url("index.php/cotizacion/consultaProductos") ?>",{buscar:$('#buscar').val()}
                 ).done(function (msg) {
             $('#bodyProducto *').remove();
             cuerpo = "";
@@ -179,7 +205,7 @@
                 cuerpo += "<tr>";
                 cuerpo += "<td class='columnaReferencia'><input class='idProducto' type='hidden' name='idProducto' value='" + val.id + "' class='idProducto' >" + val.referencia + "</td>";
                 cuerpo += "<td class='nombreProducto'>" + val.Nombre + "</td>";
-                cuerpo += "<td class='costo_prod'>" + val.costo_cop + "</td>";
+                cuerpo += "<td class='costo_prod'>" + val.costo_total + "</td>";
                 cuerpo += "<td class='cantidadProducto'><input type='text' name='cantidad' class='form-control cantidad' style='text-align:center'></td>";
                 cuerpo += "</tr>";
             })
@@ -188,7 +214,7 @@
         }).fail(function (msg) {
 
         });
-    });
+    }
 
     $('body').delegate('.guardarmodificacion', "click", function () {
         var table = "";
@@ -198,6 +224,7 @@
                 table += "<td>" + $(this).parent('td').siblings('.columnaReferencia').text() + "</td>"
                 table += "<td><input type='hidden' value='" + $(this).parent('td').parent('tr').find('.idProducto').val() + "' name='IdProducto[]'>" + $(this).parent('td').siblings('.nombreProducto').text() + "</td>"
                 table += "<td><input type='hidden' value='" + $(this).parent('td').siblings('.costo_prod').text() + "' name='costoPro[]'>" + $(this).parent('td').siblings('.costo_prod').text() + "</td>"
+                table += "<td><input type='text' maxlength='3' style='text-align:center' value='0' name='margenProductos[]' class='margenProductos'></td>"
                 table += "<td><input type='text' style='text-align:center' value='" + $(this).parent('td').parent('tr').find('.cantidad').val() + "' name='cantidadProductos[]' class='cantidadProductos'></td>"
                 table += "<td><span class='valor_total'>" + (CurrencyFormatted(parseInt($(this).parent('td').siblings('.costo_prod').text()) * parseInt($(this).parent('td').parent('tr').find('.cantidad').val()))) + "</span></td>"
                 table += "<td><button type='button' class='btn btn-danger eliminar'>Eliminar</button></td>"
@@ -224,7 +251,7 @@
                     ).done(function (msg) {
                 $('#guardarFormulario').hide();
                 alert('Datos Guardados Con Éxito.')
-                location.href='<?php echo base_url('index.php/Cotizacion/consultaCotizacion') ?>'
+                location.href = '<?php echo base_url('index.php/Cotizacion/consultaCotizacion') ?>'
             }).fail(function () {
 
             });
@@ -237,6 +264,22 @@
         var costo = $(this).parent().parent('tr').find('input[name="costoPro[]"]').val();
         console.log(costo)
         var resultado = parseInt(unidades) * parseInt(costo);
+        $(this).parent().parent('tr').find('.valor_total').html(CurrencyFormatted(resultado));
+
+        sumar_todo()
+    })
+    $('body').delegate('.margenProductos', 'change', function () {
+        if($(this).val()>99){
+           $(this).val(0) 
+           return false;
+        }
+        var margen = $(this).val();
+        var costo = $(this).parent().parent('tr').find('input[name="costoPro[]"]').val();
+        var unidad = $(this).parent().parent('tr').find('input[name="cantidadProductos[]"]').val();
+        
+        
+        
+        var resultado = (((parseInt(margen)/100)*parseInt(costo))+parseInt(costo))*unidad;
         $(this).parent().parent('tr').find('.valor_total').html(CurrencyFormatted(resultado));
 
         sumar_todo()
@@ -285,6 +328,9 @@
             $('#guardarFormulario').show();
     <?php } ?>
     <?php if ($this->session->userdata('permisos') == 2 && $consultaEncabezado->est_id = 2) { ?>
+            $('#guardarFormulario').show();
+    <?php } ?>
+    <?php if ($this->session->userdata('permisos') == 3 ) { ?>
             $('#guardarFormulario').show();
     <?php } ?>
 <?php } ?>

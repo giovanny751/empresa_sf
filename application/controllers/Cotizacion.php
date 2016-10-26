@@ -71,6 +71,7 @@ class Cotizacion extends My_Controller {
 
             $producto = $this->input->post('IdProducto');
             $costoPro = $this->input->post('costoPro');
+            $margenProductos = $this->input->post('margenProductos');
             if (count($producto)) {
                 $productoCotizacion = array();
                 for ($i = 0; $i < count($producto); $i++) {
@@ -78,6 +79,7 @@ class Cotizacion extends My_Controller {
                         "id_Producto" => $producto[$i],
                         "proCot_costo" => $costoPro[$i],
                         "encCot_id" => $idEncabezadoCotizacion,
+                        "proCot_margen" => $margenProductos[$i],
                         "proCot_cantidad" => $this->input->post("cantidadProductos")[$i],
                     );
                 }

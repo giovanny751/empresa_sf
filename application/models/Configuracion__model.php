@@ -38,10 +38,28 @@ class Configuracion__model extends CI_Model {
         $datos2 = $datos2->result();
 
         foreach ($datos2 as $value) {
+
+
+
             $post2['costo_cop'] = $dolar * $value->costo_usd;
-            $post2['arancel'] = $porcentaje_arancel * $post2['costo_cop'];
-            $post2['flete'] = $porcentaje_flete * $post2['costo_cop'];
-            $post2['g_nacionalizacion'] = $porcentaje_g_nacionalizacion * $post2['costo_cop'];
+
+            if ($value->arancel_pre == 2) {
+                $post2['arancel'] = 0;
+            } else {
+                $post2['arancel'] = $porcentaje_arancel * $post2['costo_cop'];
+            }
+            if ($value->flete_pre == 2) {
+                $post2['flete'] = 0;
+            } else {
+                $post2['flete'] = $porcentaje_flete * $post2['costo_cop'];
+            }
+            if ($value->flete_pre == 2) {
+                $post2['g_nacionalizacion'] = 0;
+            } else {
+                $post2['g_nacionalizacion'] = $porcentaje_g_nacionalizacion * $post2['costo_cop'];
+            }
+
+
             $post2['costo_total'] = $post2['costo_cop'] + $post2['arancel'] + $post2['flete'] + $post2['g_nacionalizacion'];
             $post2['Valor_unitario'] = ($post2['costo_cop'] / $porcentaje_margen);
             $post2['margen'] = $post2['Valor_unitario'] - $post2['costo_total'];

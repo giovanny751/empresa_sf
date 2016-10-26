@@ -44,6 +44,17 @@ class Cotizacion_model extends CI_Model {
     }
 
     function productos() {
+
+        $post = $this->input->post();
+
+        if (isset($post['buscar']))
+            if (!empty($post['buscar'])) {
+                $this->db->or_like('Nombre',$post['buscar']);
+                $this->db->or_like('costo_cop',$post['buscar']);
+                $this->db->or_like('referencia',$post['buscar']);
+            }
+
+
         $this->db->where("activo", 'S');
         $this->db->order_by("Descripcion");
         return $this->db->get('productos')->result();

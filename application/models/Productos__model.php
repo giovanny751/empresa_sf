@@ -17,11 +17,29 @@ class Productos__model extends CI_Model {
 
 
         // nuevos valores 
+        if (!empty($post['costo_cop'])) {
+            $post['costo_cop'] = $dolar * $post['costo_usd'];
+        } else {
+            $post['costo_usd'] = $post['costo_usd'] / $dolar;
+        }
 
-        $post['costo_cop'] = $dolar * $post['costo_usd'];
-        $post['arancel'] = $porcentaje_arancel * $post['costo_cop'];
-        $post['flete'] = $porcentaje_flete * $post['costo_cop'];
-        $post['g_nacionalizacion'] = $porcentaje_g_nacionalizacion * $post['costo_cop'];
+        if ($post['arancel_pre'] == 1) {
+            $post['arancel'] = $porcentaje_arancel * $post['costo_cop'];
+        } else {
+            $post['arancel'] = 0;
+        }
+
+        if ($post['flete_pre'] == 1) {
+            $post['flete'] = $porcentaje_flete * $post['costo_cop'];
+        } else {
+            $post['flete'] = 0;
+        }
+
+        if ($post['g_nacionalizacion_pre'] == 1) {
+            $post['g_nacionalizacion'] = $porcentaje_g_nacionalizacion * $post['costo_cop'];
+        } else {
+            $post['g_nacionalizacion'] = 0;
+        }
         $post['costo_total'] = $post['costo_cop'] + $post['arancel'] + $post['flete'] + $post['g_nacionalizacion'];
         $post['Valor_unitario'] = ($post['costo_cop'] / $porcentaje_margen);
         $post['margen'] = $post['Valor_unitario'] - $post['costo_total'];
@@ -60,7 +78,7 @@ class Productos__model extends CI_Model {
                 $this->db->like('referencia', $post['referencia']);
         if (isset($post['Nombre']))
             if ($post['Nombre'] != "")
-                $this->db->like('Nombre', $post['Nombre']);
+                $this->db->like('productos.Nombre', $post['Nombre']);
         if (isset($post['Descripcion']))
             if ($post['Descripcion'] != "")
                 $this->db->like('Descripcion', $post['Descripcion']);
@@ -101,7 +119,7 @@ class Productos__model extends CI_Model {
         $this->db->select('categoria.nombre nomb');
         $this->db->select('costo_cop');
         $this->db->where('productos.ACTIVO', 'S');
-        $this->db->join('categoria','categoria.id=productos.Categoria');
+        $this->db->join('categoria', 'categoria.id=productos.Categoria');
         $datos = $this->db->get('productos');
         $datos = $datos->result();
         return $datos;
