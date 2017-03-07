@@ -83,7 +83,7 @@
         <td style="border:1px solid #999" width="30%">&nbsp;&nbsp;DESCRIPCIÓN</td>
         <td style="border:1px solid #999" width="10%">&nbsp;&nbsp;CANT.</td>
         <td style="border:1px solid #999" width="15%">&nbsp;&nbsp;V/UNIT.</td>
-        <td style="border:1px solid #999" width="15%">&nbsp;&nbsp;IVA 16%</td>
+        <td style="border:1px solid #999" width="15%">&nbsp;&nbsp;IVA 19%</td>
         <td style="border:1px solid #999" width="20%">&nbsp;&nbsp;V/TOTAL</td>
     </tr>
     <?php
@@ -96,12 +96,13 @@
                 <td style="border:1px solid #999" >&nbsp;&nbsp;&nbsp;<?php echo ++$i ?></td>
                 <td style="border:1px solid #999"><?php echo $c->Nombre ?></td>
                 <td style="border:1px solid #999">&nbsp;&nbsp;<?php echo number_format($c->proCot_cantidad) ?></td>
-                <td style="border:1px solid #999">&nbsp;&nbsp;<?php echo number_format($c->proCot_costo - ($c->proCot_costo * 0.16)) ?></td>
-                <td style="border:1px solid #999">&nbsp;&nbsp;<?php echo number_format(($c->proCot_costo * 0.16)) ?></td>
-                <td style="border:1px solid #999">&nbsp;&nbsp;<?php echo number_format($c->proCot_costo * $c->proCot_cantidad) ?></td>
+                <?php $costo= ($c->proCot_costo*($c->proCot_margen/100))+$c->proCot_costo ?>
+                <td style="border:1px solid #999">&nbsp;&nbsp;<?php echo number_format($costo) ?></td>
+                <td style="border:1px solid #999">&nbsp;&nbsp;<?php echo number_format(($costo * 0.19)) ?></td>
+                <td style="border:1px solid #999">&nbsp;&nbsp;<?php echo number_format($costo * $c->proCot_cantidad) ?></td>
             </tr>
             <?php
-            $resultado+=$c->proCot_costo * $c->proCot_cantidad;
+            $resultado+=$costo * $c->proCot_cantidad;
         endforeach;
     ?>
     <tr>
@@ -126,7 +127,7 @@
     </tr>
     <tr>
         <td>Tiempo de Entrega:</td>
-        <td><?php  echo $cotizaciones[0]->tiempoEntrega ?></td>
+        <td><?php  echo $cotizaciones[0]->tiempoEntrega ?> <?php  echo $cotizaciones[0]->per_nombre ?></td>
     </tr>
     <tr>
         <td>Garantia:</td>

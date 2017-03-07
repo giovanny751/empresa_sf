@@ -24,6 +24,7 @@
                 <thead>
                 <th>id</th>
                 <th>Nombre</th>
+                <th>Periodo</th>
                 <th>Acción</th>
                 </thead>
                 <tbody>

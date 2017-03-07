@@ -11,15 +11,21 @@
 
             <div class="col-md-3">
                 <label for="nombre">
-                    *                             Nombre                        </label>
+                    *                             Numero                        </label>
             </div>
             <div class="col-md-3">
-                <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->nombre) ? $datos[0]->nombre : '' ) ?>" class=" form-control obligatorio " id="nombre" name="nombre" title="Ingresar tiempo de entrega de los productos.">
-
-
+                <input type="text" maxlength="10" value="<?php echo (isset($datos[0]->nombre) ? $datos[0]->nombre : '' ) ?>" class=" form-control obligatorio number" id="nombre" name="nombre" title="Ingresar tiempo de entrega de los productos.">
                 <br>
             </div>
-               
+            <div class="col-md-3">
+                <label for="nombre">
+                    *                             Periodo                        </label>
+            </div>
+            <div class="col-md-3">
+                <?php echo lista("per_id", "per_id", "form-control obligatorio", "periodo", "per_id", "per_nombre", (isset($datos[0]->per_id) ? $datos[0]->per_id : ''), array("ACTIVO" => "S"), /* readOnly? */ false); ?>
+                <br>
+            </div>
+
 
         </div>
         <?php if (isset($post['campo'])) { ?>
@@ -65,7 +71,7 @@
     });
     $('.fecha').datepicker({dateFormat: 'yy-mm-dd'});
 
-$(function(){
-    $('#nombre').focus();
-})
+    $(function () {
+        $('#nombre').focus();
+    })
 </script>

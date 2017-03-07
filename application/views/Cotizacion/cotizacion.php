@@ -37,7 +37,7 @@
                         <select name='tiempoEntrega' id='tiempoEntrega' class='form-control obligatorio'>  
                             <option value=''>::Seleccionar</option>
                             <?php foreach ($tiempoEntrega as $t): ?>
-                                <option <?php echo ((isset($consultaEncabezado->id_tiempoEntrega) ? $consultaEncabezado->id_tiempoEntrega : '') == $t->id ) ? "selected" : ""; ?> value='<?php echo $t->id ?>'><?php echo $t->nombre ?></option>
+                                <option <?php echo ((isset($consultaEncabezado->id_tiempoEntrega) ? $consultaEncabezado->id_tiempoEntrega : '') == $t->id ) ? "selected" : ""; ?> value='<?php echo $t->id ?>'><?php echo $t->nombre ?> <?php echo $t->per_nombre ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
@@ -101,6 +101,7 @@
                         <tbody>
                             <?php
                             $resultado = 0;
+                            $renta = 0;
                             if (isset($consultaProductos))
                                 foreach ($consultaProductos as $c):
                                     ?>
@@ -108,7 +109,7 @@
                                         <td><?php echo $c->referencia ?></td>
                                         <td><input type='hidden' value='<?php echo $c->id_Producto ?>' name='IdProducto[]'><?php echo $c->Nombre ?></td>
                                         <td><input type='hidden' value='<?php echo $c->proCot_costo ?>' name='costoPro[]'><?php echo $c->proCot_costo ?></td>
-                                        <td><input type='text' style='text-align:center' value='<?php echo $c->proCot_margen ?>' name='margenProductos[]' class='margenProductos'></td>
+                                        <td><input type='text' style='text-align:center' value='<?php echo $c->proCot_margen ?>' name='margenProductos[]' class='margenProductos number'></td>
                                         <td><input type='text' style='text-align:center' value='<?php echo $c->proCot_cantidad ?>' name='cantidadProductos[]' class='cantidadProductos'></td>
                                         <?php $valor=(($c->proCot_margen/100)*($c->proCot_costo * $c->proCot_cantidad))+($c->proCot_costo * $c->proCot_cantidad) ?>
                                         <td><span class='valor_total'><?php echo number_format($valor) ?></span></td>
@@ -116,6 +117,7 @@
                                     </tr>
                                     <?php
                                     $resultado+=$valor;
+                                    $renta+=$c->proCot_margen;
                                 endforeach;
                             ?>
                         </tbody>
@@ -124,6 +126,9 @@
                     <table class='table table-hover table-bordered'>
                         <thead>
                         <th>Total</th>
+                        <th>Rentabilidad</th>
+                        <th><span class='valor_toal_factura_rentabilidad'><?php echo number_format($renta) ?></span></th>
+                        <th>Valor</th>
                         <th><span class='valor_toal_factura'><?php echo number_format($resultado) ?></span></th>
                         </thead>
                     </table>
@@ -224,7 +229,7 @@
                 table += "<td>" + $(this).parent('td').siblings('.columnaReferencia').text() + "</td>"
                 table += "<td><input type='hidden' value='" + $(this).parent('td').parent('tr').find('.idProducto').val() + "' name='IdProducto[]'>" + $(this).parent('td').siblings('.nombreProducto').text() + "</td>"
                 table += "<td><input type='hidden' value='" + $(this).parent('td').siblings('.costo_prod').text() + "' name='costoPro[]'>" + $(this).parent('td').siblings('.costo_prod').text() + "</td>"
-                table += "<td><input type='text' maxlength='3' style='text-align:center' value='0' name='margenProductos[]' class='margenProductos'></td>"
+                table += "<td><input type='text' maxlength='3' style='text-align:center' value='0' name='margenProductos[]' class='margenProductos number'></td>"
                 table += "<td><input type='text' style='text-align:center' value='" + $(this).parent('td').parent('tr').find('.cantidad').val() + "' name='cantidadProductos[]' class='cantidadProductos'></td>"
                 table += "<td><span class='valor_total'>" + (CurrencyFormatted(parseInt($(this).parent('td').siblings('.costo_prod').text()) * parseInt($(this).parent('td').parent('tr').find('.cantidad').val()))) + "</span></td>"
                 table += "<td><button type='button' class='btn btn-danger eliminar'>Eliminar</button></td>"
@@ -281,6 +286,7 @@
         
         var resultado = (((parseInt(margen)/100)*parseInt(costo))+parseInt(costo))*unidad;
         $(this).parent().parent('tr').find('.valor_total').html(CurrencyFormatted(resultado));
+        $(this).parent().parent('tr').find('.valor_total').html(CurrencyFormatted(resultado));
 
         sumar_todo()
     })
@@ -297,7 +303,12 @@
             dato = dato.replace(',', '');
             valor = parseInt(dato) + parseInt(valor);
         })
+        var rr=0;
+        $('input[name="margenProductos[]"]').each(function () {
+            rr=parseInt($(this).val())+parseInt(rr);
+        });
 
+        $('.valor_toal_factura_rentabilidad').html(CurrencyFormatted(rr));
         $('.valor_toal_factura').html(CurrencyFormatted(valor));
     }
 

@@ -29,7 +29,8 @@ class Cotizacion_model extends CI_Model {
     }
 
     function TiemoEntrega() {
-        $this->db->where("activo", 'S');
+        $this->db->where("tiempo_entrega.activo", 'S');
+        $this->db->join('periodo', 'periodo.per_id=tiempo_entrega.per_id');
         return $this->db->get('tiempo_entrega')->result();
     }
 
@@ -95,6 +96,8 @@ class Cotizacion_model extends CI_Model {
             $this->db->where("id_validezOferta", $post['validezOferta']);
         if (!empty($post['encCot_id']))
             $this->db->where("encabezado_cotizacion.encCot_id", $post['encCot_id']);
+        if (!empty($post['est_id']))
+            $this->db->where("encabezado_cotizacion.est_id", $post['est_id']);
 
         $this->db->select("encabezado_cotizacion.encCot_id as cotEnc_id");
         $this->db->select("clientes.cliente as cliente");
@@ -105,7 +108,7 @@ class Cotizacion_model extends CI_Model {
         $this->db->select("estados.nombre estado");
         $this->db->select("estados.id id_estado");
         $this->db->select("(select sum(proCot_cantidad) from producto_cotizacion where encCot_id=encabezado_cotizacion.encCot_id) cantidad", false);
-        $this->db->select("(select sum(proCot_costo * proCot_cantidad) from producto_cotizacion where encCot_id=encabezado_cotizacion.encCot_id) valor_cotizacion", false);
+        $this->db->select("(select sum(( (proCot_costo * proCot_cantidad)*(proCot_margen/100))+(proCot_costo * proCot_cantidad))  from producto_cotizacion where encCot_id=encabezado_cotizacion.encCot_id) valor_cotizacion", false);
         $this->db->join("clientes", "clientes.id = encabezado_cotizacion.id_cliente");
         $this->db->join("forma_pago", "forma_pago.id = encabezado_cotizacion.id_formaPago");
         $this->db->join("garantia", "garantia.id = encabezado_cotizacion.id_garantia");
@@ -114,12 +117,12 @@ class Cotizacion_model extends CI_Model {
         $this->db->join("estados", "encabezado_cotizacion.est_id=estados.id");
 //        $this->db->where("est_id", '1');
         $data = $this->db->get("encabezado_cotizacion");
-
+//echo $this->db->last_query();
 //        print_y($data);
         return $data->result();
     }
 
-    function consultaEncabezadoCotizaciones2($dato) {
+    function consultaEncabezadoCotizaciones2($dato) { 
         $this->db->where("encCot_id", $dato);
         $this->db->select("encabezado_cotizacion.encCot_id as cotEnc_id");
         $this->db->select("clientes.*");
@@ -129,6 +132,7 @@ class Cotizacion_model extends CI_Model {
         $this->db->select("validez_oferta.nombre as validezOferta");
         $this->db->select("tiempo_entrega.nombre as tiempoEntrega");
         $this->db->select("estados.nombre estado");
+        $this->db->select("periodo.per_nombre per_nombre");
         $this->db->select("(select count(*) from producto_cotizacion where encCot_id=encabezado_cotizacion.encCot_id) cantidad", false);
         $this->db->select("(select sum(proCot_costo) from producto_cotizacion where encCot_id=encabezado_cotizacion.encCot_id) valor_cotizacion", false);
         $this->db->join("clientes", "clientes.id = encabezado_cotizacion.id_cliente");
@@ -137,6 +141,7 @@ class Cotizacion_model extends CI_Model {
         $this->db->join("tiempo_entrega", "tiempo_entrega.id = encabezado_cotizacion.id_tiempoEntrega");
         $this->db->join("validez_oferta", "validez_oferta.id = encabezado_cotizacion.id_validezOferta");
         $this->db->join("estados", "encabezado_cotizacion.est_id=estados.id");
+        $this->db->join('periodo', 'periodo.per_id=tiempo_entrega.per_id','left');
         $this->db->join("ciudad", "clientes.ciudad=ciudad.ciu_id");
 
         $data = $this->db->get("encabezado_cotizacion");

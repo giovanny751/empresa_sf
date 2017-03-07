@@ -65,7 +65,7 @@
                 <thead>
                 <th>id</th>
                 <th>Dolar</th>
-                <th>Drancel</th>
+                <th>Arancel</th>
                 <th>Flete</th>
                 <th>Gastos Nacionalización </th>
                 <th>Márgen</th>

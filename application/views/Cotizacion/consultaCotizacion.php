@@ -41,6 +41,7 @@
                         </select>
                     </div>
                 </div>
+                
 
             </div>
 
@@ -63,6 +64,17 @@
                             <option value=''>::Seleccionar</option>
                             <?php foreach ($validezOferta as $v): ?>
                                 <option value='<?php echo $v->id ?>'><?php echo $v->nombre ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </div>
+                <div class='form-group'>
+                    <label div class='col-md-6'><i class="fa fa-question-circle" aria-hidden="true" title="Seleccionar estado de la cotización. "></i><span style='color: red'>*&nbsp;&nbsp;</span>Estado</label>
+                    <div class='col-md-6'>
+                        <select name='est_id' id='est_id' class='form-control obligatorio'>  
+                            <option value=''>::Seleccionar</option>
+                            <?php foreach ($estados as $v): ?>
+                                <option <?php echo ((isset($consultaEncabezado->est_id) ? $consultaEncabezado->est_id : '') == $v->id ) ? "selected" : ""; ?> value='<?php echo $v->id ?>'><?php echo $v->nombre ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
