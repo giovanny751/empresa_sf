@@ -81,7 +81,7 @@
                         }
                         echo "<td>"
                         . '<a href="javascript:" class="btn btn-dcs" onclick="editar(' . $valor . ')"><i class="fa fa-pencil"></i></a>'
-                        . '<a href="javascript:" class="btn btn-danger" onclick="delete_(' . $valor . ')"><i class="fa fa-trash-o"></i></a>'
+                        . '<a href="javascript:" class="btn btn-danger" onclick="delete_(' . $valor . ','."'".$value->referencia."'".')"><i class="fa fa-trash-o"></i></a>'
                         . "</td>";
                         echo "</tr>";
                     }
@@ -112,8 +112,8 @@
         $('#<?php echo $campo ?>2').val(num);
         $('#editar').submit();
     }
-    function delete_(num) {
-        var r = confirm('Confirma que desea eliminar el registro');
+    function delete_(num,ref) {
+        var r = confirm('Confirma que desea eliminar la Referencia: '+ref);
         if (r == false) {
             return false;
         }

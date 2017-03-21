@@ -67,7 +67,7 @@
                 <br>
             </div>
             <div class="col-md-3">
-                <label for="costo_usd">
+                <label for="costo_cop">
                     *                             Costo COP                        </label>
             </div>
             <div class="col-md-3">
@@ -82,7 +82,7 @@
                 <label for="arancel_pre">Arancel</label>
             </div>
             <div class="col-md-3">
-                <select class=" form-control  " id="arancel_pre" name="arancel_pre">
+                <select class=" form-control obligatorio" id="arancel_pre" name="arancel_pre">
                     <option value="1">Si</option>
                     <option value="2">No</option>
                 </select>
@@ -92,7 +92,7 @@
                 <label for="flete_pre">Flete</label>
             </div>
             <div class="col-md-3">
-                <select class=" form-control  " id="flete_pre" name="flete_pre">
+                <select class=" form-control obligatorio " id="flete_pre" name="flete_pre">
                     <option value="1">Si</option>
                     <option value="2">No</option>
                 </select>
@@ -102,7 +102,7 @@
                 <label for="g_nacionalizacion_pre">Gastos Nacionalización</label>
             </div>
             <div class="col-md-3">
-                <select class=" form-control  " id="g_nacionalizacion_pre" name="g_nacionalizacion_pre">
+                <select class=" form-control  obligatorio" id="g_nacionalizacion_pre" name="g_nacionalizacion_pre">
                     <option value="1">Si</option>
                     <option value="2">No</option>
                 </select>
@@ -128,50 +128,64 @@
     </form>
 </div>
 <script>
+    
     function campos() {
-        $('input[type="file"]').each(function (key, val) {
-            var img = $(this).val();
-            if (img != "") {
-                var r = (img.indexOf('jpg') != -1) ? '' : ((img.indexOf('png') != -1) ? '' : ((img.indexOf('gif') != -1) ? '' : false))
-                if (r === false) {
-                    alert('Tipo de archivo no valido');
-                    return false;
-                }
-            }
-        });
-        if (obligatorio('obligatorio') == false) {
-            return false
-        } else {
-            $('#boton_guardar').hide();
-            $('#boton_cargar').show();
-            return true;
-        }
+    $('input[type="file"]').each(function (key, val) {
+    var img = $(this).val();
+    if (img != "") {
+    var r = (img.indexOf('jpg') != - 1) ? '' : ((img.indexOf('png') != - 1) ? '' : ((img.indexOf('gif') != - 1) ? '' : false));
+    if (r === false) {
+    alert('Tipo de archivo no valido');
+    return false;
+    }
+    }
+    });
+    if (obligatorio('obligatorio') == false) {
+    return false;
+    } else {
+    $('#boton_guardar').hide();
+    $('#boton_cargar').show();
+    return true;
+    }
     }
     $('body').delegate('.number', 'keypress', function (tecla) {
-        if (tecla.charCode > 0 && tecla.charCode < 48 || tecla.charCode > 57)
+    if (tecla.charCode > 0 && tecla.charCode < 48 || tecla.charCode > 57)
             return false;
     });
     $('.fecha').datepicker({dateFormat: 'yy-mm-dd'});
-
     $(function () {
-        $('#referencia').focus();
-    })
-
+    $('#referencia').focus();
+    });
     $('input[name="costo_usd"]').change(function () {
-        $('input[name="costo_cop"]').val('');
-        $('input[name="costo_usd"]').addClass('obligatorio')
-    })
+    $('input[name="costo_cop"]').val('');
+    $('input[name="costo_cop"]').removeClass('obligatorio');
+    $('input[name="costo_usd"]').addClass('obligatorio');
+    });
     $('input[name="costo_cop"]').change(function () {
-        $('input[name="costo_usd"]').val('')
-        $('input[name="costo_cop"]').addClass('obligatorio')
-    })
-
-<?php if(isset($datos[0]->id)){ ?>
-    $(function(){
-        $('#arancel_pre').(<?php echo $datos[0]->arancel_pre; ?>)
-        $('#flete_pre').(<?php echo $datos[0]->flete_pre; ?>)
-        $('#g_nacionalizacion_pre').(<?php echo $datos[0]->g_nacionalizacion_pre; ?>)
-    })
+    $('input[name="costo_usd"]').val('');
+    $('input[name="costo_usd"]').removeClass('obligatorio');
+    $('input[name="costo_cop"]').addClass('obligatorio');
+    });
+    
+<?php if (isset($datos[0]->id)) { ?>
+        $(function(){
+        $('#arancel_pre').val('<?php echo $datos[0]->arancel_pre; ?>');
+        $('#flete_pre').val('<?php echo $datos[0]->flete_pre; ?>');
+        $('#g_nacionalizacion_pre').val('<?php echo $datos[0]->g_nacionalizacion_pre; ?>');
+        })
 <?php } ?>
+    $('#referencia').change(function(){
+    $.post('<?php echo base_url('index.php/Productos/consultarReferencia') ?>', {referencia:$('#referencia').val()})
+            .done(function(msg){
+            if (msg > 0){
+            alerta('rojo', 'Referencia ya existe.')
+                    $('#referencia').val('')
+            } else{
+            alerta('verde', 'Referencia no existe.')
+            }
+            })
+            .fail(function(){
 
+            });
+    });
 </script>

@@ -17,10 +17,10 @@ class Productos__model extends CI_Model {
 
 
         // nuevos valores 
-        if (!empty($post['costo_cop'])) {
+        if (empty($post['costo_cop'])) {
             $post['costo_cop'] = $dolar * $post['costo_usd'];
         } else {
-            $post['costo_usd'] = $post['costo_usd'] / $dolar;
+            $post['costo_usd'] = $post['costo_cop'] / $dolar;
         }
 
         if ($post['arancel_pre'] == 1) {
@@ -42,7 +42,7 @@ class Productos__model extends CI_Model {
         }
         $post['costo_total'] = $post['costo_cop'] + $post['arancel'] + $post['flete'] + $post['g_nacionalizacion'];
         $post['Valor_unitario'] = ($post['costo_cop'] / $porcentaje_margen);
-        $post['margen'] = $post['Valor_unitario'] - $post['costo_total'];
+        $post['margen'] = $post['costo_total'] - $post['Valor_unitario'];
 
         if (isset($post['campo'])) {
             $this->db->where($post["campo"], $post[$post["campo"]]);
@@ -123,6 +123,20 @@ class Productos__model extends CI_Model {
         $datos = $this->db->get('productos');
         $datos = $datos->result();
         return $datos;
+    }
+
+    function consultarReferencia($post) {
+
+        if (isset($post['referencia']))
+            if ($post['referencia'] != "")
+                $this->db->like('referencia', $post['referencia']);
+        
+        $this->db->select('count(*) cantidad',false);
+        $this->db->where('productos.ACTIVO', 'S');
+        $this->db->join('categoria', 'categoria.id=productos.Categoria');
+        $datos = $this->db->get('productos');
+        $datos = $datos->result();
+        return $datos[0]->cantidad;
     }
 
 }

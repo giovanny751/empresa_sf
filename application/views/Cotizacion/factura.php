@@ -99,7 +99,7 @@
                 <?php $costo= ($c->proCot_costo*($c->proCot_margen/100))+$c->proCot_costo ?>
                 <td style="border:1px solid #999">&nbsp;&nbsp;<?php echo number_format($costo) ?></td>
                 <td style="border:1px solid #999">&nbsp;&nbsp;<?php echo number_format(($costo * 0.19)) ?></td>
-                <td style="border:1px solid #999">&nbsp;&nbsp;<?php echo number_format($costo * $c->proCot_cantidad) ?></td>
+                <td style="border:1px solid #999">&nbsp;&nbsp;<?php echo number_format( ($costo * $c->proCot_cantidad)+($costo * 0.19)) ?></td>
             </tr>
             <?php
             $resultado+=$costo * $c->proCot_cantidad;
