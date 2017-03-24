@@ -110,7 +110,7 @@
                                         <td><input type='hidden' value='<?php echo $c->id_Producto ?>' name='IdProducto[]'><?php echo $c->Nombre ?></td>
                                         <td><input type='hidden' value='<?php echo $c->proCot_costo ?>' name='costoPro[]'><?php echo $c->proCot_costo ?></td>
                                         <td><input type='text' style='text-align:center' value='<?php echo $c->proCot_margen ?>' name='margenProductos[]' class='margenProductos number'></td>
-                                        <td><input type='text' style='text-align:center' value='<?php echo $c->proCot_cantidad ?>' name='cantidadProductos[]' class='cantidadProductos'></td>
+                                        <td><input type='text' style='text-align:center' value='<?php echo $c->proCot_cantidad ?>' name='cantidadProductos[]' class='cantidadProductos number'></td>
                                         <?php $valor=(($c->proCot_margen/100)*($c->proCot_costo * $c->proCot_cantidad))+($c->proCot_costo * $c->proCot_cantidad) ?>
                                         <td><span class='valor_total'><?php echo number_format($valor) ?></span></td>
                                         <td><button type='button' class='btn btn-danger eliminar'>Eliminar</button></td>
@@ -230,7 +230,7 @@
                 table += "<td><input type='hidden' value='" + $(this).parent('td').parent('tr').find('.idProducto').val() + "' name='IdProducto[]'>" + $(this).parent('td').siblings('.nombreProducto').text() + "</td>"
                 table += "<td><input type='hidden' value='" + $(this).parent('td').siblings('.costo_prod').text() + "' name='costoPro[]'>" + $(this).parent('td').siblings('.costo_prod').text() + "</td>"
                 table += "<td><input type='text' maxlength='3' style='text-align:center' value='0' name='margenProductos[]' class='margenProductos number'></td>"
-                table += "<td><input type='text' style='text-align:center' value='" + $(this).parent('td').parent('tr').find('.cantidad').val() + "' name='cantidadProductos[]' class='cantidadProductos'></td>"
+                table += "<td><input type='text' style='text-align:center' value='" + $(this).parent('td').parent('tr').find('.cantidad').val() + "' name='cantidadProductos[]' class='cantidadProductos number'></td>"
                 table += "<td><span class='valor_total'>" + (CurrencyFormatted(parseInt($(this).parent('td').siblings('.costo_prod').text()) * parseInt($(this).parent('td').parent('tr').find('.cantidad').val()))) + "</span></td>"
                 table += "<td><button type='button' class='btn btn-danger eliminar'>Eliminar</button></td>"
                 table += "</tr>"

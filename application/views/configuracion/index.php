@@ -61,7 +61,7 @@
 
 
 
-            <div class="col-md-3">
+<!--            <div class="col-md-3">
                 <label for="margen">
                   *                             Márgen                        </label>
             </div>
@@ -70,7 +70,7 @@
 
 
                 <br>
-            </div>
+            </div>-->
 
         </div>
         <?php if (isset($post['campo'])) { ?>

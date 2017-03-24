@@ -45,7 +45,7 @@
                 <br>
             </div>
 
-            <div class="col-md-3">
+<!--            <div class="col-md-3">
                 <label for="margen">
                     Márgen                        </label>
             </div>
@@ -53,7 +53,7 @@
 
                 <input type="text" value="<?php echo (isset($post['margen']) ? $post['margen'] : '' ) ?>" class="form-control obligatorio  " id="margen" name="margen" title="Digite el margen de ganancia del producto, expresado en porcentaje.">
                 <br>
-            </div>
+            </div>-->
 
         </div>
         <button class="btn btn-dcs">Consultar</button>
@@ -68,7 +68,7 @@
                 <th>Arancel</th>
                 <th>Flete</th>
                 <th>Gastos Nacionalización </th>
-                <th>Márgen</th>
+                <!--<th>Márgen</th>-->
                 <th>Acción</th>
                 </thead>
                 <tbody>

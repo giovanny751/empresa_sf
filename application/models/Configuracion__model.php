@@ -114,7 +114,7 @@ class Configuracion__model extends CI_Model {
         $this->db->select('arancel');
         $this->db->select('flete');
         $this->db->select('g_nacionalizacion');
-        $this->db->select('margen');
+//        $this->db->select('margen');
         $this->db->where('ACTIVO', 'S');
         $datos = $this->db->get('configuracion');
         $datos = $datos->result();
